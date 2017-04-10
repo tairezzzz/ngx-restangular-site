@@ -4,7 +4,8 @@ import {RouterModule} from '@angular/router'
 
 @Component({
 	selector: 'lazy-view',
-	template: `<h3>i'm lazy</h3>`
+	templateUrl: './lazy.component.html',
+	styleUrls: ['./lazy.component.css']
 })
 export class LazyView {}
 
