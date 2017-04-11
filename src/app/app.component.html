@@ -1,83 +1,49 @@
-
-    <nav class="top-nav" style="background-color: #3B98EA">
-        <div class="container">
-            <div class="nav-wrapper"><a class="page-title">Ng2-Restangularв</a></div>
-        </div>
-    </nav>
-
+<nav class="top-nav" style="background-color: #3B98EA">
     <div class="container">
-        <a href="#" data-activates="nav-mobile"
-           class="button-collapse top-nav full hide-on-large-only">
-            <i class="material-icons">menu</i>
-        </a>
+        <div class="nav-wrapper"><a class="page-title">Ng2-Restangularв</a></div>
     </div>
+</nav>
+
+<div class="container">
+    <a href="#" data-activates="nav-mobile"
+       class="button-collapse top-nav full hide-on-large-only">
+        <i class="material-icons">menu</i>
+    </a>
+</div>
 
 
-    <div id="nav-mobile" class="side-nav fixed" style="margin-top: 64px;">
-
-        <!--<div class="tab">-->
-            <!--<input id="tab-two" type="radio" name="group1">-->
-            <!--<label  class="waves-effect waves-light" for="tab-two">-->
-                <!--<span>Label Two</span>-->
-            <!--</label>-->
-            <!---->
-            <!--<div class="tab-content">-->
-                <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, architecto, explicabo perferendis nostrum, maxime impedit atque odit sunt pariatur illo obcaecati soluta molestias iure facere dolorum adipisci eum? Saepe, itaque.</p>-->
-            <!--</div>-->
-        <!--</div>-->
-
-        <!--<div class="tab">-->
-            <!--<input id="tab-one" type="radio" name="group1">-->
-            <!--<label class="waves-effect waves-light" for="tab-one">-->
-                <!--<span class="menu-item">How do I add this to my project in angular 2?</span>-->
-            <!--</label>-->
-
-            <!--<div class="tab-content two-level">-->
-                <!--<div class="tab">-->
-                    <!--<input id="tab-one-one" type="radio" name="group2">-->
-                    <!--<label class="waves-effect waves-light" for="tab-one-one">-->
-                        <!--<span>Label One</span>-->
-                    <!--</label>-->
-                    <!--<div class="tab-content">-->
-                        <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, architecto, explicabo perferendis nostrum, maxime impedit atque odit sunt pariatur illo obcaecati soluta molestias iure facere dolorum adipisci eum? Saepe, itaque.</p>-->
-                    <!--</div>-->
-                <!--</div>-->
-            <!--</div>-->
-
-            <!--<div class="tab-content two-level">-->
-                <!--<div class="tab">-->
-                    <!--<input id="tab-one-two" type="radio" name="group2">-->
-                    <!--<label  class="waves-effect waves-light" for="tab-one-two">-->
-                        <!--<span>Label One</span>-->
-                    <!--</label>-->
-                    <!--<div class="tab-content">-->
-                        <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, architecto, explicabo perferendis nostrum, maxime impedit atque odit sunt pariatur illo obcaecati soluta molestias iure facere dolorum adipisci eum? Saepe, itaque.</p>-->
-                    <!--</div>-->
-                <!--</div>-->
-            <!--</div>-->
-        <!--</div>-->
-
-        <div class="tab" *ngFor="let itemsFirstLevel of menu">
-            <input [id]="itemsFirstLevel.link" type="radio" [name]="itemsFirstLevel.inputName">
-            <label  class="waves-effect waves-light" [for]="itemsFirstLevel.link" >
-                <span>{{itemsFirstLevel.title}}</span>
-            </label>
-
-            <div class="tab-content two-level" *ngFor="let itemsTwoLevel of itemsFirstLevel.children">
-                <div class="tab">
-                    <input [id]="itemsTwoLevel.link" type="radio" [name]="itemsTwoLevel.inputName">
-                    <label class="waves-effect waves-light" [for]="itemsTwoLevel.link">
-                        <span>{{itemsTwoLevel.title}}</span>
-                    </label>
+<div id="nav-mobile" class="side-nav fixed" style="margin-top: 64px;">
+    <div class="tab" *ngFor="let itemsFirstLevel of menu">
+        <input [id]="itemsFirstLevel.link" type="radio" [name]="itemsFirstLevel.inputName">
+        <label class="waves-effect waves-light" [for]="itemsFirstLevel.link">
+            <span>{{itemsFirstLevel.title}}</span>
+        </label>
+        <div class="tab-content two-level" *ngFor="let itemsTwoLevel of itemsFirstLevel.children">
+            <div class="tab">
+                <input [id]="itemsTwoLevel.link" type="radio" [name]="itemsTwoLevel.inputName">
+                <label class="waves-effect waves-light" [for]="itemsTwoLevel.link">
+                    <span>{{itemsTwoLevel.title}}</span>
+                </label>
+                <div class="tab-content two-level" *ngFor="let itemsThreeLevel of itemsTwoLevel.children">
+                    <div class="tab">
+                        <input [id]="itemsThreeLevel.link" type="radio" [name]="itemsThreeLevel.inputName">
+                        <label class="waves-effect waves-light" [for]="itemsThreeLevel.link">
+                            <span>{{itemsThreeLevel.title}}</span>
+                        </label>
+                        <div class="tab-content two-level" *ngFor="let itemsFourLevel of itemsThreeLevel.children">
+                            <div class="tab">
+                                <input [id]="itemsFourLevel.link" type="radio" [name]="itemsFourLevel.inputName">
+                                <label class="waves-effect waves-light" [for]="itemsFourLevel.link">
+                                    <span>{{itemsFourLevel.title}}</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-
         </div>
-
-
     </div>
-
-
+</div>
 
 
 <router-outlet></router-outlet>

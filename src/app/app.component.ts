@@ -42,19 +42,225 @@ export class AppComponent implements OnInit {
                     title:'Using Restangular',
                     inputName: 'Level-2',
                     link:'user-content-using-restangular',
-                    children:[]
+                    children:[
+                        {
+                            title:'Creating Main Restangular object',
+                            inputName: 'Level-3',
+                            link:'user-content-creating-main-restangular-object',
+                            children:[]
+                        },
+                        {
+                            title:'Lets Code with Observables!',
+                            inputName: 'Level-3',
+                            link:'user-content-lets-code-with-observables',
+                            children:[]
+                        },
+                        {
+                            title:'Here is Example of code with using promises!',
+                            inputName: 'Level-3',
+                            link:'user-content-here-is-example-of-code-with-using-promises',
+                            children:[]
+                        },
+
+                    ]
                 },
                 {
                     title:'Configuring Restangular',
                     inputName: 'Level-2',
                     link:'user-content-configuring-restangular',
-                    children:[]
+                    children:[
+                        {
+                            title:'Properties',
+                            inputName: 'Level-3',
+                            link:'user-content-properties',
+                            children:[
+                                {
+                                    title:'withConfig',
+                                    inputName: 'Level-4',
+                                    link:'user-content-withconfig',
+                                    children:[]
+                                },
+                                {
+                                    title:'setBaseUrl',
+                                    inputName: 'Level-4',
+                                    link:'user-content-setbaseurl',
+                                    children:[]
+                                },
+                                {
+                                    title:'setExtraFields',
+                                    inputName: 'Level-4',
+                                    link: 'user-content-setextrafields',
+                                    children:[]
+                                },
+                                {
+                                    title:'setParentless',
+                                    inputName: 'Level-4',
+                                    link:'user-content-setparentless',
+                                    children:[]
+                                },
+                                {
+                                    title:'addElementTransformer',
+                                    inputName: 'Level-4',
+                                    link:'user-content-addelementtransformer',
+                                    children:[]
+                                },
+                                {
+                                    title:'setTransformOnlyServerElements',
+                                    inputName: 'Level-4',
+                                    link:'user-content-settransformonlyserverelements',
+                                    children:[]
+                                },
+                                {
+                                    title:'setOnElemRestangularized',
+                                    inputName: 'Level-4',
+                                    link:'user-content-setonelemrestangularized',
+                                    children:[]
+                                },
+                                {
+                                    title:'addResponseInterceptor',
+                                    inputName: 'Level-4',
+                                    link:'user-content-addresponseinterceptor',
+                                    children:[]
+                                },
+                                {
+                                    title:'addFullRequestInterceptor',
+                                    inputName: 'Level-4',
+                                    link:'user-content-addfullrequestinterceptor',
+                                    children:[]
+                                },
+                                {
+                                    title:'addErrorInterceptor',
+                                    inputName: 'Level-4',
+                                    link:'user-content-adderrorinterceptor',
+                                    children:[]
+                                },
+                                {
+                                    title:'setRestangularFields',
+                                    inputName: 'Level-4',
+                                    link:'user-content-setrestangularfields',
+                                    children:[]
+                                },
+                                {
+                                    title:'setMethodOverriders',
+                                    inputName: 'Level-4',
+                                    link:'user-content-setmethodoverriders',
+                                    children:[]
+                                },
+                                {
+                                    title:'setDefaultRequestParams',
+                                    inputName: 'Level-4',
+                                    link:'user-content-setdefaultrequestparams',
+                                    children:[]
+                                },
+                                {
+                                    title:'setFullResponse',
+                                    inputName: 'Level-4',
+                                    link:'user-content-setfullresponse',
+                                    children:[]
+                                },
+                                {
+                                    title:'setDefaultHeaders',
+                                    inputName: 'Level-4',
+                                    link:'user-content-setdefaultheaders',
+                                    children:[]
+                                },
+                                {
+                                    title:'setRequestSuffix',
+                                    inputName: 'Level-4',
+                                    link:'user-content-setrequestsuffix',
+                                    children:[]
+                                },
+                                {
+                                    title:'setUseCannonicalId',
+                                    inputName: 'Level-4',
+                                    link:'user-content-setusecannonicalid',
+                                    children:[]
+                                },
+                                {
+                                    title:'setPlainByDefault',
+                                    inputName: 'Level-4',
+                                    link:'user-content-setplainbydefault',
+                                    children:[]
+                                },
+                                {
+                                    title:'setEncodeIds',
+                                    inputName: 'Level-4',
+                                    link:'user-content-setencodeids',
+                                    children:[]
+                                },
+                            ]
+                        },
+                        {
+                            title:'Accessing configuration',
+                            inputName: 'Level-3',
+                            link:'user-content-accessing-configuration',
+                            children:[]
+                        },
+                        {
+                            title:'How to configure them globally',
+                            inputName: 'Level-3',
+                            link:'user-content-how-to-configure-them-globally',
+                            children:[
+                                {
+                                    title:'Configuring in the AppModule',
+                                    inputName: 'Level-4',
+                                    link:'user-content-configuring-in-the-appmodule',
+                                    children:[]
+                                },
+                                {
+                                    title:'Configuring in the AppModule with Dependency Injection applied',
+                                    inputName: 'Level-4',
+                                    link:'user-content-configuring-in-the-appmodule-with-dependency-injection-applied',
+                                    children:[]
+                                },
+
+                            ]
+                        },
+                        {
+                            title:'How to create a Restangular service with a different configuration from the global one',
+                            inputName: 'Level-3',
+                            link:'user-content-how-to-create-a-restangular-service-with-a-different-configuration-from-the-global-one',
+                            children:[]
+                        },
+                        {
+                            title:'Decoupled Restangular Service',
+                            inputName: 'Level-3',
+                            link:'user-content-decoupled-restangular-service',
+                            children:[]
+                        },
+                    ]
                 },
                 {
                     title:'Methods description',
                     inputName: 'Level-2',
                     link:'user-content-methods-description',
-                    children:[]
+                    children:[
+                        {
+                            title:'Restangular methods',
+                            inputName: 'Level-3',
+                            link:'user-content-restangular-methods',
+                            children:[]
+                        },
+                        {
+                            title:'Element methods',
+                            inputName: 'Level-3',
+                            link:'user-content-element-methods',
+                            children:[]
+                        },
+                        {
+                            title:'Collection methods',
+                            inputName: 'Level-3',
+                            link:'user-content-collection-methods',
+                            children:[]
+                        },
+                        {
+                            title:'Custom methods',
+                            inputName: 'Level-3',
+                            link:'user-content-custom-methods',
+                            children:[]
+                        },
+
+                    ]
                 },
                 {
                     title:'Copying elements',
@@ -84,13 +290,27 @@ export class AppComponent implements OnInit {
                     title:'Adding Custom Methods to Collections',
                     inputName: 'Level-2',
                     link:'user-content-adding-custom-methods-to-collections',
-                    children:[]
+                    children:[
+                        {
+                            title:'Example:',
+                            inputName: 'Level-3',
+                            link:'user-content-example',
+                            children:[]
+                        },
+                    ]
                 },
                 {
                     title:'Adding Custom Methods to Models',
                     inputName: 'Level-2',
                     link:'user-content-adding-custom-methods-to-models',
-                    children:[]
+                    children:[
+                        {
+                            title:'Example:',
+                            inputName: 'Level-3',
+                            link:'user-content-example-1',
+                            children:[]
+                        },
+                    ]
                 },
             ]
         },
