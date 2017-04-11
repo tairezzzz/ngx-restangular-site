@@ -1,5 +1,8 @@
-import { Component, OnInit } from '@angular/core'
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core'
 import { TransferState } from '../modules/transfer-state/transfer-state';
+import { PageScrollService, PageScrollInstance } from 'ng2-page-scroll';
+import { Inject, Injectable } from '@angular/core';
+import { DOCUMENT } from '@angular/platform-browser';
 
 @Component({
 	selector: 'demo-app',
@@ -401,14 +404,18 @@ export class AppComponent implements OnInit {
         }
     ];
 
-    constructor(private cache: TransferState) {}
+    constructor(private cache: TransferState,
+                private pageScrollService: PageScrollService,
+                @Inject(DOCUMENT) private document: any) {}
+
     ngOnInit() {
+
     this.cache.set('cached', true);
     }
 
-    doActive(){
-
-    }
-
+    public goToHead(target): void {
+        let pageScrollInstance: PageScrollInstance = PageScrollInstance.simpleInstance(this.document, target);
+        this.pageScrollService.start(pageScrollInstance);
+    };
 
 }
