@@ -5,6 +5,7 @@ const clientPartial = require('./webpack/webpack.client');
 const serverPartial = require('./webpack/webpack.server');
 const prodPartial = require('./webpack/webpack.prod');
 const { getAotPlugin } = require('./webpack/webpack.aot');
+const webpack = require("webpack");
 
 module.exports = function (options, webpackOptions) {
   options = options || {};
