@@ -1,8 +1,9 @@
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core'
+import { Component, OnInit, ViewChild, ElementRef, Renderer2 } from '@angular/core'
 import { TransferState } from '../modules/transfer-state/transfer-state';
-import { PageScrollService, PageScrollInstance } from 'ng2-page-scroll';
+import { PageScrollService, PageScrollInstance, PageScrollConfig } from 'ng2-page-scroll';
 import { Inject, Injectable } from '@angular/core';
 import { DOCUMENT } from '@angular/platform-browser';
+
 
 @Component({
 	selector: 'demo-app',
@@ -403,19 +404,34 @@ export class AppComponent implements OnInit {
             children:[]
         }
     ];
+    private isSideBarShowen = false;
 
     constructor(private cache: TransferState,
                 private pageScrollService: PageScrollService,
-                @Inject(DOCUMENT) private document: any) {}
+                @Inject(DOCUMENT) private document: any,
+                private renderer:Renderer2) {
+        PageScrollConfig.defaultScrollOffset = 64;
+    }
 
     ngOnInit() {
 
     this.cache.set('cached', true);
     }
 
-    public goToHead(target): void {
+    public goToHead(target, children): void {
+        if ( (window.innerWidth < 992) && (children == 0) ) {
+            this.isSideBarShowen = false;
+        }
         let pageScrollInstance: PageScrollInstance = PageScrollInstance.simpleInstance(this.document, target);
         this.pageScrollService.start(pageScrollInstance);
     };
+
+    public sideBar() {
+        if (this.isSideBarShowen) {
+            this.isSideBarShowen = false;
+        } else {
+            this.isSideBarShowen = true;
+        }
+    }
 
 }
