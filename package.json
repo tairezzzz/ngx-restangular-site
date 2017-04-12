@@ -31,6 +31,7 @@
     "@angular/router": "^4.0.0",
     "express": "^4.15.2",
     "font-awesome": "^4.7.0",
+    "materialize-css": "^0.98.1",
     "ng2-page-scroll": "^4.0.0-beta.6",
     "primeng": "^4.0.0-rc.2",
     "rxjs": "^5.2.0",

@@ -8,7 +8,7 @@ import { DOCUMENT } from '@angular/platform-browser';
 @Component({
 	selector: 'demo-app',
     templateUrl: './app.component.html',
-    styleUrls: ['./app.component.css']
+    styleUrls: ['../../node_modules/materialize-css/dist/css/materialize.css', './app.component.css']
 })
 export class AppComponent implements OnInit {
 
