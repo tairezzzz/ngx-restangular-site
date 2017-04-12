@@ -1,5 +1,4 @@
 const { root } = require('./helpers');
-
 /**
  * This is a common webpack config which is the base for all builds
  */
@@ -11,6 +10,10 @@ module.exports = {
   output: {
     path: root('dist')
   },
+  node: {
+    __filename: true,
+    __dirname: true
+  },
   module: {
     rules: [
       { test: /\.ts$/, loader: '@ngtools/webpack' },
@@ -18,5 +21,7 @@ module.exports = {
       { test: /\.html$/, loader: 'raw-loader' }
     ]
   },
-  plugins: []
+  plugins: [
+
+  ]
 };

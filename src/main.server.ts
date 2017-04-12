@@ -9,11 +9,12 @@ import { ROUTES } from './routes';
 import { App } from './api/app';
 import { enableProdMode } from '@angular/core';
 enableProdMode();
+const fs = require ('fs');
 const app = express();
 const api = new App();
 const port = 8000;
 const baseUrl = `http://localhost:${port}`;
-
+let myDirName = fs.realpathSync('.');
 app.engine('html', ngExpressEngine({
   bootstrap: ServerAppModule
 }));
@@ -22,6 +23,7 @@ app.set('view engine', 'html');
 app.set('views', 'src');
 
 app.use('/', express.static('dist', {index: false}));
+app.use('/assets', express.static(myDirName + '/src/assets'));
 
 ROUTES.forEach(route => {
   app.get(route, (req, res) => {
