@@ -1,75 +1,122 @@
 nav {
     background: #c50033;
+    margin-left: -8px;
 }
+
 .logo {
     text-align: center;
     margin: 35px 0;
 }
+
 .logo img {
     width: 50%;
 }
-header, main {
 
+main {
+    padding-left: 300px;
 }
+
+.custom-burger-menu {
+    cursor: pointer;
+}
+
+.custom-sidebar {
+    width: 300px;
+    position: fixed;
+    z-index: 999;
+    overflow-y: auto;
+    height: calc(100vh - 60px);
+    top: 64px;
+    left: 0;
+    transition: all .4s;
+    background-color: #eeeeee;
+}
+
+@media only screen and (max-width: 992px) {
+    main {
+        padding-left: 0;
+    }
+    .custom-sidebar {
+        left: -300px;
+    }
+}
+
+.custom-sidebar.show {
+    left: 0px;
+}
+
 header {
     position: fixed;
     width: 100%;
     top: 0;
 }
-main, footer {
 
-    padding-left: 300px;
-}
 footer {
     text-align: right;
+    padding-left: 300px;
 }
-.side-nav, main {
+
+main {
     margin-top: 66px;
 }
+
 pre {
     background: #E0E0E0;
     padding: 15px;
     border: 1px solid #BDBDBD;
     border-radius: 4px;
 }
+
 code {
     background: #E0E0E0;
 }
+
 h2, h3, h4, h5, h6 {
     font-weight: bold;
 }
+
 h3 {
     font-size: 2.4rem;
     border-bottom: 1px solid #eaecef;
 }
+
 h6 {
     font-size: 1.2rem;
 }
+
 .pl-k {
     color: #a71d5d;
 }
+
 .pl-smi, .pl-s .pl-s1 {
     color: #333;
 }
+
 .pl-s, .pl-pds, .pl-s .pl-pse .pl-s1, .pl-sr, .pl-sr .pl-cce, .pl-sr .pl-sre, .pl-sr .pl-sra {
     color: #183691;
 }
+
 .pl-e, .pl-en {
     color: #795da3;
 }
+
 .pl-c {
     color: #969896;
 }
+
 .pl-c1, .pl-s .pl-v {
     color: #0086b3;
 }
+
 main ul:not(.browser-default) {
     padding-left: 20px;
     list-style-type: disc;
 }
+
 main ul:not(.browser-default) li {
     list-style-type: disc;
 }
+
 /*left sidebar*/
 
 .tab {
@@ -79,6 +126,7 @@ main ul:not(.browser-default) li {
     color: #fff;
     overflow: hidden;
 }
+
 .tab svg {
     position: absolute;
     right: 5px;
@@ -86,7 +134,8 @@ main ul:not(.browser-default) li {
     top: 50%;
     margin-top: -12px;
 }
-[type="radio"]:not(:checked)+label, [type="radio"]:checked+label {
+
+[type="radio"]:not(:checked) + label, [type="radio"]:checked + label {
     position: relative;
     /*padding-left: 0;*/
     padding: 15px;
@@ -102,7 +151,7 @@ main ul:not(.browser-default) li {
     user-select: none;
 }
 
-[type="radio"]:checked+label:before {
+[type="radio"]:checked + label:before {
     border: none;
 }
 
@@ -113,7 +162,7 @@ input {
 }
 
 label {
-    color:white;
+    color: white;
     position: relative;
     display: block !important;
     padding: 0 0 0 1em;
@@ -123,7 +172,6 @@ label {
     margin-bottom: 1px;
     cursor: pointer;
 }
-
 
 .tab-content {
     max-height: 0;
@@ -144,19 +192,21 @@ label {
 
 /* :checked */
 input:checked ~ .tab-content {
-    max-height: 100em;
+    max-height: 150em;
 }
 
 .menu-item {
-    color:white;
+    color: white;
 }
 
 input:checked ~ label {
     background-color: #c50033 !important;
 }
+
 input:checked ~ label svg {
     transform: rotate(180deg);
 }
+
 .second-level label {
     padding-left: 30px !important;
     background: #E0E0E0;
@@ -166,26 +216,32 @@ input:checked ~ label svg {
 .second-level input:checked ~ label {
     background-color: #BDBDBD !important;
 }
+
 .third-level label {
     padding-left: 45px !important;
     background: #EEEEEE;
     color: #616161;
 }
+
 .third-level input:checked ~ label {
     background-color: #E0E0E0 !important;
 }
+
 .fourth-level label {
     padding-left: 60px !important;
     background: #F5F5F5;
     color: #757575;
 }
+
 .fourth-level input:checked ~ label {
     background-color: #EEEEEE !important;
 }
+
 [type="radio"]:checked + label:after, [type="radio"].with-gap:checked + label:after {
     background-color: transparent !important;
     border: none !important;
 }
+
 [type="radio"]:not(:checked) + label:before, [type="radio"]:not(:checked) + label:after {
     border: none;
 }
