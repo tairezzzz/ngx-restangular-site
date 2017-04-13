@@ -1,0 +1,53 @@
+<div class="logo"><img src="./../assets/ngx_logo_1.png" id="logo-container" class="brand-logo"></div>
+<div class="tab" *ngFor="let itemsFirstLevel of menu">
+  <input [id]="'menu-' + itemsFirstLevel.link" type="radio" [name]="itemsFirstLevel.inputName">
+  <label (click)="goToHead('#'+ itemsFirstLevel.link, itemsFirstLevel.children.length)"
+    class="waves-effect waves-light" [for]="'menu-' + itemsFirstLevel.link">
+    <span>{{itemsFirstLevel.title}}</span>
+    <svg *ngIf="itemsFirstLevel.children.length > 0" fill="#ffffff" height="24" viewBox="0 0 24 24"
+      width="24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z"/>
+      <path d="M0-.75h24v24H0z" fill="none"/>
+    </svg>
+  </label>
+  <div class="tab-content second-level" *ngFor="let itemsTwoLevel of itemsFirstLevel.children">
+    <div class="tab">
+      <input [id]="'menu-' + itemsTwoLevel.link" type="radio" [name]="itemsTwoLevel.inputName">
+      <label (click)="goToHead('#'+ itemsTwoLevel.link, itemsTwoLevel.children.length)"
+        class="waves-effect waves-light" [for]="'menu-' + itemsTwoLevel.link">
+        <span>{{itemsTwoLevel.title}}</span>
+        <svg *ngIf="itemsTwoLevel.children.length > 0" fill="#424242" height="24" viewBox="0 0 24 24"
+          width="24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z"/>
+          <path d="M0-.75h24v24H0z" fill="none"/>
+        </svg>
+      </label>
+      <div class="tab-content third-level" *ngFor="let itemsThreeLevel of itemsTwoLevel.children">
+        <div class="tab">
+          <input [id]="'menu-' + itemsThreeLevel.link" type="radio"
+            [name]="itemsThreeLevel.inputName">
+          <label (click)="goToHead('#'+ itemsThreeLevel.link, itemsThreeLevel.children.length)"
+            class="waves-effect waves-light" [for]="'menu-' + itemsThreeLevel.link">
+            <span>{{itemsThreeLevel.title}}</span>
+            <svg *ngIf="itemsThreeLevel.children.length > 0" fill="#616161" height="24"
+              viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z"/>
+              <path d="M0-.75h24v24H0z" fill="none"/>
+            </svg>
+          </label>
+          <div class="tab-content fourth-level"
+            *ngFor="let itemsFourLevel of itemsThreeLevel.children">
+            <div class="tab">
+              <input [id]="'menu-' + itemsFourLevel.link" type="radio"
+                [name]="itemsFourLevel.inputName">
+              <label (click)="goToHead('#'+ itemsFourLevel.link, itemsFourLevel.children.length)"
+                class="waves-effect waves-light" [for]="'menu-' + itemsFourLevel.link">
+                <span>{{itemsFourLevel.title}}</span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

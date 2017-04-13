@@ -4,9 +4,10 @@ import { APP_BASE_HREF, CommonModule } from '@angular/common';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
-import { HomeView } from './home/home-view.component';
+import { HomeViewComponent } from './home/home-view.component';
 import { TransferHttpModule } from '../modules/transfer-http/transfer-http.module';
 import { Ng2PageScrollModule } from 'ng2-page-scroll';
+import { SidebarComponent } from './sidebar/sidebar.component';
 
 @NgModule({
 	imports: [
@@ -14,12 +15,12 @@ import { Ng2PageScrollModule } from 'ng2-page-scroll';
         HttpModule,
         TransferHttpModule,
         RouterModule.forRoot([
-          { path: '', component: HomeView, pathMatch: 'full'},
+          { path: '', component: HomeViewComponent, pathMatch: 'full'},
           { path: 'lazy', loadChildren: './+lazy/lazy.module#LazyModule'}
         ]),
         Ng2PageScrollModule.forRoot()
 	],
-	declarations: [ AppComponent, HomeView ],
+	declarations: [ AppComponent, HomeViewComponent, SidebarComponent ],
   exports: [ AppComponent ]
 })
 export class AppModule {}

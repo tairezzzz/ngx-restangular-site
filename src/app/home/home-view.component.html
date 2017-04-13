@@ -1,12 +1,1096 @@
-<!--<div class="container">-->
-    <!--<div class="card">-->
-        <!--<h2>How do I add this to my project in angular 2?</h2>-->
-        <!--<p>You can download this by:</p>-->
-        <!--<ul>-->
-            <!--<li>Using npm and running <code>npm install ng2-restangular</code></li>-->
-        <!--</ul>-->
-    <!--</div>-->
+<main (click)="hideSidebar()">
+  <div class="container">
+    <div class="row">
+      <h3><a id="user-content-ng2-restangular" class="anchor" href="#ng2-restangular" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Ng2-Restangular</h3>
+      <p>This project is the follow-up of the <a href="https://github.com/mgonto/restangular/" target="_blank">Restangular</a>. Ng2-Restangular is an Angular 2 service that simplifies common GET, POST, DELETE, and UPDATE requests with a minimum of client code.
+        It's a perfect fit for any WebApp that consumes data from a RESTful API.</p>
+      <h3><a id="user-content-demo" class="anchor" href="#demo" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Demo</h3>
+      <p>Live Demo on Plunkr <a href="http://embed.plnkr.co/qozGPV2HowzmtKbC9a54/" target="_blank">Hero App</a>.
+        You can also check post about using ng2-restangular with <a href="https://restdb.io/" target="_blank">restdb.io</a> service in <a href="http://blog.2muchcoffee.com/angular_todo_application_with_ng2-restangular_and_restdb-io/" target="_blank">simple TODO Application</a></p>
+      <h3><a id="user-content-current-stage" class="anchor" href="#current-stage" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Current stage</h3>
+      <p>Ng2-Restangular almost all functionality was transferred from the Restangular.
+        We are open to any cooperation in terms of its further development.</p>
+      <h3><a id="user-content-how-do-i-add-this-to-my-project-in-angular-2" class="anchor" href="#how-do-i-add-this-to-my-project-in-angular-2" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>How do I add this to my project in angular 2?</h3>
+      <p>You can download this by:</p>
+      <ul>
+        <li>Using npm and running <code>npm install ng2-restangular</code></li>
+      </ul>
+      <h3><a id="user-content-how-do-i-add-this-to-my-project-in-angular-4" class="anchor" href="#how-do-i-add-this-to-my-project-in-angular-4" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>How do I add this to my project in angular 4?</h3>
+      <p>You can download this by:</p>
+      <ul>
+        <li>Using npm and running <code>npm install ng2-restangular@beta</code></li>
+      </ul>
+      <h3><a id="user-content-dependencies" class="anchor" href="#dependencies" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Dependencies</h3>
+      <p>Restangular depends on Angular2 and Lodash.</p>
+      <h3><a id="user-content-starter-guide" class="anchor" href="#starter-guide" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Starter Guide</h3>
+      <h4><a id="user-content-quick-configuration-for-lazy-readers" class="anchor" href="#quick-configuration-for-lazy-readers" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Quick Configuration (For Lazy Readers)</h4>
+      <p>This is all you need to start using all the basic Restangular features.</p>
+      <div class="highlight highlight-source-js">
+        <code><pre>
+<span class="pl-k">import</span>  &#123; <span class="pl-smi">NgModule</span> &#125; <span class="pl-k">from</span> <span class="pl-s"><span class="pl-pds">'</span>@angular/core<span class="pl-pds">'</span></span>;
+<span class="pl-k">import</span>  &#123; <span class="pl-smi">AppComponent</span> &#125; <span class="pl-k">from</span> <span class="pl-s"><span class="pl-pds">'</span>./app.component<span class="pl-pds">'</span></span>;
+<span class="pl-k">import</span>  &#123; <span class="pl-smi">RestangularModule</span>, <span class="pl-smi">Restangular</span> &#125; <span class="pl-k">from</span> <span class="pl-s"><span class="pl-pds">'</span>ng2-restangular<span class="pl-pds">'</span></span>;
+
+<span class="pl-c"><span class="pl-c">//</span> Function for settting the default restangular configuration</span>
+<span class="pl-k">export</span> <span class="pl-k">function</span> <span class="pl-en">RestangularConfigFactory</span> (<span class="pl-smi">RestangularProvider</span>)  &#123;
+  <span class="pl-smi">RestangularProvider</span>.<span class="pl-en">setBaseUrl</span>(<span class="pl-s"><span class="pl-pds">'</span>http://api.restng2.local/v1<span class="pl-pds">'</span></span>);
+  <span class="pl-smi">RestangularProvider</span>.<span class="pl-en">setDefaultHeaders</span>( &#123;<span class="pl-s"><span class="pl-pds">'</span>Authorization<span class="pl-pds">'</span></span><span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>Bearer UDXPx-Xko0w4BRKajozCVy20X11MRZs1<span class="pl-pds">'</span></span>&#125;);
+&#125;
+
+<span class="pl-c"><span class="pl-c">//</span> AppModule is the main entry point into Angular2 bootstraping process</span>
+@<span class="pl-en">NgModule</span>( &#123;
+  bootstrap<span class="pl-k">:</span> [ AppComponent ],
+  declarations<span class="pl-k">:</span> [
+    AppComponent,
+  ],
+  imports<span class="pl-k">:</span> [
+    <span class="pl-c"><span class="pl-c">//</span> Importing RestangularModule and making default configs for restanglar</span>
+    <span class="pl-smi">RestangularModule</span>.<span class="pl-en">forRoot</span>(RestangularConfigFactory),
+  ]
+&#125;)
+<span class="pl-k">export</span> <span class="pl-k">class</span> <span class="pl-en">AppModule</span>  &#123;
+&#125;
+
+<span class="pl-c"><span class="pl-c">//</span> later in code ...</span>
+
+@<span class="pl-en">Component</span>( &#123;
+  <span class="pl-k">...</span>
+&#125;)
+<span class="pl-k">export</span> <span class="pl-k">class</span> <span class="pl-en">OtherComponent</span>  &#123;
+  <span class="pl-en">constructor</span>(<span class="pl-k">private</span> <span class="pl-smi">restangular</span><span class="pl-k">:</span> <span class="pl-smi">Restangular</span>)  &#123;
+  &#125;
+
+  <span class="pl-en">ngOnInit</span>()  &#123;
+    <span class="pl-c"><span class="pl-c">//</span> GET http://api.test.local/v1/users/2/accounts</span>
+    <span class="pl-c1">this</span>.<span class="pl-smi">restangular</span>.<span class="pl-en">one</span>(<span class="pl-s"><span class="pl-pds">'</span>users<span class="pl-pds">'</span></span>, <span class="pl-c1">2</span>).<span class="pl-c1">all</span>(<span class="pl-s"><span class="pl-pds">'</span>accounts<span class="pl-pds">'</span></span>).<span class="pl-en">getList</span>();
+  &#125;
+            </pre></code>
+      </div>
+
+      <h4><a id="user-content-using-restangular" class="anchor" href="#using-restangular" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Using Restangular</h4>
+      <h5><a id="user-content-creating-main-restangular-object" class="anchor" href="#creating-main-restangular-object" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Creating Main Restangular object</h5>
+      <p>There are 3 ways of creating a main Restangular object.
+        The first one and most common one is by stating the main route of all requests.
+        The second one is by stating the main route and object of all requests.</p>
+      <div class="highlight highlight-source-js"><code><pre><span class="pl-c"><span class="pl-c">//</span> Only stating main route</span>
+<span class="pl-smi">Restangular</span>.<span class="pl-c1">all</span>(<span class="pl-s"><span class="pl-pds">'</span>accounts<span class="pl-pds">'</span></span>)
+
+<span class="pl-c"><span class="pl-c">//</span> Stating main object</span>
+<span class="pl-smi">Restangular</span>.<span class="pl-en">one</span>(<span class="pl-s"><span class="pl-pds">'</span>accounts<span class="pl-pds">'</span></span>, <span class="pl-c1">1234</span>)
+
+<span class="pl-c"><span class="pl-c">//</span> Gets a list of all of those accounts</span>
+<span class="pl-smi">Restangular</span>.<span class="pl-en">several</span>(<span class="pl-s"><span class="pl-pds">'</span>accounts<span class="pl-pds">'</span></span>, <span class="pl-c1">1234</span>, <span class="pl-c1">123</span>, <span class="pl-c1">12345</span>);
+          </pre></code></div>
+      <h5><a id="user-content-lets-code-with-observables" class="anchor" href="#lets-code-with-observables" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Lets Code with Observables!</h5>
+      <p>Now that we have our main Object let's start playing with it.</p>
+      <div class="highlight highlight-source-js"><code><pre><span class="pl-c"><span class="pl-c">//</span> AppModule is the main entry point into Angular2 bootstraping process</span>
+@<span class="pl-en">NgModule</span>(&#123;
+  bootstrap<span class="pl-k">:</span> [ AppComponent ],
+  declarations<span class="pl-k">:</span> [
+    AppComponent,
+  ],
+  imports<span class="pl-k">:</span> [
+    <span class="pl-c"><span class="pl-c">//</span> Importing RestangularModule</span>
+    RestangularModule,
+  ]
+&#125;)
+<span class="pl-k">export</span> <span class="pl-k">class</span> <span class="pl-en">AppModule</span> &#123;
+&#125;
+
+@<span class="pl-en">Component</span>(&#123;
+  <span class="pl-k">...</span>
+&#125;)
+<span class="pl-k">export</span> <span class="pl-k">class</span> <span class="pl-en">OtherComponent</span> &#123;
+  allAccounts;
+  accounts;
+  account;
+
+  <span class="pl-en">constructor</span>(<span class="pl-k">private</span> <span class="pl-smi">restangular</span><span class="pl-k">:</span> <span class="pl-smi">Restangular</span>) &#123;
+  &#125;
+
+  <span class="pl-en">ngOnInit</span>() &#123;
+    <span class="pl-c"><span class="pl-c">//</span> First way of creating a this.restangular object. Just saying the base URL</span>
+    <span class="pl-k">let</span> baseAccounts <span class="pl-k">=</span> <span class="pl-c1">this</span>.<span class="pl-smi">restangular</span>.<span class="pl-c1">all</span>(<span class="pl-s"><span class="pl-pds">'</span>accounts<span class="pl-pds">'</span></span>);
+
+    <span class="pl-c"><span class="pl-c">//</span> This will query /accounts and return a observable.</span>
+    <span class="pl-smi">baseAccounts</span>.<span class="pl-en">getList</span>().<span class="pl-en">subscribe</span>(<span class="pl-smi">accounts</span> <span class="pl-k">=&gt;</span> &#123;
+      <span class="pl-c1">this</span>.<span class="pl-smi">allAccounts</span> <span class="pl-k">=</span> accounts;
+    &#125;);
 
 
+    <span class="pl-k">let</span> newAccount <span class="pl-k">=</span> &#123;name<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>Gonto's account<span class="pl-pds">"</span></span>&#125;;
 
-<!--</div>-->
+    <span class="pl-c"><span class="pl-c">//</span> POST /accounts</span>
+    <span class="pl-smi">baseAccounts</span>.<span class="pl-en">post</span>(newAccount);
+
+    <span class="pl-c"><span class="pl-c">//</span> GET to http://www.google.com/ You set the URL in this case</span>
+    <span class="pl-c1">this</span>.<span class="pl-smi">restangular</span>.<span class="pl-en">allUrl</span>(<span class="pl-s"><span class="pl-pds">'</span>googlers<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>http://www.google.com/<span class="pl-pds">'</span></span>).<span class="pl-en">getList</span>();
+
+    <span class="pl-c"><span class="pl-c">//</span> GET to http://www.google.com/1 You set the URL in this case</span>
+    <span class="pl-c1">this</span>.<span class="pl-smi">restangular</span>.<span class="pl-en">oneUrl</span>(<span class="pl-s"><span class="pl-pds">'</span>googlers<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>http://www.google.com/1<span class="pl-pds">'</span></span>).<span class="pl-c1">get</span>();
+
+    <span class="pl-c"><span class="pl-c">//</span> You can do RequestLess "connections" if you need as well</span>
+
+    <span class="pl-c"><span class="pl-c">//</span> Just ONE GET to /accounts/123/buildings/456</span>
+    <span class="pl-c1">this</span>.<span class="pl-smi">restangular</span>.<span class="pl-en">one</span>(<span class="pl-s"><span class="pl-pds">'</span>accounts<span class="pl-pds">'</span></span>, <span class="pl-c1">123</span>).<span class="pl-en">one</span>(<span class="pl-s"><span class="pl-pds">'</span>buildings<span class="pl-pds">'</span></span>, <span class="pl-c1">456</span>).<span class="pl-c1">get</span>();
+
+    <span class="pl-c"><span class="pl-c">//</span> Just ONE GET to /accounts/123/buildings</span>
+    <span class="pl-c1">this</span>.<span class="pl-smi">restangular</span>.<span class="pl-en">one</span>(<span class="pl-s"><span class="pl-pds">'</span>accounts<span class="pl-pds">'</span></span>, <span class="pl-c1">123</span>).<span class="pl-en">getList</span>(<span class="pl-s"><span class="pl-pds">'</span>buildings<span class="pl-pds">'</span></span>);
+
+    <span class="pl-c"><span class="pl-c">//</span> Here we use Observables</span>
+    <span class="pl-c"><span class="pl-c">//</span> GET /accounts</span>
+    <span class="pl-k">let</span> baseAccounts$ <span class="pl-k">=</span> <span class="pl-smi">baseAccounts</span>.<span class="pl-en">getList</span>().<span class="pl-en">subscribe</span>(<span class="pl-smi">accounts</span> <span class="pl-k">=&gt;</span> &#123;
+      <span class="pl-c"><span class="pl-c">//</span> Here we can continue fetching the tree :).</span>
+
+      <span class="pl-k">let</span> firstAccount <span class="pl-k">=</span> accounts[<span class="pl-c1">0</span>];
+      <span class="pl-c"><span class="pl-c">//</span> This will query /accounts/123/buildings considering 123 is the id of the firstAccount</span>
+      <span class="pl-k">let</span> buildings <span class="pl-k">=</span> <span class="pl-smi">firstAccount</span>.<span class="pl-en">getList</span>(<span class="pl-s"><span class="pl-pds">"</span>buildings<span class="pl-pds">"</span></span>);
+
+      <span class="pl-c"><span class="pl-c">//</span> GET /accounts/123/places?query=param with request header: x-user:mgonto</span>
+      <span class="pl-k">let</span> loggedInPlaces <span class="pl-k">=</span> <span class="pl-smi">firstAccount</span>.<span class="pl-en">getList</span>(<span class="pl-s"><span class="pl-pds">"</span>places<span class="pl-pds">"</span></span>, &#123;query<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>param<span class="pl-pds">'</span></span>&#125;, &#123;<span class="pl-s"><span class="pl-pds">'</span>x-user<span class="pl-pds">'</span></span><span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>mgonto<span class="pl-pds">'</span></span>&#125;);
+
+      <span class="pl-c"><span class="pl-c">//</span> This is a regular JS object, we can change anything we want :)</span>
+      <span class="pl-smi">firstAccount</span>.<span class="pl-c1">name</span> <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">"</span>Gonto<span class="pl-pds">"</span></span>;
+
+      <span class="pl-c"><span class="pl-c">//</span> If we wanted to keep the original as it is, we can copy it to a new element</span>
+      <span class="pl-k">let</span> editFirstAccount <span class="pl-k">=</span> <span class="pl-c1">this</span>.<span class="pl-smi">restangular</span>.<span class="pl-en">copy</span>(firstAccount);
+      <span class="pl-smi">editFirstAccount</span>.<span class="pl-c1">name</span> <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">"</span>New Name<span class="pl-pds">"</span></span>;
+
+
+      <span class="pl-c"><span class="pl-c">//</span> PUT /accounts/123. The name of this account will be changed from now on</span>
+      <span class="pl-smi">firstAccount</span>.<span class="pl-en">put</span>();
+      <span class="pl-smi">editFirstAccount</span>.<span class="pl-en">put</span>();
+
+      <span class="pl-c"><span class="pl-c">//</span> PUT /accounts/123. Save will do POST or PUT accordingly</span>
+      <span class="pl-smi">firstAccount</span>.<span class="pl-en">save</span>();
+
+      <span class="pl-c"><span class="pl-c">//</span> DELETE /accounts/123 We don't have first account anymore :(</span>
+      <span class="pl-smi">firstAccount</span>.<span class="pl-c1">remove</span>();
+
+    &#125;, () <span class="pl-k">=&gt;</span> &#123;
+      <span class="pl-en">alert</span>(<span class="pl-s"><span class="pl-pds">"</span>Oops error from server :(<span class="pl-pds">"</span></span>);
+    &#125;);
+
+
+    <span class="pl-c"><span class="pl-c">//</span> Get first account</span>
+    <span class="pl-k">let</span> firstAccount$ <span class="pl-k">=</span> <span class="pl-smi">baseAccounts$</span>.<span class="pl-en">map</span>(<span class="pl-smi">accounts</span> <span class="pl-k">=&gt;</span> accounts[<span class="pl-c1">0</span>]);
+
+
+    <span class="pl-c"><span class="pl-c">//</span> POST /accounts/123/buildings with MyBuilding information</span>
+    <span class="pl-smi">firstAccount$</span>.<span class="pl-en">switchMap</span>(<span class="pl-smi">firstAccount</span> <span class="pl-k">=&gt;</span> &#123;
+      <span class="pl-k">var</span> myBuilding <span class="pl-k">=</span> &#123;
+        name<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>Gonto's Building<span class="pl-pds">"</span></span>,
+        place<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>Argentina<span class="pl-pds">"</span></span>
+      &#125;;
+
+      <span class="pl-k">return</span> <span class="pl-smi">firstAccount</span>.<span class="pl-en">post</span>(<span class="pl-s"><span class="pl-pds">"</span>Buildings<span class="pl-pds">"</span></span>, myBuilding)
+    &#125;)
+    .<span class="pl-en">subscribe</span>(() <span class="pl-k">=&gt;</span> &#123;
+      <span class="pl-en">console</span>.<span class="pl-c1">log</span>(<span class="pl-s"><span class="pl-pds">"</span>Object saved OK<span class="pl-pds">"</span></span>);
+    &#125;, () <span class="pl-k">=&gt;</span> &#123;
+      <span class="pl-en">console</span>.<span class="pl-c1">log</span>(<span class="pl-s"><span class="pl-pds">"</span>There was an error saving<span class="pl-pds">"</span></span>);
+    &#125;);
+
+
+    <span class="pl-c"><span class="pl-c">//</span> GET /accounts/123/users?query=params</span>
+    <span class="pl-smi">firstAccount$</span>.<span class="pl-en">switchMap</span>(<span class="pl-smi">firstAccount</span> <span class="pl-k">=&gt;</span> &#123;
+      <span class="pl-k">var</span> myBuilding <span class="pl-k">=</span> &#123;
+        name<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>Gonto's Building<span class="pl-pds">"</span></span>,
+        place<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>Argentina<span class="pl-pds">"</span></span>
+      &#125;;
+
+      <span class="pl-k">return</span> <span class="pl-smi">firstAccount</span>.<span class="pl-en">getList</span>(<span class="pl-s"><span class="pl-pds">"</span>users<span class="pl-pds">"</span></span>, &#123;query<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>params<span class="pl-pds">'</span></span>&#125;);
+    &#125;)
+    .<span class="pl-en">subscribe</span>((<span class="pl-smi">users</span>) <span class="pl-k">=&gt;</span> &#123;
+      <span class="pl-c"><span class="pl-c">//</span> Instead of posting nested element, a collection can post to itself</span>
+      <span class="pl-c"><span class="pl-c">//</span> POST /accounts/123/users</span>
+      <span class="pl-smi">users</span>.<span class="pl-en">post</span>(&#123;userName<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>unknown<span class="pl-pds">'</span></span>&#125;);
+
+      <span class="pl-c"><span class="pl-c">//</span> Custom methods are available now :).</span>
+      <span class="pl-c"><span class="pl-c">//</span> GET /accounts/123/users/messages?param=myParam</span>
+      <span class="pl-smi">users</span>.<span class="pl-en">customGET</span>(<span class="pl-s"><span class="pl-pds">"</span>messages<span class="pl-pds">"</span></span>, &#123;param<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>myParam<span class="pl-pds">"</span></span>&#125;);
+
+      <span class="pl-k">var</span> firstUser <span class="pl-k">=</span> users[<span class="pl-c1">0</span>];
+
+      <span class="pl-c"><span class="pl-c">//</span> GET /accounts/123/users/456. Just in case we want to update one user :)</span>
+      <span class="pl-k">let</span> userFromServer <span class="pl-k">=</span> <span class="pl-smi">firstUser</span>.<span class="pl-c1">get</span>();
+
+      <span class="pl-c"><span class="pl-c">//</span> ALL http methods are available :)</span>
+      <span class="pl-c"><span class="pl-c">//</span> HEAD /accounts/123/users/456</span>
+      <span class="pl-smi">firstUser</span>.<span class="pl-en">head</span>()
+    &#125;, () <span class="pl-k">=&gt;</span> &#123;
+      <span class="pl-en">console</span>.<span class="pl-c1">log</span>(<span class="pl-s"><span class="pl-pds">"</span>There was an error saving<span class="pl-pds">"</span></span>);
+    &#125;);
+
+
+    <span class="pl-c"><span class="pl-c">//</span> Second way of creating this.restangular object. URL and ID :)</span>
+    <span class="pl-k">var</span> account <span class="pl-k">=</span> <span class="pl-c1">this</span>.<span class="pl-smi">restangular</span>.<span class="pl-en">one</span>(<span class="pl-s"><span class="pl-pds">"</span>accounts<span class="pl-pds">"</span></span>, <span class="pl-c1">123</span>);
+
+    <span class="pl-c"><span class="pl-c">//</span> GET /accounts/123?single=true</span>
+    <span class="pl-c1">this</span>.<span class="pl-smi">account</span> <span class="pl-k">=</span> <span class="pl-smi">account</span>.<span class="pl-c1">get</span>(&#123;single<span class="pl-k">:</span> <span class="pl-c1">true</span>&#125;);
+
+    <span class="pl-c"><span class="pl-c">//</span> POST /accounts/123/messages?param=myParam with the body of name: "My Message"</span>
+    <span class="pl-smi">account</span>.<span class="pl-en">customPOST</span>(&#123;name<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>My Message<span class="pl-pds">"</span></span>&#125;, <span class="pl-s"><span class="pl-pds">"</span>messages<span class="pl-pds">"</span></span>, &#123;param<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>myParam<span class="pl-pds">"</span></span>&#125;, &#123;&#125;)
+  &#125;
+&#125;</pre></code></div>
+      <h5><a id="user-content-here-is-example-of-code-with-using-promises" class="anchor" href="#here-is-example-of-code-with-using-promises" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Here is Example of code with using promises!</h5>
+      <div class="highlight highlight-source-js"><code><pre>@<span class="pl-en">Component</span>(&#123;
+  <span class="pl-k">...</span>
+&#125;)
+<span class="pl-k">export</span> <span class="pl-k">class</span> <span class="pl-en">OtherComponent</span> &#123;
+  allAccounts;
+  accounts;
+  account;
+
+  <span class="pl-en">constructor</span>(<span class="pl-k">private</span> <span class="pl-smi">restangular</span><span class="pl-k">:</span> <span class="pl-smi">Restangular</span>) &#123;
+  &#125;
+
+  <span class="pl-en">ngOnInit</span>() &#123;
+
+    <span class="pl-c"><span class="pl-c">//</span> First way of creating a this.restangular object. Just saying the base URL</span>
+    <span class="pl-k">let</span> baseAccounts <span class="pl-k">=</span> <span class="pl-c1">this</span>.<span class="pl-smi">restangular</span>.<span class="pl-c1">all</span>(<span class="pl-s"><span class="pl-pds">'</span>accounts<span class="pl-pds">'</span></span>);
+
+    <span class="pl-c"><span class="pl-c">//</span> This will query /accounts and return a promise.</span>
+    <span class="pl-smi">baseAccounts</span>.<span class="pl-en">getList</span>().<span class="pl-en">toPromise</span>().<span class="pl-en">then</span>(<span class="pl-k">function</span>(<span class="pl-smi">accounts</span>) &#123;
+      <span class="pl-c1">this</span>.<span class="pl-smi">allAccounts</span> <span class="pl-k">=</span> accounts;
+    &#125;);
+
+    <span class="pl-k">var</span> newAccount <span class="pl-k">=</span> &#123;name<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>Gonto's account<span class="pl-pds">"</span></span>&#125;;
+
+    <span class="pl-c"><span class="pl-c">//</span> POST /accounts</span>
+    <span class="pl-smi">baseAccounts</span>.<span class="pl-en">post</span>(newAccount);
+
+    <span class="pl-c"><span class="pl-c">//</span> GET to http://www.google.com/ You set the URL in this case</span>
+    <span class="pl-c1">this</span>.<span class="pl-smi">restangular</span>.<span class="pl-en">allUrl</span>(<span class="pl-s"><span class="pl-pds">'</span>googlers<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>http://www.google.com/<span class="pl-pds">'</span></span>).<span class="pl-en">getList</span>();
+
+    <span class="pl-c"><span class="pl-c">//</span> GET to http://www.google.com/1 You set the URL in this case</span>
+    <span class="pl-c1">this</span>.<span class="pl-smi">restangular</span>.<span class="pl-en">oneUrl</span>(<span class="pl-s"><span class="pl-pds">'</span>googlers<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>http://www.google.com/1<span class="pl-pds">'</span></span>).<span class="pl-c1">get</span>();
+
+    <span class="pl-c"><span class="pl-c">//</span> You can do RequestLess "connections" if you need as well</span>
+
+    <span class="pl-c"><span class="pl-c">//</span> Just ONE GET to /accounts/123/buildings/456</span>
+    <span class="pl-c1">this</span>.<span class="pl-smi">restangular</span>.<span class="pl-en">one</span>(<span class="pl-s"><span class="pl-pds">'</span>accounts<span class="pl-pds">'</span></span>, <span class="pl-c1">123</span>).<span class="pl-en">one</span>(<span class="pl-s"><span class="pl-pds">'</span>buildings<span class="pl-pds">'</span></span>, <span class="pl-c1">456</span>).<span class="pl-c1">get</span>();
+
+    <span class="pl-c"><span class="pl-c">//</span> Just ONE GET to /accounts/123/buildings</span>
+    <span class="pl-c1">this</span>.<span class="pl-smi">restangular</span>.<span class="pl-en">one</span>(<span class="pl-s"><span class="pl-pds">'</span>accounts<span class="pl-pds">'</span></span>, <span class="pl-c1">123</span>).<span class="pl-en">getList</span>(<span class="pl-s"><span class="pl-pds">'</span>buildings<span class="pl-pds">'</span></span>);
+
+    <span class="pl-c"><span class="pl-c">//</span> Here we use Promises then</span>
+    <span class="pl-c"><span class="pl-c">//</span> GET /accounts</span>
+    <span class="pl-smi">baseAccounts</span>.<span class="pl-en">getList</span>().<span class="pl-en">toPromise</span>().<span class="pl-en">then</span>(<span class="pl-k">function</span> (<span class="pl-smi">accounts</span>) &#123;
+      <span class="pl-c"><span class="pl-c">//</span> Here we can continue fetching the tree :).</span>
+
+      <span class="pl-k">var</span> firstAccount <span class="pl-k">=</span> accounts[<span class="pl-c1">0</span>];
+      <span class="pl-c"><span class="pl-c">//</span> This will query /accounts/123/buildings considering 123 is the id of the firstAccount</span>
+      <span class="pl-c1">this</span>.<span class="pl-smi">buildings</span> <span class="pl-k">=</span> <span class="pl-smi">firstAccount</span>.<span class="pl-en">getList</span>(<span class="pl-s"><span class="pl-pds">"</span>buildings<span class="pl-pds">"</span></span>);
+
+      <span class="pl-c"><span class="pl-c">//</span> GET /accounts/123/places?query=param with request header: x-user:mgonto</span>
+      <span class="pl-c1">this</span>.<span class="pl-smi">loggedInPlaces</span> <span class="pl-k">=</span> <span class="pl-smi">firstAccount</span>.<span class="pl-en">getList</span>(<span class="pl-s"><span class="pl-pds">"</span>places<span class="pl-pds">"</span></span>, &#123;query<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>param<span class="pl-pds">'</span></span>&#125;, &#123;<span class="pl-s"><span class="pl-pds">'</span>x-user<span class="pl-pds">'</span></span><span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>mgonto<span class="pl-pds">'</span></span>&#125;);
+
+      <span class="pl-c"><span class="pl-c">//</span> This is a regular JS object, we can change anything we want :)</span>
+      <span class="pl-smi">firstAccount</span>.<span class="pl-c1">name</span> <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">"</span>Gonto<span class="pl-pds">"</span></span>;
+
+      <span class="pl-c"><span class="pl-c">//</span> If we wanted to keep the original as it is, we can copy it to a new element</span>
+      <span class="pl-k">var</span> editFirstAccount <span class="pl-k">=</span> <span class="pl-c1">this</span>.<span class="pl-smi">restangular</span>.<span class="pl-en">copy</span>(firstAccount);
+      <span class="pl-smi">editFirstAccount</span>.<span class="pl-c1">name</span> <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">"</span>New Name<span class="pl-pds">"</span></span>;
+
+
+      <span class="pl-c"><span class="pl-c">//</span> PUT /accounts/123. The name of this account will be changed from now on</span>
+      <span class="pl-smi">firstAccount</span>.<span class="pl-en">put</span>();
+      <span class="pl-smi">editFirstAccount</span>.<span class="pl-en">put</span>();
+
+      <span class="pl-c"><span class="pl-c">//</span> PUT /accounts/123. Save will do POST or PUT accordingly</span>
+      <span class="pl-smi">firstAccount</span>.<span class="pl-en">save</span>();
+
+      <span class="pl-c"><span class="pl-c">//</span> DELETE /accounts/123 We don't have first account anymore :(</span>
+      <span class="pl-smi">firstAccount</span>.<span class="pl-c1">remove</span>();
+
+      <span class="pl-k">var</span> myBuilding <span class="pl-k">=</span> &#123;
+        name<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>Gonto's Building<span class="pl-pds">"</span></span>,
+        place<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>Argentina<span class="pl-pds">"</span></span>
+      &#125;;
+
+      <span class="pl-c"><span class="pl-c">//</span> POST /accounts/123/buildings with MyBuilding information</span>
+      <span class="pl-smi">firstAccount</span>.<span class="pl-en">post</span>(<span class="pl-s"><span class="pl-pds">"</span>Buildings<span class="pl-pds">"</span></span>, myBuilding).<span class="pl-en">toPromise</span>().<span class="pl-en">then</span>(<span class="pl-k">function</span>() &#123;
+        <span class="pl-en">console</span>.<span class="pl-c1">log</span>(<span class="pl-s"><span class="pl-pds">"</span>Object saved OK<span class="pl-pds">"</span></span>);
+      &#125;, <span class="pl-k">function</span>() &#123;
+        <span class="pl-en">console</span>.<span class="pl-c1">log</span>(<span class="pl-s"><span class="pl-pds">"</span>There was an error saving<span class="pl-pds">"</span></span>);
+      &#125;);
+
+      <span class="pl-c"><span class="pl-c">//</span> GET /accounts/123/users?query=params</span>
+      <span class="pl-smi">firstAccount</span>.<span class="pl-en">getList</span>(<span class="pl-s"><span class="pl-pds">"</span>users<span class="pl-pds">"</span></span>, &#123;query<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>params<span class="pl-pds">'</span></span>&#125;).<span class="pl-en">toPromise</span>().<span class="pl-en">then</span>(<span class="pl-k">function</span>(<span class="pl-smi">users</span>) &#123;
+        <span class="pl-c"><span class="pl-c">//</span> Instead of posting nested element, a collection can post to itself</span>
+        <span class="pl-c"><span class="pl-c">//</span> POST /accounts/123/users</span>
+        <span class="pl-smi">users</span>.<span class="pl-en">post</span>(&#123;userName<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>unknown<span class="pl-pds">'</span></span>&#125;);
+
+        <span class="pl-c"><span class="pl-c">//</span> Custom methods are available now :).</span>
+        <span class="pl-c"><span class="pl-c">//</span> GET /accounts/123/users/messages?param=myParam</span>
+        <span class="pl-smi">users</span>.<span class="pl-en">customGET</span>(<span class="pl-s"><span class="pl-pds">"</span>messages<span class="pl-pds">"</span></span>, &#123;param<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>myParam<span class="pl-pds">"</span></span>&#125;);
+
+        <span class="pl-k">var</span> firstUser <span class="pl-k">=</span> users[<span class="pl-c1">0</span>];
+
+        <span class="pl-c"><span class="pl-c">//</span> GET /accounts/123/users/456. Just in case we want to update one user :)</span>
+        <span class="pl-c1">this</span>.<span class="pl-smi">userFromServer</span> <span class="pl-k">=</span> <span class="pl-smi">firstUser</span>.<span class="pl-c1">get</span>();
+
+        <span class="pl-c"><span class="pl-c">//</span> ALL http methods are available :)</span>
+        <span class="pl-c"><span class="pl-c">//</span> HEAD /accounts/123/users/456</span>
+        <span class="pl-smi">firstUser</span>.<span class="pl-en">head</span>()
+
+      &#125;);
+
+    &#125;, <span class="pl-k">function</span> <span class="pl-en">errorCallback</span>() &#123;
+      <span class="pl-en">alert</span>(<span class="pl-s"><span class="pl-pds">"</span>Oops error from server :(<span class="pl-pds">"</span></span>);
+    &#125;);
+
+    <span class="pl-c"><span class="pl-c">//</span> Second way of creating this.restangular object. URL and ID :)</span>
+    <span class="pl-k">var</span> account <span class="pl-k">=</span> <span class="pl-c1">this</span>.<span class="pl-smi">restangular</span>.<span class="pl-en">one</span>(<span class="pl-s"><span class="pl-pds">"</span>accounts<span class="pl-pds">"</span></span>, <span class="pl-c1">123</span>);
+
+    <span class="pl-c"><span class="pl-c">//</span> GET /accounts/123?single=true</span>
+    <span class="pl-c1">this</span>.<span class="pl-smi">account</span> <span class="pl-k">=</span> <span class="pl-smi">account</span>.<span class="pl-c1">get</span>(&#123;single<span class="pl-k">:</span> <span class="pl-c1">true</span>&#125;);
+
+    <span class="pl-c"><span class="pl-c">//</span> POST /accounts/123/messages?param=myParam with the body of name: "My Message"</span>
+    <span class="pl-smi">account</span>.<span class="pl-en">customPOST</span>(&#123;name<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>My Message<span class="pl-pds">"</span></span>&#125;, <span class="pl-s"><span class="pl-pds">"</span>messages<span class="pl-pds">"</span></span>, &#123;param<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>myParam<span class="pl-pds">"</span></span>&#125;, &#123;&#125;)
+  &#125;
+&#125;</pre></code></div>
+      <h4><a id="user-content-configuring-restangular" class="anchor" href="#configuring-restangular" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Configuring Restangular</h4>
+      <h5><a id="user-content-properties" class="anchor" href="#properties" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Properties</h5>
+      <p>Restangular comes with defaults for all of its properties but you can configure them. <strong>So, if you don't need to configure something, there's no need to add the configuration.</strong>
+        You can set all these configurations in <strong><a href="#how-to-configure-them-globally">RestangularModule</a> to change the global configuration</strong>, you can also <strong>use the <a href="#how-to-create-a-restangular-service-with-a-different-configuration-from-the-global-one">withConfig</a> method in Restangular service to create a new Restangular service with some scoped configuration</strong> or <strong>use <a href="#withconfig">withConfig</a> in component to make specified Restangular</strong></p>
+      <h6><a id="user-content-withconfig" class="anchor" href="#withconfig" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>withConfig</h6>
+      <p>You can configure Restangular "withConfig" like in example below, you can also configure them globally **<a href="#how-to-configure-them-globally">RestangularModule</a> or in service with <a href="#how-to-create-a-restangular-service-with-a-different-configuration-from-the-global-one">withConfig</a></p>
+      <div class="highlight highlight-source-js"><code><pre><span class="pl-c"><span class="pl-c">//</span> Function for settting the default restangular configuration</span>
+<span class="pl-k">export</span> <span class="pl-k">function</span> <span class="pl-en">RestangularCo  igFactory</span> (<span class="pl-smi">RestangularProvider</span>) &#123;
+ <span class="pl-smi">RestangularProvider</span>.<span class="pl-en">setBaseUrl</span>(<span class="pl-s"><span class="pl-pds">'</span>http://www.google.com<span class="pl-pds">'</span></span>);
+&#125;
+
+@<span class="pl-en">NgModule</span>(&#123;
+ bootstrap<span class="pl-k">:</span> [ AppComponent ],
+ declarations<span class="pl-k">:</span> [
+   AppComponent,
+ ],
+ imports<span class="pl-k">:</span> [
+   <span class="pl-c"><span class="pl-c">//</span> Global configuration</span>
+   <span class="pl-smi">RestangularModule</span>.<span class="pl-en">forRoot</span>(RestangularConfigFactory),
+ ]
+&#125;)
+<span class="pl-k">export</span> <span class="pl-k">class</span> <span class="pl-en">AppModule</span> &#123;&#125;
+<span class="pl-c"><span class="pl-c">//</span> Let's use it in the component</span>
+@<span class="pl-en">Component</span>(&#123;
+ <span class="pl-k">...</span>
+&#125;)
+<span class="pl-k">export</span> <span class="pl-k">class</span> <span class="pl-en">OtherComponent</span> &#123;
+ <span class="pl-en">constructor</span>(<span class="pl-k">private</span> <span class="pl-smi">restangular</span><span class="pl-k">:</span> <span class="pl-smi">Restangular</span>) &#123;&#125;
+
+ <span class="pl-en">ngOnInit</span>() &#123;
+   <span class="pl-smi">restangular</span>.<span class="pl-en">withConfig</span>((<span class="pl-smi">RestangularConfigurer</span>) <span class="pl-k">=&gt;</span> &#123;
+     <span class="pl-smi">RestangularConfigurer</span>.<span class="pl-en">setBaseUrl</span>(<span class="pl-s"><span class="pl-pds">'</span>http://www.bing.com<span class="pl-pds">'</span></span>);
+   &#125;).<span class="pl-c1">all</span>(<span class="pl-s"><span class="pl-pds">'</span>users<span class="pl-pds">'</span></span>).<span class="pl-en">getList</span>()
+ &#125;
+&#125;;</pre></code></div>
+      <h6><a id="user-content-setbaseurl" class="anchor" href="#setbaseurl" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>setBaseUrl</h6>
+      <p>The base URL for all calls to your API. For example if your URL for fetching accounts is <a href="http://example.com/api/v1/accounts">http://example.com/api/v1/accounts</a>, then your baseUrl is <code>/api/v1</code>. The default baseUrl is an empty string which resolves to the same url that Angular2 is running, but you can also set an absolute url like <code>http://api.example.com/api/v1</code> if you need to set another domain.</p>
+      <h6><a id="user-content-setextrafields" class="anchor" href="#setextrafields" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>setExtraFields</h6>
+      <p>These are the fields that you want to save from your parent resources if you need to display them. By default this is an Empty Array which will suit most cases</p>
+      <h6><a id="user-content-setparentless" class="anchor" href="#setparentless" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>setParentless</h6>
+      <p>Use this property to control whether Restangularized elements to have a parent or not. So, for example if you get an account and then get a nested list of buildings, you may want the buildings URL to be simple <code>/buildings/123</code> instead of <code>/accounts/123/buildings/123</code>. This property lets you do that.</p>
+      <p>This method accepts 1 parameter, it could be:</p>
+      <ul>
+        <li>Boolean: Specifies if all elements should be parentless or not</li>
+        <li>Array: Specifies the routes (types) of all elements that should be parentless. For example <code>['buildings']</code></li>
+      </ul>
+      <h6><a id="user-content-addelementtransformer" class="anchor" href="#addelementtransformer" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>addElementTransformer</h6>
+      <p>This is a hook. After each element has been "restangularized" (Added the new methods from Restangular), the corresponding transformer will be called if it fits.</p>
+      <p>This should be used to add your own methods / functions to entities of certain types.</p>
+      <p>You can add as many element transformers as you want. The signature of this method can be one of the following:</p>
+      <ul>
+        <li>
+          <p><strong>addElementTransformer(route, transformer)</strong>: Transformer is called with all elements that have been restangularized, no matter if they're collections or not.</p>
+        </li>
+        <li>
+          <p><strong>addElementTransformer(route, isCollection, transformer)</strong>: Transformer is called with all elements that have been restangularized and match the specification regarding if it's a collection or not (true | false)</p>
+        </li>
+      </ul>
+      <h6><a id="user-content-settransformonlyserverelements" class="anchor" href="#settransformonlyserverelements" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>setTransformOnlyServerElements</h6>
+      <p>This sets whether transformers will be run for local objects and not by objects returned by the server. This is by default true but can be changed to false if needed (Most people won't need this).</p>
+      <h6><a id="user-content-setonelemrestangularized" class="anchor" href="#setonelemrestangularized" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>setOnElemRestangularized</h6>
+      <p>This is a hook. After each element has been "restangularized" (Added the new methods from Restangular), this will be called. It means that if you receive a list of objects in one call, this method will be called first for the collection and then for each element of the collection.</p>
+      <p><strong>I favor the usage of <code>addElementTransformer</code> instead of <code>onElemRestangularized</code> whenever possible as the implementation is much cleaner.</strong></p>
+      <p>This callback is a function that has 4 parameters:</p>
+      <ul>
+        <li><strong>elem</strong>: The element that has just been restangularized. Can be a collection or a single element.</li>
+        <li><strong>isCollection</strong>: Boolean indicating if this is a collection or a single element.</li>
+        <li><strong>what</strong>: The model that is being modified. This is the "path" of this resource. For example <code>buildings</code></li>
+        <li><strong>Restangular</strong>: The instanced service to use any of its methods</li>
+      </ul>
+      <p>This can be used together with <code>addRestangularMethod</code> (Explained later) to add custom methods to an element</p>
+      <div class="highlight highlight-source-js"><code><pre><span class="pl-smi">service</span>.<span class="pl-en">setOnElemRestangularized</span>((<span class="pl-smi">element</span>, <span class="pl-smi">isCollection</span>, <span class="pl-smi">what</span>, <span class="pl-smi">Restangular</span>) <span class="pl-k">=&gt;</span> &#123;
+  <span class="pl-smi">element</span>.<span class="pl-smi">newField</span> <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">"</span>newField<span class="pl-pds">"</span></span>;
+  <span class="pl-k">return</span> element;
+&#125;);</pre></code></div>
+      <h6><a id="user-content-addresponseinterceptor" class="anchor" href="#addresponseinterceptor" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>addResponseInterceptor</h6>
+      <p>The responseInterceptor is called after we get each response from the server. It's a function that receives this arguments:</p>
+      <ul>
+        <li><strong>data</strong>: The data received got from the server</li>
+        <li><strong>operation</strong>: The operation made. It'll be the HTTP method used except for a <code>GET</code> which returns a list of element which will return <code>getList</code> so that you can distinguish them.</li>
+        <li><strong>what</strong>: The model that's being requested. It can be for example: <code>accounts</code>, <code>buildings</code>, etc.</li>
+        <li><strong>url</strong>: The relative URL being requested. For example: <code>/api/v1/accounts/123</code></li>
+        <li><strong>response</strong>: Full server response including headers</li>
+      </ul>
+      <p>Some of the use cases of the responseInterceptor are handling wrapped responses and enhancing response elements with more methods among others.</p>
+      <p>The responseInterceptor must return the restangularized data element.</p>
+      <div class="highlight highlight-source-js"><code><pre> <span class="pl-smi">RestangularProvider</span>.<span class="pl-en">addResponseInterceptor</span>((<span class="pl-smi">data</span>, <span class="pl-smi">operation</span>, <span class="pl-smi">what</span>, <span class="pl-smi">url</span>, <span class="pl-smi">response</span>)<span class="pl-k">=&gt;</span> &#123;
+       <span class="pl-k">return</span> data;
+     &#125;);
+ &#125;);</pre></code></div>
+      <h6><a id="user-content-addfullrequestinterceptor" class="anchor" href="#addfullrequestinterceptor" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>addFullRequestInterceptor</h6>
+      <p>This adds a new fullRequestInterceptor. The fullRequestInterceptor is similar to the <code>requestInterceptor</code> but more powerful. It lets you change the element, the request parameters and the headers as well.</p>
+      <p>It's a function that receives the same as the <code>requestInterceptor</code> plus the headers and the query parameters (in that order).</p>
+      <p>It can return an object with any (or all) of following properties:</p>
+      <ul>
+        <li><strong>headers</strong>: The headers to send</li>
+        <li><strong>params</strong>: The request parameters to send</li>
+        <li><strong>element</strong>: The element to send</li>
+      </ul>
+      <div class="highlight highlight-source-js"><code><pre><span class="pl-smi">RestangularProvider</span>.<span class="pl-en">addFullRequestInterceptor</span>((<span class="pl-smi">element</span>, <span class="pl-smi">operation</span>, <span class="pl-smi">path</span>, <span class="pl-smi">url</span>, <span class="pl-smi">headers</span>, <span class="pl-smi">params</span>)<span class="pl-k">=&gt;</span> &#123;
+   <span class="pl-k">return</span> &#123;
+     params<span class="pl-k">:</span> <span class="pl-c1">Object</span>.<span class="pl-en">assign</span>(&#123;&#125;, params, &#123;sort<span class="pl-k">:</span><span class="pl-s"><span class="pl-pds">"</span>name<span class="pl-pds">"</span></span>&#125;),
+     headers<span class="pl-k">:</span> headers,
+     element<span class="pl-k">:</span> element
+   &#125;
+ &#125;);</pre></code></div>
+      <p>If a property isn't returned, the one sent is used.</p>
+      <h6><a id="user-content-adderrorinterceptor" class="anchor" href="#adderrorinterceptor" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>addErrorInterceptor</h6>
+      <p>The errorInterceptor is called whenever there's an error. It's a function that receives the response, subject and the Restangular-response handler as parameters.</p>
+      <p>The errorInterceptor function, whenever it returns false, prevents the observable linked to a Restangular request to be executed. All other return values (besides false) are ignored and the observable follows the usual path, eventually reaching the success or error hooks.</p>
+      <p>The refreshAccesstoken function must return observable. It`s function that will be done before repeating the request, there you can make some actions. In switchMap you might do some transformations to request.</p>
+      <div class="highlight highlight-source-js"><code><pre><span class="pl-c"><span class="pl-c">//</span> Function for settting the default restangular configuration</span>
+<span class="pl-k">export</span> <span class="pl-k">function</span> <span class="pl-en">RestangularConfigFactory</span> (<span class="pl-smi">RestangularProvider</span>, <span class="pl-smi">authService</span>) &#123;
+  <span class="pl-smi">RestangularProvider</span>.<span class="pl-en">setBaseUrl</span>(<span class="pl-s"><span class="pl-pds">'</span>http://api.test.com/v1<span class="pl-pds">'</span></span>);
+
+  <span class="pl-c"><span class="pl-c">//</span> This function must return observable</span>
+  <span class="pl-k">var</span> <span class="pl-en">refreshAccesstoken</span> <span class="pl-k">=</span> <span class="pl-k">function</span> () &#123;
+    <span class="pl-c"><span class="pl-c">//</span> Here you can make action before repeated request</span>
+    <span class="pl-k">return</span> <span class="pl-smi">authService</span>.<span class="pl-en">functionForTokenUpdate</span>();
+  &#125;;
+
+  <span class="pl-smi">RestangularProvider</span>.<span class="pl-en">addErrorInterceptor</span>((<span class="pl-smi">response</span>, <span class="pl-smi">subject</span>, <span class="pl-smi">responseHandler</span>) <span class="pl-k">=&gt;</span> &#123;
+    <span class="pl-k">if</span> (<span class="pl-smi">response</span>.<span class="pl-c1">status</span> <span class="pl-k">===</span> <span class="pl-c1">403</span>) &#123;
+
+      <span class="pl-en">refreshAccesstoken</span>()
+      .<span class="pl-en">switchMap</span>(<span class="pl-smi">refreshAccesstokenResponse</span> <span class="pl-k">=&gt;</span> &#123;
+        <span class="pl-c"><span class="pl-c">//</span>If you want to change request or make with it some actions and give the request to the repeatRequest func.</span>
+        <span class="pl-c"><span class="pl-c">//</span>Or you can live it empty and request will be the same.</span>
+
+        <span class="pl-c"><span class="pl-c">//</span> update Authorization header</span>
+        <span class="pl-smi">response</span>.<span class="pl-smi">request</span>.<span class="pl-c1">headers</span>.<span class="pl-c1">set</span>(<span class="pl-s"><span class="pl-pds">'</span>Authorization<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>Bearer <span class="pl-pds">'</span></span> <span class="pl-k">+</span> refreshAccesstokenResponse)
+
+        <span class="pl-k">return</span> <span class="pl-smi">response</span>.<span class="pl-en">repeatRequest</span>(<span class="pl-smi">response</span>.<span class="pl-smi">request</span>);
+      &#125;)
+      .<span class="pl-en">subscribe</span>(
+        <span class="pl-smi">res</span> <span class="pl-k">=&gt;</span> <span class="pl-en">responseHandler</span>(res),
+        <span class="pl-smi">err</span> <span class="pl-k">=&gt;</span> <span class="pl-smi">subject</span>.<span class="pl-en">error</span>(err)
+      );
+
+      <span class="pl-k">return</span> <span class="pl-c1">false</span>; <span class="pl-c"><span class="pl-c">//</span> error handled</span>
+    &#125;
+    <span class="pl-k">return</span> <span class="pl-c1">true</span>; <span class="pl-c"><span class="pl-c">//</span> error not handled</span>
+  &#125;);
+&#125;
+
+<span class="pl-c"><span class="pl-c">//</span> AppModule is the main entry point into Angular2 bootstraping process</span>
+@<span class="pl-en">NgModule</span>(&#123;
+  bootstrap<span class="pl-k">:</span> [ AppComponent ],
+  imports<span class="pl-k">:</span> [
+    <span class="pl-c"><span class="pl-c">//</span> Importing RestangularModule and making default configs for restanglar</span>
+    <span class="pl-smi">RestangularModule</span>.<span class="pl-en">forRoot</span>([authService], RestangularConfigFactory),
+  ],
+&#125;)</pre></code></div>
+      <h6><a id="user-content-setrestangularfields" class="anchor" href="#setrestangularfields" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>setRestangularFields</h6>
+      <p>Restangular required 3 fields for every "Restangularized" element. These are:</p>
+      <ul>
+        <li>id: Id of the element. Default: id</li>
+        <li>route: Name of the route of this element. Default: route</li>
+        <li>parentResource: The reference to the parent resource. Default: parentResource</li>
+        <li>restangularCollection: A boolean indicating if this is a collection or an element. Default: restangularCollection</li>
+        <li>cannonicalId: If available, the path to the cannonical ID to use. Useful for PK changes</li>
+        <li>etag: Where to save the ETag received from the server. Defaults to <code>restangularEtag</code></li>
+        <li>selfLink: The path to the property that has the URL to this item. If your REST API doesn't return a URL to an item, you can just leave it blank. Defaults to <code>href</code></li>
+      </ul>
+      <p>Also all of Restangular methods and functions are configurable through restangularFields property.
+        All of these fields except for <code>id</code> and <code>selfLink</code> are handled by Restangular, so most of the time you won't change them. You can configure the name of the property that will be binded to all of this fields by setting restangularFields property.</p>
+      <h6><a id="user-content-setmethodoverriders" class="anchor" href="#setmethodoverriders" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>setMethodOverriders</h6>
+      <p>You can now Override HTTP Methods. You can set here the array of methods to override. All those methods will be sent as POST and Restangular will add an X-HTTP-Method-Override header with the real HTTP method we wanted to do.</p>
+      <div class="highlight highlight-source-js"><pre><span class="pl-smi">RestangularProvider</span>.<span class="pl-en">setMethodOverriders</span>([<span class="pl-s"><span class="pl-pds">"</span>Get<span class="pl-pds">"</span></span>,<span class="pl-s"><span class="pl-pds">"</span>Put<span class="pl-pds">"</span></span>]);</pre></div>
+      <h6><a id="user-content-setdefaultrequestparams" class="anchor" href="#setdefaultrequestparams" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>setDefaultRequestParams</h6>
+      <p>You can set default Query parameters to be sent with every request and every method.</p>
+      <p>Additionally, if you want to configure request params per method, you can use <code>requestParams</code> configuration similar to <code>$http</code>. For example <code>RestangularProvider.requestParams.get = &#123;single: true&#125;</code>.</p>
+      <p>Supported method to configure are: remove, get, post, put, common (all)</p>
+      <div class="highlight highlight-source-js"><code><pre><span class="pl-c"><span class="pl-c">//</span> set params for multiple methods at once</span>
+<span class="pl-smi">RestangularProvider</span>.<span class="pl-en">setDefaultRequestParams</span>([<span class="pl-s"><span class="pl-pds">'</span>remove<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>post<span class="pl-pds">'</span></span>], &#123;confirm<span class="pl-k">:</span> <span class="pl-c1">true</span>&#125;);
+
+<span class="pl-c"><span class="pl-c">//</span> set only for get method</span>
+<span class="pl-smi">RestangularProvider</span>.<span class="pl-en">setDefaultRequestParams</span>(<span class="pl-s"><span class="pl-pds">'</span>get<span class="pl-pds">'</span></span>, &#123;limit<span class="pl-k">:</span> <span class="pl-c1">10</span>&#125;);
+
+<span class="pl-c"><span class="pl-c">//</span> or for all supported request methods</span>
+<span class="pl-smi">RestangularProvider</span>.<span class="pl-en">setDefaultRequestParams</span>(&#123;apikey<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>secret key<span class="pl-pds">"</span></span>&#125;);</pre></code></div>
+      <h6><a id="user-content-setfullresponse" class="anchor" href="#setfullresponse" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>setFullResponse</h6>
+      <p>You can set fullResponse to true to get the whole response every time you do any request. The full response has the restangularized data in the <code>data</code> field, and also has the headers and config sent. By default, it's set to false. Please note that in order for Restangular to access custom HTTP headers, your server must respond having the <code>Access-Control-Expose-Headers:</code> set.</p>
+      <div class="highlight highlight-source-js"><code><pre><span class="pl-c"><span class="pl-c">//</span> set params for multiple methods at once</span>
+<span class="pl-smi">RestangularProvider</span>.<span class="pl-en">setFullResponse</span>(<span class="pl-c1">true</span>);</pre></code></div>
+      <p>Or set it per service</p>
+      <div class="highlight highlight-source-js"><code><pre><span class="pl-c"><span class="pl-c">//</span> Restangular factory that uses setFullResponse</span>
+<span class="pl-k">export</span> <span class="pl-k">const</span> <span class="pl-c1">REST_FUL_RESPONSE</span> <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">OpaqueToken</span>(<span class="pl-s"><span class="pl-pds">'</span>RestFulResponse<span class="pl-pds">'</span></span>);
+<span class="pl-k">export</span> <span class="pl-k">function</span> <span class="pl-en">RestFulResponseFactory</span>(<span class="pl-smi">restangular</span><span class="pl-k">:</span> <span class="pl-smi">Restangular</span>) &#123;
+  <span class="pl-k">return</span> <span class="pl-smi">restangular</span>.<span class="pl-en">withConfig</span>((<span class="pl-smi">RestangularConfigurer</span>) <span class="pl-k">=&gt;</span> &#123;
+    <span class="pl-smi">RestangularConfigurer</span>.<span class="pl-en">setFullResponse</span>(<span class="pl-c1">true</span>);
+  &#125;);
+&#125;
+
+
+<span class="pl-c"><span class="pl-c">//</span> Configure factory in AppModule module</span>
+<span class="pl-c"><span class="pl-c">//</span> AppModule is the main entry point into Angular2 bootstraping process</span>
+@<span class="pl-en">NgModule</span>(&#123;
+  bootstrap<span class="pl-k">:</span> [ AppComponent ],
+  declarations<span class="pl-k">:</span> [
+    AppComponent,
+  ],
+  imports<span class="pl-k">:</span> [RestangularModule],
+  providers<span class="pl-k">:</span> [
+    &#123; provide<span class="pl-k">:</span> <span class="pl-c1">REST_FUL_RESPONSE</span>, useFactory<span class="pl-k">:</span>  RestFulResponseFactory, deps<span class="pl-k">:</span> [Restangular] &#125;
+  ]
+&#125;)
+<span class="pl-k">export</span> <span class="pl-k">class</span> <span class="pl-en">AppModule</span> &#123;&#125;
+
+
+<span class="pl-c"><span class="pl-c">//</span> Let's use it in the component</span>
+@<span class="pl-en">Component</span>(&#123;
+  <span class="pl-k">...</span>
+&#125;)
+<span class="pl-k">export</span> <span class="pl-k">class</span> <span class="pl-en">OtherComponent</span> &#123;
+  users;
+
+  <span class="pl-en">constructor</span>(@<span class="pl-en">Inject</span>(<span class="pl-c1">REST_FUL_RESPONSE</span>) <span class="pl-k">public</span> <span class="pl-smi">restFulResponse</span>) &#123;
+  &#125;
+
+  <span class="pl-en">ngOnInit</span>() &#123;
+    <span class="pl-c1">this</span>.<span class="pl-smi">restFulResponse</span>.<span class="pl-c1">all</span>(<span class="pl-s"><span class="pl-pds">'</span>users<span class="pl-pds">'</span></span>).<span class="pl-en">getList</span>().<span class="pl-en">subscribe</span>( <span class="pl-smi">response</span> <span class="pl-k">=&gt;</span> &#123;
+      <span class="pl-c1">this</span>.<span class="pl-smi">users</span> <span class="pl-k">=</span> <span class="pl-smi">response</span>.<span class="pl-c1">data</span>;
+      <span class="pl-en">console</span>.<span class="pl-c1">log</span>(<span class="pl-smi">response</span>.<span class="pl-c1">headers</span>);
+    &#125;);
+  &#125;
+&#125;</pre></code></div>
+      <h6><a id="user-content-setdefaultheaders" class="anchor" href="#setdefaultheaders" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>setDefaultHeaders</h6>
+      <p>You can set default Headers to be sent with every request. Send format: &#123;header_name: header_value&#125;</p>
+      <div class="highlight highlight-source-js"><code><pre><span class="pl-k">import</span> &#123; <span class="pl-smi">NgModule</span> &#125; <span class="pl-k">from</span> <span class="pl-s"><span class="pl-pds">'</span>@angular/core<span class="pl-pds">'</span></span>;
+<span class="pl-k">import</span> &#123; <span class="pl-smi">RestangularModule</span>, <span class="pl-smi">Restangular</span> &#125; <span class="pl-k">from</span> <span class="pl-s"><span class="pl-pds">'</span>ng2-restangular<span class="pl-pds">'</span></span>;
+
+<span class="pl-c"><span class="pl-c">//</span> Function for settting the default restangular configuration</span>
+<span class="pl-k">export</span> <span class="pl-k">function</span> <span class="pl-en">RestangularConfigFactory</span> (<span class="pl-smi">RestangularProvider</span>) &#123;
+  <span class="pl-smi">RestangularProvider</span>.<span class="pl-en">setDefaultHeaders</span>(&#123;<span class="pl-s"><span class="pl-pds">'</span>Authorization<span class="pl-pds">'</span></span><span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>Bearer UDXPx-Xko0w4BRKajozCVy20X11MRZs1<span class="pl-pds">'</span></span>&#125;);
+&#125;
+
+<span class="pl-c"><span class="pl-c">//</span> AppModule is the main entry point into Angular2 bootstraping process</span>
+@<span class="pl-en">NgModule</span>(&#123;
+  <span class="pl-k">...</span>
+  imports<span class="pl-k">:</span> [
+    <span class="pl-c"><span class="pl-c">//</span> Importing RestangularModule and making default configs for restanglar</span>
+    <span class="pl-smi">RestangularModule</span>.<span class="pl-en">forRoot</span>(RestangularConfigFactory),
+  ]
+&#125;)
+<span class="pl-k">export</span> <span class="pl-k">class</span> <span class="pl-en">AppModule</span> &#123;
+&#125;</pre></code></div>
+      <h6><a id="user-content-setrequestsuffix" class="anchor" href="#setrequestsuffix" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>setRequestSuffix</h6>
+      <p>If all of your requests require to send some suffix to work, you can set it here. For example, if you need to send the format like <code>/users/123.json</code> you can add that <code>.json</code> to the suffix using the <code>setRequestSuffix</code> method</p>
+      <h6><a id="user-content-setusecannonicalid" class="anchor" href="#setusecannonicalid" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>setUseCannonicalId</h6>
+      <p>You can set this to either <code>true</code> or <code>false</code>. By default it's false. If set to true, then the cannonical ID from the element will be used for URL creation (in DELETE, PUT, POST, etc.). What this means is that if you change the ID of the element and then you do a put, if you set this to true, it'll use the "old" ID which was received from the server. If set to false, it'll use the new ID assigned to the element.</p>
+      <h6><a id="user-content-setplainbydefault" class="anchor" href="#setplainbydefault" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>setPlainByDefault</h6>
+      <p>You can set this to <code>true</code> or <code>false</code>. By default it's false. If set to true, data retrieved will be returned with no embed methods from restangular.</p>
+      <h6><a id="user-content-setencodeids" class="anchor" href="#setencodeids" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>setEncodeIds</h6>
+      <p>You can set here if you want to URL Encode IDs or not. By default, it's true.</p>
+      <h5><a id="user-content-accessing-configuration" class="anchor" href="#accessing-configuration" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Accessing configuration</h5>
+      <p>You can also access the configuration via <code>RestangularModule</code> and <code>Restangular.provider</code> via the <code>configuration</code> property if you don't want to use the setters. Check it out:</p>
+      <div class="highlight highlight-source-js"><pre><span class="pl-smi">RestangularProvider</span>.<span class="pl-smi">configuration</span>.<span class="pl-smi">requestSuffix</span> <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">'</span>/<span class="pl-pds">'</span></span>;</pre></div>
+      <h5><a id="user-content-how-to-configure-them-globally" class="anchor" href="#how-to-configure-them-globally" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>How to configure them globally</h5>
+      <p>You can configure this in either the <code>AppModule</code>.</p>
+      <h6><a id="user-content-configuring-in-the-appmodule" class="anchor" href="#configuring-in-the-appmodule" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Configuring in the <code>AppModule</code></h6>
+      <div class="highlight highlight-source-js"><code><pre><span class="pl-k">import</span> &#123; <span class="pl-smi">RestangularModule</span> &#125; <span class="pl-k">from</span> <span class="pl-s"><span class="pl-pds">'</span>ng2-restangular<span class="pl-pds">'</span></span>;
+
+<span class="pl-c"><span class="pl-c">//</span> Function for settting the default restangular configuration</span>
+<span class="pl-k">export</span> <span class="pl-k">function</span> <span class="pl-en">RestangularConfigFactory</span> (<span class="pl-smi">RestangularProvider</span>) &#123;
+  <span class="pl-smi">RestangularProvider</span>.<span class="pl-en">setBaseUrl</span>(<span class="pl-s"><span class="pl-pds">'</span>http://api.restng2.local/v1<span class="pl-pds">'</span></span>);
+  <span class="pl-smi">RestangularProvider</span>.<span class="pl-en">setDefaultHeaders</span>(&#123;<span class="pl-s"><span class="pl-pds">'</span>Authorization<span class="pl-pds">'</span></span><span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>Bearer UDXPx-Xko0w4BRKajozCVy20X11MRZs1<span class="pl-pds">'</span></span>&#125;);
+&#125;
+
+<span class="pl-c"><span class="pl-c">//</span> AppModule is the main entry point into Angular2 bootstraping process</span>
+@<span class="pl-en">NgModule</span>(&#123;
+  bootstrap<span class="pl-k">:</span> [ AppComponent ],
+  declarations<span class="pl-k">:</span> [
+    AppComponent,
+  ],
+  imports<span class="pl-k">:</span> [
+    <span class="pl-smi">RestangularModule</span>.<span class="pl-en">forRoot</span>(RestangularConfigFactory),
+  ]
+&#125;)
+<span class="pl-k">export</span> <span class="pl-k">class</span> <span class="pl-en">AppModule</span> &#123;
+&#125;</pre></code></div>
+      <h6><a id="user-content-configuring-in-the-appmodule-with-dependency-injection-applied" class="anchor" href="#configuring-in-the-appmodule-with-dependency-injection-applied" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Configuring in the <code>AppModule</code> with Dependency Injection applied</h6>
+      <div class="highlight highlight-source-js"><code><pre><span class="pl-k">import</span> &#123; <span class="pl-smi">RestangularModule</span> &#125; <span class="pl-k">from</span> <span class="pl-s"><span class="pl-pds">'</span>ng2-restangular<span class="pl-pds">'</span></span>;
+
+<span class="pl-c"><span class="pl-c">//</span> Function for settting the default restangular configuration</span>
+<span class="pl-k">export</span> <span class="pl-k">function</span> <span class="pl-en">RestangularConfigFactory</span> (<span class="pl-smi">RestangularProvider</span>, <span class="pl-smi">http</span>) &#123;
+  <span class="pl-smi">RestangularProvider</span>.<span class="pl-en">setBaseUrl</span>(<span class="pl-s"><span class="pl-pds">'</span>http://api.restng2.local/v1<span class="pl-pds">'</span></span>);
+  <span class="pl-smi">RestangularProvider</span>.<span class="pl-en">setDefaultHeaders</span>(&#123;<span class="pl-s"><span class="pl-pds">'</span>Authorization<span class="pl-pds">'</span></span><span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>Bearer UDXPx-Xko0w4BRKajozCVy20X11MRZs1<span class="pl-pds">'</span></span>&#125;);
+
+  <span class="pl-c"><span class="pl-c">//</span> Example of using Http service inside global config restangular</span>
+  <span class="pl-smi">RestangularProvider</span>.<span class="pl-en">addElementTransformer</span>(<span class="pl-s"><span class="pl-pds">'</span>me<span class="pl-pds">'</span></span>, <span class="pl-c1">true</span>, ()<span class="pl-k">=&gt;</span>&#123;
+    <span class="pl-k">return</span> <span class="pl-smi">http</span>.<span class="pl-c1">get</span>(<span class="pl-s"><span class="pl-pds">'</span>http://api.test.com/v1/users/2<span class="pl-pds">'</span></span>, &#123;&#125;);
+  &#125;);
+&#125;
+
+<span class="pl-c"><span class="pl-c">//</span> AppModule is the main entry point into Angular2 bootstraping process</span>
+@<span class="pl-en">NgModule</span>(&#123;
+  bootstrap<span class="pl-k">:</span> [ AppComponent ],
+  declarations<span class="pl-k">:</span> [
+    AppComponent,
+  ],
+  imports<span class="pl-k">:</span> [
+    <span class="pl-smi">RestangularModule</span>.<span class="pl-en">forRoot</span>([Http], RestangularConfigFactory),
+  ]
+&#125;)
+<span class="pl-k">export</span> <span class="pl-k">class</span> <span class="pl-en">AppModule</span> &#123;
+&#125;</pre></code></div>
+      <h5><a id="user-content-how-to-create-a-restangular-service-with-a-different-configuration-from-the-global-one" class="anchor" href="#how-to-create-a-restangular-service-with-a-different-configuration-from-the-global-one" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>How to create a Restangular service with a different configuration from the global one</h5>
+      <p>Let's assume that for most requests you need some configuration (The global one), and for just a bunch of methods you need another configuration. In that case, you'll need to create another Restangular service with this particular configuration. This scoped configuration will inherit all defaults from the global one. Let's see how.</p>
+      <div class="highlight highlight-source-js"><code><pre><span class="pl-c"><span class="pl-c">//</span> Function for settting the default restangular configuration</span>
+<span class="pl-k">export</span> <span class="pl-k">function</span> <span class="pl-en">RestangularConfigFactory</span> (<span class="pl-smi">RestangularProvider</span>) &#123;
+  <span class="pl-smi">RestangularProvider</span>.<span class="pl-en">setBaseUrl</span>(<span class="pl-s"><span class="pl-pds">'</span>http://www.google.com<span class="pl-pds">'</span></span>);
+&#125;
+
+<span class="pl-c"><span class="pl-c">//</span>Restangular service that uses Bing</span>
+<span class="pl-k">export</span> <span class="pl-k">const</span> <span class="pl-c1">RESTANGULAR_BING</span> <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">OpaqueToken</span>(<span class="pl-s"><span class="pl-pds">'</span>RestangularBing<span class="pl-pds">'</span></span>);
+<span class="pl-k">export</span> <span class="pl-k">function</span> <span class="pl-en">RestangularBingFactory</span>(<span class="pl-smi">restangular</span><span class="pl-k">:</span> <span class="pl-smi">Restangular</span>) &#123;
+  <span class="pl-k">return</span> <span class="pl-smi">restangular</span>.<span class="pl-en">withConfig</span>((<span class="pl-smi">RestangularConfigurer</span>) <span class="pl-k">=&gt;</span> &#123;
+     <span class="pl-smi">RestangularConfigurer</span>.<span class="pl-en">setBaseUrl</span>(<span class="pl-s"><span class="pl-pds">'</span>http://www.bing.com<span class="pl-pds">'</span></span>);
+   &#125;);
+&#125;
+
+
+<span class="pl-c"><span class="pl-c">//</span> AppModule is the main entry point into Angular2 bootstraping process</span>
+@<span class="pl-en">NgModule</span>(&#123;
+  bootstrap<span class="pl-k">:</span> [ AppComponent ],
+  declarations<span class="pl-k">:</span> [
+    AppComponent,
+  ],
+  imports<span class="pl-k">:</span> [
+    <span class="pl-c"><span class="pl-c">//</span> Global configuration</span>
+    <span class="pl-smi">RestangularModule</span>.<span class="pl-en">forRoot</span>(RestangularConfigFactory),
+  ],
+  providers<span class="pl-k">:</span> [
+    &#123; provide<span class="pl-k">:</span> <span class="pl-c1">RESTANGULAR_BING</span>, useFactory<span class="pl-k">:</span>  RestangularBingFactory, deps<span class="pl-k">:</span> [Restangular] &#125;
+  ]
+&#125;)
+<span class="pl-k">export</span> <span class="pl-k">class</span> <span class="pl-en">AppModule</span> &#123;&#125;
+
+
+<span class="pl-c"><span class="pl-c">//</span> Let's use it in the component</span>
+@<span class="pl-en">Component</span>(&#123;
+  <span class="pl-k">...</span>
+&#125;)
+<span class="pl-k">export</span> <span class="pl-k">class</span> <span class="pl-en">OtherComponent</span> &#123;
+  <span class="pl-en">constructor</span>(
+    @<span class="pl-en">Inject</span>(Restangular) <span class="pl-k">public</span> <span class="pl-smi">Restangular</span>,
+    @<span class="pl-en">Inject</span>(<span class="pl-c1">RESTANGULAR_BING</span>) <span class="pl-k">public</span> <span class="pl-smi">RestangularBing</span>
+  ) &#123;&#125;
+
+  <span class="pl-en">ngOnInit</span>() &#123;
+    <span class="pl-c"><span class="pl-c">//</span> GET to http://www.google.com/users</span>
+    <span class="pl-c"><span class="pl-c">//</span> Uses global configuration</span>
+    <span class="pl-smi">Restangular</span>.<span class="pl-c1">all</span>(<span class="pl-s"><span class="pl-pds">'</span>users<span class="pl-pds">'</span></span>).<span class="pl-en">getList</span>()
+
+    <span class="pl-c"><span class="pl-c">//</span> GET to http://www.bing.com/users</span>
+    <span class="pl-c"><span class="pl-c">//</span> Uses Bing configuration which is based on Global one, therefore .json is added.</span>
+    <span class="pl-smi">RestangularBing</span>.<span class="pl-c1">all</span>(<span class="pl-s"><span class="pl-pds">'</span>users<span class="pl-pds">'</span></span>).<span class="pl-en">getList</span>()
+  &#125;
+&#125;;</pre></code></div>
+      <h5><a id="user-content-decoupled-restangular-service" class="anchor" href="#decoupled-restangular-service" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Decoupled Restangular Service</h5>
+      <p>There're some times where you want to use Restangular but you don't want to expose Restangular object anywhere. For those cases, you can actually use the <code>service</code> feature of Restangular.</p>
+      <p>Let's see how it works:</p>
+      <div class="highlight highlight-source-js"><code><pre><span class="pl-c"><span class="pl-c">//</span> Restangular factory that uses Users</span>
+<span class="pl-k">export</span> <span class="pl-k">const</span> <span class="pl-c1">USER_REST</span> <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">OpaqueToken</span>(<span class="pl-s"><span class="pl-pds">'</span>UserRest<span class="pl-pds">'</span></span>);
+<span class="pl-k">export</span> <span class="pl-k">function</span> <span class="pl-en">UserRestFactory</span>(<span class="pl-smi">restangular</span><span class="pl-k">:</span> <span class="pl-smi">Restangular</span>) &#123;
+  <span class="pl-k">return</span> <span class="pl-smi">restangular</span>.<span class="pl-en">service</span>(<span class="pl-s"><span class="pl-pds">'</span>users<span class="pl-pds">'</span></span>);
+&#125;
+
+
+<span class="pl-c"><span class="pl-c">//</span> AppModule is the main entry point into Angular2 bootstraping process</span>
+@<span class="pl-en">NgModule</span>(&#123;
+  bootstrap<span class="pl-k">:</span> [ AppComponent ],
+  declarations<span class="pl-k">:</span> [
+    AppComponent,
+  ],
+  imports<span class="pl-k">:</span> [RestangularModule],
+  providers<span class="pl-k">:</span> [
+    &#123; provide<span class="pl-k">:</span> <span class="pl-c1">USER_REST</span>, useFactory<span class="pl-k">:</span>  UserRestFactory, deps<span class="pl-k">:</span> [Restangular] &#125; <span class="pl-c"><span class="pl-c">//</span> Configurating our factory</span>
+  ]
+&#125;)
+<span class="pl-k">export</span> <span class="pl-k">class</span> <span class="pl-en">AppModule</span> &#123;
+&#125;
+
+
+<span class="pl-c"><span class="pl-c">//</span> Let's use it in the component</span>
+<span class="pl-k">export</span> <span class="pl-k">class</span> <span class="pl-en">OtherComponent</span> &#123;
+  <span class="pl-en">constructor</span>(@<span class="pl-en">Inject</span>(<span class="pl-c1">USER_REST</span>) <span class="pl-k">public</span> <span class="pl-smi">User</span>) &#123;
+    <span class="pl-smi">Users</span>.<span class="pl-en">one</span>(<span class="pl-c1">2</span>).<span class="pl-c1">get</span>() <span class="pl-c"><span class="pl-c">//</span> GET to /users/2</span>
+    <span class="pl-smi">Users</span>.<span class="pl-en">post</span>(&#123;data&#125;) <span class="pl-c"><span class="pl-c">//</span> POST to /users</span>
+
+    <span class="pl-c"><span class="pl-c">//</span> GET to /users</span>
+    <span class="pl-smi">Users</span>.<span class="pl-en">getList</span>().<span class="pl-en">subscribe</span>( <span class="pl-smi">users</span> <span class="pl-k">=&gt;</span> &#123;
+      <span class="pl-k">var</span> user <span class="pl-k">=</span> users[<span class="pl-c1">0</span>]; <span class="pl-c"><span class="pl-c">//</span> user === &#123;id: 1, name: "Tonto"&#125;</span>
+      <span class="pl-smi">user</span>.<span class="pl-c1">name</span> <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">"</span>Gonto<span class="pl-pds">"</span></span>;
+      <span class="pl-c"><span class="pl-c">//</span> PUT to /users/1</span>
+      <span class="pl-smi">user</span>.<span class="pl-en">put</span>();
+    &#125;)
+  &#125;
+&#125;</pre></code></div>
+      <p>We can also use Nested RESTful resources with this:</p>
+      <div class="highlight highlight-source-js"><code><pre><span class="pl-k">var</span> Cars <span class="pl-k">=</span> <span class="pl-smi">Restangular</span>.<span class="pl-en">service</span>(<span class="pl-s"><span class="pl-pds">'</span>cars<span class="pl-pds">'</span></span>, <span class="pl-smi">Restangular</span>.<span class="pl-en">one</span>(<span class="pl-s"><span class="pl-pds">'</span>users<span class="pl-pds">'</span></span>, <span class="pl-c1">1</span>));
+
+<span class="pl-smi">Cars</span>.<span class="pl-en">getList</span>() <span class="pl-c"><span class="pl-c">//</span> GET to /users/1/cars</span></pre></code></div>
+
+      <h3><a id="user-content-methods-description" class="anchor" href="#methods-description" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Methods description</h3>
+      <p>There are 3 sets of methods. Collections have some methods and elements have others. There are are also some common methods for all of them</p>
+      <h5><a id="user-content-restangular-methods" class="anchor" href="#restangular-methods" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Restangular methods</h5>
+      <p>These are the methods that can be called on the Restangular object.</p>
+      <ul>
+        <li><strong>one(route, id)</strong>: This will create a new Restangular object that is just a pointer to one element with the route <code>route</code> and the specified id.</li>
+        <li><strong>all(route)</strong>: This will create a new Restangular object that is just a pointer to a list of elements for the specified path.</li>
+        <li><strong>oneUrl(route, url)</strong>: This will create a new Restangular object that is just a pointer to one element with the specified URL.</li>
+        <li><strong>allUrl(route, url)</strong>: This creates a Restangular object that is just a pointer to a list at the specified URL.</li>
+        <li><strong>copy(fromElement)</strong>: This will create a copy of the from element so that we can modify the copied one.</li>
+        <li><strong>restangularizeElement(parent, element, route, queryParams)</strong>: Restangularizes a new element</li>
+        <li><strong>restangularizeCollection(parent, element, route, queryParams)</strong>: Restangularizes a new collection</li>
+      </ul>
+      <h5><a id="user-content-element-methods" class="anchor" href="#element-methods" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Element methods</h5>
+      <ul>
+        <li><strong>get([queryParams, headers])</strong>: Gets the element. Query params and headers are optionals</li>
+        <li><strong>getList(subElement, [queryParams, headers])</strong>: Gets a nested resource. subElement is mandatory. <strong>It's a string with the name of the nested resource (and URL)</strong>. For example <code>buildings</code></li>
+        <li><strong>put([queryParams, headers])</strong>: Does a put to the current element</li>
+        <li><strong>post(subElement, elementToPost, [queryParams, headers])</strong>: Does a POST and creates a subElement. Subelement is mandatory and is the nested resource. Element to post is the object to post to the server</li>
+        <li><strong>remove([queryParams, headers])</strong>: Does a DELETE. By default, <code>remove</code> sends a request with an empty object, which may cause problems with some servers or browsers. <a href="https://github.com/mgonto/restangular/issues/193">This</a> shows how to configure RESTangular to have no payload.</li>
+        <li><strong>head([queryParams, headers])</strong>: Does a HEAD</li>
+        <li><strong>trace([queryParams, headers])</strong>: Does a TRACE</li>
+        <li><strong>options([queryParams, headers])</strong>: Does a OPTIONS</li>
+        <li><strong>patch(object, [queryParams, headers])</strong>: Does a PATCH</li>
+        <li><strong>one(route, id)</strong>: Used for RequestLess connections and URL Building. See section below.</li>
+        <li><strong>all(route)</strong>: Used for RequestLess connections and URL Building. See section below.</li>
+        <li><em><em>several(route, ids</em>)</em>*: Used for RequestLess connections and URL Building. See section below.</li>
+        <li><strong>oneUrl(route, url)</strong>: This will create a new Restangular object that is just a pointer to one element with the specified URL.</li>
+        <li><strong>allUrl(route, url)</strong>: This creates a Restangular object that is just a pointer to a list at the specified URL.</li>
+        <li><strong>getRestangularUrl()</strong>: Gets the URL of the current object.</li>
+        <li><strong>getRequestedUrl()</strong>: Gets the real URL the current object was requested with (incl. GET parameters). Will equal getRestangularUrl() when no parameters were used, before calling <code>get()</code>, or when using on a nested child.</li>
+        <li><strong>getParentList()</strong>: Gets the parent list to which it belongs (if any)</li>
+        <li><strong>clone()</strong>: Copies the element. It's an alias to calling <code>Restangular.copy(elem)</code>.</li>
+        <li><strong>plain()</strong>: Returns the plain element received from the server without any of the enhanced methods from Restangular. It's an alias to calling <code>Restangular.stripRestangular(elem)</code></li>
+        <li><strong>save</strong>: Calling save will determine whether to do PUT or POST accordingly</li>
+      </ul>
+      <h5><a id="user-content-collection-methods" class="anchor" href="#collection-methods" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Collection methods</h5>
+      <ul>
+        <li><strong>getList([queryParams, headers]): Gets itself again (Remember this is a collection)</strong>.</li>
+        <li><strong>get(id): Gets one item from the collection by id</strong>.</li>
+        <li><strong>post(elementToPost, [queryParams, headers])</strong>: Creates a new element of this collection.</li>
+        <li><strong>head([queryParams, headers])</strong>: Does a HEAD</li>
+        <li><strong>trace: ([queryParams, headers])</strong>: Does a TRACE</li>
+        <li><strong>options: ([queryParams, headers])</strong>: Does a OPTIONS</li>
+        <li><strong>patch(object, [queryParams, headers])</strong>: Does a PATCH</li>
+        <li><strong>remove([queryParams, headers])</strong>: Does a DELETE. By default, <code>remove</code> sends a request with an empty object, which may cause problems with some servers or browsers. <a href="https://github.com/mgonto/restangular/issues/193">This</a> shows how to configure RESTangular to have no payload.</li>
+        <li><strong>putElement(index, params, headers)</strong>: Puts the element on the required index and returns a observable of the updated new array</li>
+      </ul>
+      <div class="highlight highlight-source-js"><code><pre><span class="pl-smi">Restangular</span>.<span class="pl-c1">all</span>(<span class="pl-s"><span class="pl-pds">'</span>users<span class="pl-pds">'</span></span>).<span class="pl-en">getList</span>()
+.<span class="pl-en">subscribe</span>( <span class="pl-smi">users</span> <span class="pl-k">=&gt;</span> &#123;
+  <span class="pl-smi">users</span>.<span class="pl-en">putElement</span>(<span class="pl-c1">2</span>, &#123;<span class="pl-s"><span class="pl-pds">'</span>name<span class="pl-pds">'</span></span><span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>new name<span class="pl-pds">'</span></span>&#125;);
+&#125;);</pre></code></div>
+      <ul>
+        <li><strong>getRestangularUrl()</strong>: Gets the URL of the current object.</li>
+        <li><strong>getRequestedUrl()</strong>: Gets the real URL the current object was requested with (incl. GET parameters). Will equal getRestangularUrl() when no parameters were used, before calling <code>getList()</code>, or when using on a nested child.</li>
+        <li><strong>one(route, id)</strong>: Used for RequestLess connections and URL Building. See section below.</li>
+        <li><strong>all(route)</strong>: Used for RequestLess connections and URL Building. See section below.</li>
+        <li><em><em>several(route, ids</em>)</em>*: Used for RequestLess connections and URL Building. See section below.</li>
+        <li><strong>oneUrl(route, url)</strong>: This will create a new Restangular object that is just a pointer to one element with the specified URL.</li>
+        <li><strong>allUrl(route, url)</strong>: This creates a Restangular object that is just a pointer to a list at the specified URL.</li>
+        <li><strong>clone()</strong>: Copies the collection. It's an alias to calling <code>Restangular.copy(collection)</code>.</li>
+      </ul>
+      <h5><a id="user-content-custom-methods" class="anchor" href="#custom-methods" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Custom methods</h5>
+      <ul>
+        <li><strong>customGET(path, [params, headers])</strong>: Does a GET to the specific path. Optionally you can set params and headers.</li>
+        <li><strong>customGETLIST(path, [params, headers])</strong>: Does a GET to the specific path. <strong>In this case, you expect to get an array, not a single element</strong>. Optionally you can set params and headers.</li>
+        <li><strong>customDELETE(path, [params, headers])</strong>: Does a DELETE to the specific path. Optionally you can set params and headers.</li>
+        <li><strong>customPOST([elem, path, params, headers])</strong>: Does a POST to the specific path. Optionally you can set params and headers and elem. Elem is the element to post. If it's not set, it's assumed that it's the element itself from which you're calling this function.</li>
+        <li><strong>customPUT([elem, path, params, headers])</strong>: Does a PUT to the specific path. Optionally you can set params and headers and elem. Elem is the element to post. If it's not set, it's assumed that it's the element itself from which you're calling this function.</li>
+        <li><strong>customPATCH([elem, path, params, headers])</strong>: Does a PATCH to the specific path. Accepts the same arguments as customPUT.</li>
+        <li><strong>customOperation(operation, path, [params, headers, elem])</strong>: This does a custom operation to the path that we specify. This method is actually used from all the others in this subsection. Operation can be one of: get, post, put, remove, head, options, patch, trace</li>
+        <li><strong>addRestangularMethod(name, operation, [path, params, headers, elem])</strong>: This will add a new restangular method to this object with the name <code>name</code> to the operation and path specified (or current path otherwise). There's a section on how to do this later.</li>
+      </ul>
+      <p>Let's see an example of this:</p>
+      <div class="highlight highlight-source-js"><code><pre><span class="pl-c"><span class="pl-c">//</span> GET /accounts/123/messages</span>
+<span class="pl-smi">Restangular</span>.<span class="pl-en">one</span>(<span class="pl-s"><span class="pl-pds">"</span>accounts<span class="pl-pds">"</span></span>, <span class="pl-c1">123</span>).<span class="pl-en">customGET</span>(<span class="pl-s"><span class="pl-pds">"</span>messages<span class="pl-pds">"</span></span>)
+
+<span class="pl-c"><span class="pl-c">//</span> GET /accounts/messages?param=param2</span>
+<span class="pl-smi">Restangular</span>.<span class="pl-c1">all</span>(<span class="pl-s"><span class="pl-pds">"</span>accounts<span class="pl-pds">"</span></span>).<span class="pl-en">customGET</span>(<span class="pl-s"><span class="pl-pds">"</span>messages<span class="pl-pds">"</span></span>, &#123;param<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>param2<span class="pl-pds">"</span></span>&#125;)</pre></code></div>
+      <h4><a id="user-content-copying-elements" class="anchor" href="#copying-elements" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Copying elements</h4>
+      <p>Before modifying an object, we sometimes want to copy it and then modify the copied object. We can use <code>Restangular.copy(fromElement)</code>.</p>
+      <h4><a id="user-content-using-values-directly-in-templates-with-observables" class="anchor" href="#using-values-directly-in-templates-with-observables" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Using values directly in templates with Observables</h4>
+      <p>If you want to use values directly in templates use <code>AsyncPipe</code></p>
+      <div class="highlight highlight-source-js"><code><pre><span class="pl-c1">this</span>.<span class="pl-smi">accounts</span> <span class="pl-k">=</span> <span class="pl-c1">this</span>.<span class="pl-smi">restangular</span>.<span class="pl-c1">all</span>(<span class="pl-s"><span class="pl-pds">'</span>accounts<span class="pl-pds">'</span></span>).<span class="pl-en">getList</span>();</pre></code></div>
+      <div class="highlight highlight-text-html-basic"><code><pre>&lt;<span class="pl-ent">tr</span> *<span class="pl-e">ngFor</span>=<span class="pl-s"><span class="pl-pds">"</span>let account of accounts | async<span class="pl-pds">"</span></span>&gt;
+            &lt;<span class="pl-ent">td</span>&gt;&#123;&#123;<code>account.fullName</code>&#125;&#125;&lt;/<span class="pl-ent">td</span>&gt;
+&lt;/<span class="pl-ent">tr</span>&gt;</pre></code></div>
+      <h4><a id="user-content-url-building" class="anchor" href="#url-building" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>URL Building</h4>
+      <p>Sometimes, we have a lot of nested entities (and their IDs), but we just want the last child. In those cases, doing a request for everything to get the last child is overkill. For those cases, I've added the possibility to create URLs using the same API as creating a new Restangular object. This connections are created without making any requests. Let's see how to do this:</p>
+      <div class="highlight highlight-source-js"><code><pre><span class="pl-k">var</span> restangularSpaces <span class="pl-k">=</span> <span class="pl-smi">Restangular</span>.<span class="pl-en">one</span>(<span class="pl-s"><span class="pl-pds">"</span>accounts<span class="pl-pds">"</span></span>,<span class="pl-c1">123</span>).<span class="pl-en">one</span>(<span class="pl-s"><span class="pl-pds">"</span>buildings<span class="pl-pds">"</span></span>, <span class="pl-c1">456</span>).<span class="pl-c1">all</span>(<span class="pl-s"><span class="pl-pds">"</span>spaces<span class="pl-pds">"</span></span>);
+
+<span class="pl-c"><span class="pl-c">//</span> This will do ONE get to /accounts/123/buildings/456/spaces</span>
+<span class="pl-smi">restangularSpaces</span>.<span class="pl-en">getList</span>()
+
+<span class="pl-c"><span class="pl-c">//</span> This will do ONE get to /accounts/123/buildings/456/spaces/789</span>
+<span class="pl-smi">Restangular</span>.<span class="pl-en">one</span>(<span class="pl-s"><span class="pl-pds">"</span>accounts<span class="pl-pds">"</span></span>, <span class="pl-c1">123</span>).<span class="pl-en">one</span>(<span class="pl-s"><span class="pl-pds">"</span>buildings<span class="pl-pds">"</span></span>, <span class="pl-c1">456</span>).<span class="pl-en">one</span>(<span class="pl-s"><span class="pl-pds">"</span>spaces<span class="pl-pds">"</span></span>, <span class="pl-c1">789</span>).<span class="pl-c1">get</span>()
+
+<span class="pl-c"><span class="pl-c">//</span> POST /accounts/123/buildings/456/spaces</span>
+<span class="pl-smi">Restangular</span>.<span class="pl-en">one</span>(<span class="pl-s"><span class="pl-pds">"</span>accounts<span class="pl-pds">"</span></span>, <span class="pl-c1">123</span>).<span class="pl-en">one</span>(<span class="pl-s"><span class="pl-pds">"</span>buildings<span class="pl-pds">"</span></span>, <span class="pl-c1">456</span>).<span class="pl-c1">all</span>(<span class="pl-s"><span class="pl-pds">"</span>spaces<span class="pl-pds">"</span></span>).<span class="pl-en">post</span>(&#123;name<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>New Space<span class="pl-pds">"</span></span>&#125;);
+
+<span class="pl-c"><span class="pl-c">//</span> DELETE /accounts/123/buildings/456</span>
+<span class="pl-smi">Restangular</span>.<span class="pl-en">one</span>(<span class="pl-s"><span class="pl-pds">"</span>accounts<span class="pl-pds">"</span></span>, <span class="pl-c1">123</span>).<span class="pl-en">one</span>(<span class="pl-s"><span class="pl-pds">"</span>buildings<span class="pl-pds">"</span></span>, <span class="pl-c1">456</span>).<span class="pl-c1">remove</span>();</pre></code></div>
+      <h4><a id="user-content-creating-new-restangular-methods" class="anchor" href="#creating-new-restangular-methods" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Creating new Restangular Methods</h4>
+      <p>Let's assume that your API needs some custom methods to work. If that's the case, always calling customGET or customPOST for that method with all parameters is a pain in the ass. That's why every element has a <code>addRestangularMethod</code> method.</p>
+      <p>This can be used together with the hook <code>addElementTransformer</code> to do some neat stuff. Let's see an example to learn this:</p>
+      <div class="highlight highlight-source-js"><code><pre><span class="pl-c"><span class="pl-c">//</span> Function for settting the default restangular configuration</span>
+<span class="pl-k">export</span> <span class="pl-k">function</span> <span class="pl-en">RestangularConfigFactory</span> (<span class="pl-smi">RestangularProvider</span>) &#123;
+  <span class="pl-c"><span class="pl-c">//</span> It will transform all building elements, NOT collections</span>
+  <span class="pl-smi">RestangularProvider</span>.<span class="pl-en">addElementTransformer</span>(<span class="pl-s"><span class="pl-pds">'</span>buildings<span class="pl-pds">'</span></span>, <span class="pl-c1">false</span>, <span class="pl-k">function</span>(<span class="pl-smi">building</span>) &#123;
+    <span class="pl-c"><span class="pl-c">//</span> This will add a method called evaluate that will do a get to path evaluate with NO default</span>
+    <span class="pl-c"><span class="pl-c">//</span> query params and with some default header</span>
+    <span class="pl-c"><span class="pl-c">//</span> signature is (name, operation, path, params, headers, elementToPost)</span>
+
+    <span class="pl-smi">building</span>.<span class="pl-en">addRestangularMethod</span>(<span class="pl-s"><span class="pl-pds">'</span>evaluate<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>get<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>evaluate<span class="pl-pds">'</span></span>, <span class="pl-c1">undefined</span>, &#123;<span class="pl-s"><span class="pl-pds">'</span>myHeader<span class="pl-pds">'</span></span><span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>value<span class="pl-pds">'</span></span>&#125;);
+
+    <span class="pl-k">return</span> building;
+  &#125;);
+
+  <span class="pl-smi">RestangularProvider</span>.<span class="pl-en">addElementTransformer</span>(<span class="pl-s"><span class="pl-pds">'</span>users<span class="pl-pds">'</span></span>, <span class="pl-c1">true</span>, <span class="pl-k">function</span>(<span class="pl-smi">user</span>) &#123;
+    <span class="pl-c"><span class="pl-c">//</span> This will add a method called login that will do a POST to the path login</span>
+    <span class="pl-c"><span class="pl-c">//</span> signature is (name, operation, path, params, headers, elementToPost)</span>
+
+    <span class="pl-smi">user</span>.<span class="pl-en">addRestangularMethod</span>(<span class="pl-s"><span class="pl-pds">'</span>login<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>post<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>login<span class="pl-pds">'</span></span>);
+
+    <span class="pl-k">return</span> user;
+  &#125;);
+&#125;
+
+<span class="pl-c"><span class="pl-c">//</span> AppModule is the main entry point into Angular2 bootstraping process</span>
+@<span class="pl-en">NgModule</span>(&#123;
+  bootstrap<span class="pl-k">:</span> [ AppComponent ],
+  imports<span class="pl-k">:</span> [ <span class="pl-c"><span class="pl-c">//</span> import Angular's modules</span>
+    <span class="pl-smi">RestangularModule</span>.<span class="pl-en">forRoot</span>(RestangularConfigFactory),
+  ],
+&#125;)
+
+<span class="pl-c"><span class="pl-c">//</span> Then, later in your code you can do the following:</span>
+
+<span class="pl-c"><span class="pl-c">//</span> GET to /buildings/123/evaluate?myParam=param with headers myHeader: value</span>
+
+<span class="pl-c"><span class="pl-c">//</span> Signature for this "custom created" methods is (params, headers, elem) if it's a safe operation (GET, OPTIONS, etc.)</span>
+<span class="pl-c"><span class="pl-c">//</span> If it's an unsafe operation (POST, PUT, etc.), signature is (elem, params, headers).</span>
+
+<span class="pl-c"><span class="pl-c">//</span> If something is set to any of this variables, the default set in the method creation will be overridden</span>
+<span class="pl-c"><span class="pl-c">//</span> If nothing is set, then the defaults are sent</span>
+<span class="pl-smi">Restangular</span>.<span class="pl-en">one</span>(<span class="pl-s"><span class="pl-pds">'</span>buildings<span class="pl-pds">'</span></span>, <span class="pl-c1">123</span>).<span class="pl-c1">evaluate</span>(&#123;myParam<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>param<span class="pl-pds">'</span></span>&#125;);
+
+<span class="pl-c"><span class="pl-c">//</span> GET to /buildings/123/evaluate?myParam=param with headers myHeader: specialHeaderCase</span>
+
+<span class="pl-smi">Restangular</span>.<span class="pl-en">one</span>(<span class="pl-s"><span class="pl-pds">'</span>buildings<span class="pl-pds">'</span></span>, <span class="pl-c1">123</span>).<span class="pl-c1">evaluate</span>(&#123;myParam<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>param<span class="pl-pds">'</span></span>&#125;, &#123;<span class="pl-s"><span class="pl-pds">'</span>myHeader<span class="pl-pds">'</span></span><span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>specialHeaderCase<span class="pl-pds">'</span></span>&#125;);
+
+<span class="pl-c"><span class="pl-c">//</span> Here the body of the POST is going to be &#123;key: value&#125; as POST is an unsafe operation</span>
+<span class="pl-smi">Restangular</span>.<span class="pl-c1">all</span>(<span class="pl-s"><span class="pl-pds">'</span>users<span class="pl-pds">'</span></span>).<span class="pl-en">login</span>(&#123;key<span class="pl-k">:</span> value&#125;);
+</pre></code></div>
+      <h4><a id="user-content-adding-custom-methods-to-collections" class="anchor" href="#adding-custom-methods-to-collections" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Adding Custom Methods to Collections</h4>
+      <p>Create custom methods for your collection using Restangular.extendCollection(). This is an alias for:</p>
+      <div class="highlight highlight-source-js"><pre>  <span class="pl-smi">RestangularProvider</span>.<span class="pl-en">addElementTransformer</span>(route, <span class="pl-c1">true</span>, fn);</pre></div>
+      <h5><a id="user-content-example" class="anchor" href="#example" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example:</h5>
+      <div class="highlight highlight-source-js"><code><pre>  <span class="pl-c"><span class="pl-c">//</span> create methods for your collection</span>
+  <span class="pl-smi">Restangular</span>.<span class="pl-en">extendCollection</span>(<span class="pl-s"><span class="pl-pds">'</span>accounts<span class="pl-pds">'</span></span>, <span class="pl-k">function</span>(<span class="pl-smi">collection</span>) &#123;
+    <span class="pl-smi">collection</span>.<span class="pl-en">totalAmount</span> <span class="pl-k">=</span> <span class="pl-k">function</span>() &#123;
+      <span class="pl-c"><span class="pl-c">//</span> implementation here</span>
+    &#125;;
+
+    <span class="pl-k">return</span> collection;
+  &#125;);
+
+  <span class="pl-k">var</span> accounts$ <span class="pl-k">=</span> <span class="pl-smi">Restangular</span>.<span class="pl-c1">all</span>(<span class="pl-s"><span class="pl-pds">'</span>accounts<span class="pl-pds">'</span></span>).<span class="pl-en">getList</span>();
+
+  <span class="pl-smi">accounts$</span>.<span class="pl-en">subscribe</span>( <span class="pl-smi">accounts</span> <span class="pl-k">=&gt;</span> &#123;
+    <span class="pl-smi">accounts</span>.<span class="pl-en">totalAmount</span>(); <span class="pl-c"><span class="pl-c">//</span> invoke your custom collection method</span>
+  &#125;);</pre></code></div>
+      <h4><a id="user-content-adding-custom-methods-to-models" class="anchor" href="#adding-custom-methods-to-models" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Adding Custom Methods to Models</h4>
+      <p>Create custom methods for your models using Restangular.extendModel(). This is an alias for:</p>
+      <div class="highlight highlight-source-js"><pre>  <span class="pl-smi">RestangularProvider</span>.<span class="pl-en">addElementTransformer</span>(route, <span class="pl-c1">false</span>, fn);</pre></div>
+      <h5><a id="user-content-example-1" class="anchor" href="#example-1" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example:</h5>
+      <div class="highlight highlight-source-js"><code><pre>  <span class="pl-smi">Restangular</span>.<span class="pl-en">extendModel</span>(<span class="pl-s"><span class="pl-pds">'</span>accounts<span class="pl-pds">'</span></span>, <span class="pl-k">function</span>(<span class="pl-smi">model</span>) &#123;
+    <span class="pl-smi">model</span>.<span class="pl-en">prettifyAmount</span> <span class="pl-k">=</span> <span class="pl-k">function</span>() &#123;&#125;;
+    <span class="pl-k">return</span> model;
+  &#125;);
+
+  <span class="pl-k">var</span> account$ <span class="pl-k">=</span> <span class="pl-smi">Restangular</span>.<span class="pl-en">one</span>(<span class="pl-s"><span class="pl-pds">'</span>accounts<span class="pl-pds">'</span></span>, <span class="pl-c1">1</span>).<span class="pl-c1">get</span>();
+
+  <span class="pl-smi">account$</span>.<span class="pl-en">subscribe</span>(<span class="pl-k">function</span>(<span class="pl-smi">account</span>) &#123;
+    <span class="pl-smi">account</span>.<span class="pl-en">prettifyAmount</span>(); <span class="pl-c"><span class="pl-c">//</span> invoke your custom model method</span>
+  &#125;);</pre></code></div>
+      <h3><a id="user-content-faq" class="anchor" href="#faq" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>FAQ</h3>
+      <h6><a id="user-content-how-can-i-handle-errors" class="anchor" href="#how-can-i-handle-errors" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><strong>How can I handle errors?</strong></h6>
+      <p>Errors can be checked on the second argument of the subscribe.</p>
+      <div class="highlight highlight-source-js"><code><pre><span class="pl-smi">Restangular</span>.<span class="pl-c1">all</span>(<span class="pl-s"><span class="pl-pds">"</span>accounts<span class="pl-pds">"</span></span>).<span class="pl-en">getList</span>().<span class="pl-en">subscribe</span>( <span class="pl-smi">response</span> <span class="pl-k">=&gt;</span> &#123;
+  <span class="pl-en">console</span>.<span class="pl-c1">log</span>(<span class="pl-s"><span class="pl-pds">"</span>All ok<span class="pl-pds">"</span></span>);
+&#125;, <span class="pl-smi">errorResponse</span> <span class="pl-k">=&gt;</span> &#123;
+  <span class="pl-en">console</span>.<span class="pl-c1">log</span>(<span class="pl-s"><span class="pl-pds">"</span>Error with status code<span class="pl-pds">"</span></span>, <span class="pl-smi">errorResponse</span>.<span class="pl-c1">status</span>);
+&#125;);</pre></code></div>
+      <h6><a id="user-content-i-need-to-send-authorization-token-in-every-restangular-request-how-can-i-do-this" class="anchor" href="#i-need-to-send-authorization-token-in-every-restangular-request-how-can-i-do-this" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><strong>I need to send Authorization token in EVERY Restangular request, how can I do this?</strong></h6>
+      <p>You can use <code>setDefaultHeaders</code> or <code>addFullRequestInterceptor</code></p>
+      <div class="highlight highlight-source-js"><code><pre><span class="pl-k">import</span> &#123; <span class="pl-smi">NgModule</span> &#125; <span class="pl-k">from</span> <span class="pl-s"><span class="pl-pds">'</span>@angular/core<span class="pl-pds">'</span></span>;
+<span class="pl-k">import</span> &#123; <span class="pl-smi">AppComponent</span> &#125; <span class="pl-k">from</span> <span class="pl-s"><span class="pl-pds">'</span>./app.component<span class="pl-pds">'</span></span>;
+<span class="pl-k">import</span> &#123; <span class="pl-smi">RestangularModule</span> &#125; <span class="pl-k">from</span> <span class="pl-s"><span class="pl-pds">'</span>ng2-restangular<span class="pl-pds">'</span></span>;
+<span class="pl-k">import</span> &#123; <span class="pl-smi">authService</span> &#125; <span class="pl-k">from</span> <span class="pl-s"><span class="pl-pds">'</span>../your-services<span class="pl-pds">'</span></span>;
+
+<span class="pl-c"><span class="pl-c">//</span> Function for settting the default restangular configuration</span>
+<span class="pl-k">export</span> <span class="pl-k">function</span> <span class="pl-en">RestangularConfigFactory</span> (<span class="pl-smi">RestangularProvider</span>, <span class="pl-smi">authService</span>) &#123;
+
+  <span class="pl-c"><span class="pl-c">//</span> set static header</span>
+  <span class="pl-smi">RestangularProvider</span>.<span class="pl-en">setDefaultHeaders</span>(&#123;<span class="pl-s"><span class="pl-pds">'</span>Authorization<span class="pl-pds">'</span></span><span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>Bearer UDXPx-Xko0w4BRKajozCVy20X11MRZs1<span class="pl-pds">'</span></span>&#125;);
+
+  <span class="pl-c"><span class="pl-c">//</span> by each request to the server receive a token and update headers with it</span>
+  <span class="pl-smi">RestangularProvider</span>.<span class="pl-en">addFullRequestInterceptor</span>((<span class="pl-smi">element</span>, <span class="pl-smi">operation</span>, <span class="pl-smi">path</span>, <span class="pl-smi">url</span>, <span class="pl-smi">headers</span>, <span class="pl-smi">params</span>) <span class="pl-k">=&gt;</span> &#123;
+    <span class="pl-k">let</span> bearerToken <span class="pl-k">=</span> <span class="pl-smi">authService</span>.<span class="pl-en">getBearerToken</span>();
+
+    <span class="pl-k">return</span> &#123;
+      headers<span class="pl-k">:</span> <span class="pl-c1">Object</span>.<span class="pl-en">assign</span>(&#123;&#125;, headers, &#123;Authorization<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">`</span>Bearer <span class="pl-s1"><span class="pl-pse">$&#123;</span>bearerToken<span class="pl-pse">&#125;</span></span><span class="pl-pds">`</span></span>&#125;)
+    &#125;;
+  &#125;);
+&#125;
+
+<span class="pl-c"><span class="pl-c">//</span> AppModule is the main entry point into Angular2 bootstraping process</span>
+@<span class="pl-en">NgModule</span>(&#123;
+  bootstrap<span class="pl-k">:</span> [ AppComponent ],
+  declarations<span class="pl-k">:</span> [
+    AppComponent,
+  ],
+  imports<span class="pl-k">:</span> [
+    <span class="pl-c"><span class="pl-c">//</span> Importing RestangularModule and making default configs for restanglar</span>
+    <span class="pl-smi">RestangularModule</span>.<span class="pl-en">forRoot</span>([authService], RestangularConfigFactory),
+  ]
+&#125;)
+<span class="pl-k">export</span> <span class="pl-k">class</span> <span class="pl-en">AppModule</span> &#123;
+&#125;</pre></code></div>
+      <h6><a id="user-content-i-need-to-send-one-header-in-every-restangular-request-how-can-i-do-this" class="anchor" href="#i-need-to-send-one-header-in-every-restangular-request-how-can-i-do-this" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><strong>I need to send one header in EVERY Restangular request, how can I do this?</strong></h6>
+      <p>You can use <code>defaultHeaders</code> property for this. <code>defaultsHeaders</code> can be scoped with <code>withConfig</code> so it's really cool.</p>
+      <h6><a id="user-content-how-can-i-send-a-delete-without-a-body" class="anchor" href="#how-can-i-send-a-delete-without-a-body" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><strong>How can I send a delete WITHOUT a body?</strong></h6>
+      <p>You must add a requestInterceptor for this.</p>
+      <div class="highlight highlight-source-js"><code><pre><span class="pl-smi">RestangularProvider</span>.<span class="pl-en">setRequestInterceptor</span>(<span class="pl-k">function</span>(<span class="pl-smi">elem</span>, <span class="pl-smi">operation</span>) &#123;
+  <span class="pl-k">if</span> (operation <span class="pl-k">===</span> <span class="pl-s"><span class="pl-pds">"</span>remove<span class="pl-pds">"</span></span>) &#123;
+     <span class="pl-k">return</span> <span class="pl-c1">null</span>;
+  &#125;
+  <span class="pl-k">return</span> elem;
+&#125;)</pre></code></div>
+      <h6><a id="user-content-i-use-mongo-and-the-id-of-the-elements-is-_id-not-id-as-the-default-therefore-requests-are-sent-to-undefined-routes" class="anchor" href="#i-use-mongo-and-the-id-of-the-elements-is-_id-not-id-as-the-default-therefore-requests-are-sent-to-undefined-routes" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><strong>I use Mongo and the ID of the elements is <code>_id</code> not <code>id</code> as the default. Therefore requests are sent to undefined routes</strong></h6>
+      <p>What you need to do is to configure the <code>RestangularFields</code> and set the <code>id</code> field to <code>_id</code>. Let's see how:</p>
+      <div class="highlight highlight-source-js"><code><pre><span class="pl-smi">RestangularProvider</span>.<span class="pl-en">setRestangularFields</span>(&#123;
+  id<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>_id<span class="pl-pds">"</span></span>
+&#125;);</pre></code></div>
+      <h6><a id="user-content-what-if-each-of-my-models-has-a-different-id-name-like-customerid-for-customer" class="anchor" href="#what-if-each-of-my-models-has-a-different-id-name-like-customerid-for-customer" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><strong>What if each of my models has a different ID name like CustomerID for Customer</strong></h6>
+      <p>In some cases, people have different ID name for each entity. For example, they have CustomerID for customer and EquipmentID for Equipment. If that's the case, you can override Restangular's getIdFromElem. For that, you need to do:</p>
+      <div class="highlight highlight-source-js"><code><pre><span class="pl-smi">RestangularProvider</span>.<span class="pl-smi">configuration</span>.<span class="pl-en">getIdFromElem</span> <span class="pl-k">=</span> <span class="pl-k">function</span>(<span class="pl-smi">elem</span>) &#123;
+  <span class="pl-c"><span class="pl-c">//</span> if route is customers ==&gt; returns customerID</span>
+  <span class="pl-k">return</span> elem[<span class="pl-smi">_</span>.<span class="pl-en">initial</span>(<span class="pl-smi">elem</span>.<span class="pl-smi">route</span>).<span class="pl-c1">join</span>(<span class="pl-s"><span class="pl-pds">'</span><span class="pl-pds">'</span></span>) <span class="pl-k">+</span> <span class="pl-s"><span class="pl-pds">"</span>ID<span class="pl-pds">"</span></span>];
+&#125;</pre></code></div>
+      <p>With that, you'd get what you need :)</p>
+      <h6><a id="user-content-how-can-i-send-files-in-my-request-using-restangular" class="anchor" href="#how-can-i-send-files-in-my-request-using-restangular" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><strong>How can I send files in my request using Restangular?</strong></h6>
+      <p>This can be done using the customPOST / customPUT method. Look at the following example:</p>
+      <div class="highlight highlight-source-js"><code><pre><span class="pl-smi">Restangular</span>.<span class="pl-c1">all</span>(<span class="pl-s"><span class="pl-pds">'</span>users<span class="pl-pds">'</span></span>)
+.<span class="pl-en">customPOST</span>(formData, <span class="pl-c1">undefined</span>, <span class="pl-c1">undefined</span>, &#123; <span class="pl-s"><span class="pl-pds">'</span>Content-Type<span class="pl-pds">'</span></span><span class="pl-k">:</span> <span class="pl-c1">undefined</span> &#125;);</pre></code></div>
+      <p>This basically tells the request to use the <em>Content-Type: multipart/form-data</em> as the header. Also <em>formData</em> is the body of the request, be sure to add all the params here, including the File you want to send of course.</p>
+      <h6><a id="user-content-how-do-i-handle-crud-operations-in-a-list-returned-by-restangular" class="anchor" href="#how-do-i-handle-crud-operations-in-a-list-returned-by-restangular" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><strong>How do I handle CRUD operations in a List returned by Restangular?</strong></h6>
+      <div class="highlight highlight-source-js"><code><pre><span class="pl-smi">Restangular</span>.<span class="pl-c1">all</span>(<span class="pl-s"><span class="pl-pds">'</span>users<span class="pl-pds">'</span></span>).<span class="pl-en">getList</span>().<span class="pl-en">subscribe</span>( <span class="pl-smi">users</span> <span class="pl-k">=&gt;</span> &#123;
+  <span class="pl-c1">this</span>.<span class="pl-smi">users</span> <span class="pl-k">=</span> users;
+  <span class="pl-k">var</span> userWithId <span class="pl-k">=</span> <span class="pl-smi">_</span>.<span class="pl-c1">find</span>(users, <span class="pl-k">function</span>(<span class="pl-smi">user</span>) &#123;
+    <span class="pl-k">return</span> <span class="pl-smi">user</span>.<span class="pl-c1">id</span> <span class="pl-k">===</span> <span class="pl-c1">123</span>;
+  &#125;);
+
+  <span class="pl-smi">userWithId</span>.<span class="pl-c1">name</span> <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">"</span>Gonto<span class="pl-pds">"</span></span>;
+  <span class="pl-smi">userWithId</span>.<span class="pl-en">put</span>();
+
+  <span class="pl-c"><span class="pl-c">//</span> Alternatively delete the element from the list when finished</span>
+  <span class="pl-smi">userWithId</span>.<span class="pl-c1">remove</span>().<span class="pl-en">subscribe</span>( () <span class="pl-k">=&gt;</span> &#123;
+    <span class="pl-c"><span class="pl-c">//</span> Updating the list and removing the user after the response is OK.</span>
+    <span class="pl-c1">this</span>.<span class="pl-smi">users</span> <span class="pl-k">=</span> <span class="pl-smi">_</span>.<span class="pl-en">without</span>(<span class="pl-c1">this</span>.<span class="pl-smi">users</span>, userWithId);
+  &#125;);
+
+&#125;);</pre></code></div>
+      <h6><a id="user-content-removing-an-element-from-a-collection-keeping-the-collection-restangularized" class="anchor" href="#removing-an-element-from-a-collection-keeping-the-collection-restangularized" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Removing an element from a collection, keeping the collection restangularized</h6>
+      <p>While the example above removes the deleted user from the collection, it also overwrites the collection object with a plain array (because of <code>_.without</code>) which no longer knows about its Restangular attributes.</p>
+      <p>If want to keep the restangularized collection, remove the element by modifying the collection in place:</p>
+      <div class="highlight highlight-source-js"><code><pre><span class="pl-smi">userWithId</span>.<span class="pl-c1">remove</span>().<span class="pl-en">subscribe</span>( () <span class="pl-k">=&gt;</span> &#123;
+  <span class="pl-k">let</span> index <span class="pl-k">=</span> <span class="pl-smi">$scope</span>.<span class="pl-smi">users</span>.<span class="pl-c1">indexOf</span>(userWithId);
+  <span class="pl-k">if</span> (index <span class="pl-k">&gt;</span> <span class="pl-k">-</span><span class="pl-c1">1</span>) <span class="pl-c1">this</span>.<span class="pl-smi">users</span>.<span class="pl-c1">splice</span>(index, <span class="pl-c1">1</span>);
+&#125;);</pre></code></div>
+      <h6><a id="user-content-how-can-i-access-the-unrestangularized-element-as-well-as-the-restangularized-one" class="anchor" href="#how-can-i-access-the-unrestangularized-element-as-well-as-the-restangularized-one" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>How can I access the <code>unrestangularized</code> element as well as the <code>restangularized</code> one?</h6>
+      <p>In order to get this done, you need to use the <code>responseExtractor</code>. You need to set a property there that will point to the original response received. Also, you need to actually copy this response as that response is the one that's going to be <code>restangularized</code> later</p>
+      <div class="highlight highlight-source-js"><code><pre><span class="pl-smi">RestangularProvider</span>.<span class="pl-en">setResponseExtractor</span>( (<span class="pl-smi">response</span>) <span class="pl-k">=&gt;</span> &#123;
+  <span class="pl-k">var</span> newResponse <span class="pl-k">=</span> response;
+  <span class="pl-k">if</span> (<span class="pl-smi">_</span>.<span class="pl-en">isArray</span>(response)) &#123;
+    <span class="pl-smi">_</span>.<span class="pl-c1">forEach</span>(newResponse, <span class="pl-k">function</span>(<span class="pl-smi">value</span>, <span class="pl-smi">key</span>) &#123;
+      newResponse[key].<span class="pl-smi">originalElement</span> <span class="pl-k">=</span> <span class="pl-smi">_</span>.<span class="pl-en">clone</span>(value);
+    &#125;);
+  &#125; <span class="pl-k">else</span> &#123;
+    <span class="pl-smi">newResponse</span>.<span class="pl-smi">originalElement</span> <span class="pl-k">=</span> <span class="pl-smi">_</span>.<span class="pl-en">clone</span>(response);
+  &#125;
+
+  <span class="pl-k">return</span> newResponse;
+&#125;);</pre></code></div>
+      <p>Alternatively, if you just want the stripped out response on any given call, you can use the .plain() method, doing something like this:</p>
+      <div class="highlight highlight-source-js"><pre><span class="pl-c1">this</span>.<span class="pl-en">showData</span> <span class="pl-k">=</span> <span class="pl-k">function</span> () &#123;
+  <span class="pl-smi">baseUrl</span>.<span class="pl-en">post</span>(someData).<span class="pl-en">subscribe</span>( (<span class="pl-smi">response</span>) <span class="pl-k">=&gt;</span> &#123;
+    <span class="pl-en">console</span>.<span class="pl-c1">log</span>(<span class="pl-smi">response</span>.<span class="pl-en">plain</span>());
+  &#125;);
+&#125;;</pre></div>
+      <h6><a id="user-content-how-can-add-withcredentials-params-to-requests" class="anchor" href="#how-can-add-withcredentials-params-to-requests" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>How can add withCredentials params to requests?</h6>
+      <div class="highlight highlight-source-js"><code><pre><span class="pl-c"><span class="pl-c">//</span> Function for settting the default restangular configuration</span>
+<span class="pl-k">export</span> <span class="pl-k">function</span> <span class="pl-en">RestangularConfigFactory</span> (<span class="pl-smi">RestangularProvider</span>) &#123;
+  <span class="pl-c"><span class="pl-c">//</span> Adding withCredential parametr to all Restangular requests</span>
+  <span class="pl-smi">RestangularProvider</span>.<span class="pl-en">setDefaultHttpFields</span>(&#123; withCredentials<span class="pl-k">:</span> <span class="pl-c1">true</span> &#125;);
+&#125;
+
+@<span class="pl-en">NgModule</span>(&#123;
+  bootstrap<span class="pl-k">:</span> [ AppComponent ],
+  declarations<span class="pl-k">:</span> [
+    AppComponent,
+  ],
+  imports<span class="pl-k">:</span> [
+    <span class="pl-c"><span class="pl-c">//</span> Global configuration</span>
+    <span class="pl-smi">RestangularModule</span>.<span class="pl-en">forRoot</span>(RestangularConfigFactory),
+  ]
+&#125;)
+<span class="pl-k">export</span> <span class="pl-k">class</span> <span class="pl-en">AppModule</span> &#123;&#125;</pre></code></div>
+      <h3><a id="user-content-server-frameworks" class="anchor" href="#server-frameworks" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Server Frameworks</h3>
+      <p>Users reported that this server frameworks play real nice with Ng2-Restangular, as they let you create a Nested RESTful Resources API easily:</p>
+      <ul>
+        <li>Ruby on Rails</li>
+        <li>CakePHP, Laravel and FatFREE, Symfony2 with RestBundle, Silex for PHP</li>
+        <li>Play1 &amp; 2 for Java &amp; scala</li>
+        <li>Dropwizard for Java</li>
+        <li>Restify and Express for NodeJS</li>
+        <li>Tastypie and Django Rest Framework for Django</li>
+        <li>Slim Framework</li>
+        <li>Symfony2 with FOSRestBundle (PHP)</li>
+        <li>Microsoft ASP.NET Web API 2</li>
+        <li>Grails Framework (<a href="https://github.com/rmondejar/grails-angular-duo">example</a>)</li>
+      </ul>
+      <h3><a id="user-content-license" class="anchor" href="#license" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>License</h3>
+      <p>The MIT License</p>
+    </div>
+  </div>
+</main>
