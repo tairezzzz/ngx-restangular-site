@@ -4,7 +4,8 @@ import { PageScrollService, PageScrollInstance, PageScrollConfig } from 'ng2-pag
 
 import { isPlatformBrowser, isPlatformServer } from '@angular/common';
 import { DOCUMENT } from '@angular/platform-browser';
-//import { isSideBarShowen } from './app.module';
+import { MainService } from '../core/services/main.service';
+
 @Component({
   selector: 'sidebar',
   host: {
@@ -410,20 +411,19 @@ export class SidebarComponent implements OnInit {
   
   public elementRef;
   
-  @Input() isSideBarShowen;
-  
   constructor(
     private pageScrollService: PageScrollService,
     @Inject(PLATFORM_ID) private platformId: Object,
     @Inject(DOCUMENT) private document: any,
-    public myElement: ElementRef
+    public myElement: ElementRef,
+    public mainService: MainService
   ) {
     PageScrollConfig.defaultScrollOffset = 64;
     this.elementRef = myElement;
   }
   
   ngOnInit() {
-
+    
   }
   
   public goToHead(target, children): void {
@@ -434,8 +434,6 @@ export class SidebarComponent implements OnInit {
   };
   
   handleClick(event){
-    debugger;
-   console.log(this.isSideBarShowen);
     let clickedComponent = event.target;
     let inside = false;
     do {
@@ -445,11 +443,9 @@ export class SidebarComponent implements OnInit {
       clickedComponent = clickedComponent.parentNode;
     } while (clickedComponent);
     if(inside){
-      this.isSideBarShowen = true;
-      console.log('inside');
+      this.mainService.isSideBarShowen = true;
     }else{
-      this.isSideBarShowen = false;
-      console.log('outside');
+      this.mainService.isSideBarShowen = false;
     }
   };
 }

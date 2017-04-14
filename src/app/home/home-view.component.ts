@@ -16,7 +16,4 @@ export class HomeViewComponent implements OnInit {
     //  return `${data.greeting} ${data.name}`;
     //});
   }
-  hideSidebar() {
-    
-  }
 }

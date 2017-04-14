@@ -4,19 +4,17 @@ import { PageScrollService, PageScrollInstance, PageScrollConfig } from 'ng2-pag
 import { Inject, Injectable } from '@angular/core';
 import { isPlatformBrowser, isPlatformServer } from '@angular/common';
 import { DOCUMENT } from '@angular/platform-browser';
+import { MainService } from './core/services/main.service';
+
+Injectable();
 
 @Component({
 	selector: 'restangular-app',
     templateUrl: './app.component.html',
-    //host: {
-    //    '(document:click)': 'handleClick($event)',
-    //},
     styleUrls: [/*'../../node_modules/materialize-css/dist/css/materialize.css',*/ './app.component.css']
 })
+
 export class AppComponent implements OnInit {
-    
-    private isSideBarShowen = false;
-    //public elementRef;
     
     constructor(
         private cache: TransferState,
@@ -24,10 +22,9 @@ export class AppComponent implements OnInit {
         //private pageScrollService: PageScrollService,
         @Inject(DOCUMENT) private document: any,
         private renderer:Renderer2,
-        //public myElement: ElementRef
+        public mainService: MainService
     ) {
         PageScrollConfig.defaultScrollOffset = 64;
-        //this.elementRef = myElement;
     }
 
     ngOnInit() {
@@ -35,33 +32,17 @@ export class AppComponent implements OnInit {
             
         }
         this.cache.set('cached', true);
+
     }
     
-    public sideBar() {
-        if (this.isSideBarShowen) {
-            this.isSideBarShowen = false;
+    public sideBar(e) {
+        e.stopPropagation();
+        if (this.mainService.isSideBarShowen) {
+            this.mainService.isSideBarShowen = false;
         } else {
-            this.isSideBarShowen = true;
+            this.mainService.isSideBarShowen = true;
         }
     }
-    
-    //handleClick(event){
-    //    debugger;
-    //    let clickedComponent = event.target;
-    //    let inside = false;
-    //    do {
-    //        if (clickedComponent === this.elementRef.nativeElement) {
-    //            inside = true;
-    //        }
-    //        clickedComponent = clickedComponent.parentNode;
-    //    } while (clickedComponent);
-    //    if(inside){
-    //        console.log('inside');
-    //    }else{
-    //        console.log('outside');
-    //    }
-    //};
-    
 
 }
 

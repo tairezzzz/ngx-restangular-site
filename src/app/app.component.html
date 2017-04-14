@@ -3,7 +3,7 @@
         <div class="container">
             <div class="nav-wrapper">
                 <a href="#" class="brand-logo">Stars on GitHub</a>
-                <a data-activates="mobile-demo" class="custom-burger-menu hide-on-large-only button-collapse" (click)="sideBar()">
+                <a data-activates="mobile-demo" class="custom-burger-menu hide-on-large-only button-collapse" (click)="sideBar($event)">
                     <i class="material-icons">menu</i>
                 </a>
                 <ul id="top-nav-mobile" class="right hide-on-med-and-down">
@@ -13,12 +13,12 @@
             </div>
         </div>
     </nav>
-  <sidebar class="custom-sidebar z-depth-4" [ngClass]="{show: isSideBarShowen}"></sidebar>
+  <sidebar></sidebar>
 </header>
 <router-outlet></router-outlet>
 <footer>
   <div class="container">
-    <div class="row">© Ngx-Restangular 2017</div>
+    <div class="row">2muchcoffee team</div>
   </div>
 </footer>
 

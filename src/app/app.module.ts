@@ -8,6 +8,7 @@ import { HomeViewComponent } from './home/home-view.component';
 import { TransferHttpModule } from '../modules/transfer-http/transfer-http.module';
 import { Ng2PageScrollModule } from 'ng2-page-scroll';
 import { SidebarComponent } from './sidebar/sidebar.component';
+import { MainService } from './core/services/main.service';
 
 @NgModule({
 	imports: [
@@ -21,6 +22,7 @@ import { SidebarComponent } from './sidebar/sidebar.component';
         Ng2PageScrollModule.forRoot()
 	],
 	declarations: [ AppComponent, HomeViewComponent, SidebarComponent ],
+  providers: [MainService],
   exports: [ AppComponent ]
 })
 export class AppModule {}

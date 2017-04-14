@@ -1,3 +1,4 @@
+<div [ngClass]="{show: mainService.isSideBarShowen}" class="custom-sidebar z-depth-4">
 <div class="logo"><img src="./../assets/ngx_logo_1.png" id="logo-container" class="brand-logo"></div>
 <div class="tab" *ngFor="let itemsFirstLevel of menu">
   <input [id]="'menu-' + itemsFirstLevel.link" type="radio" [name]="itemsFirstLevel.inputName">
@@ -50,4 +51,5 @@
       </div>
     </div>
   </div>
+</div>
 </div>
