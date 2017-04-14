@@ -8,13 +8,15 @@ import { HomeViewComponent } from './home/home-view.component';
 import { TransferHttpModule } from '../modules/transfer-http/transfer-http.module';
 import { Ng2PageScrollModule } from 'ng2-page-scroll';
 import { SidebarComponent } from './sidebar/sidebar.component';
-import { MainService } from './core/services/main.service';
+import { CoreModule } from './core/core.module';
+//import { MainService } from './core/services/main.service';
 
 @NgModule({
 	imports: [
         CommonModule,
         HttpModule,
         TransferHttpModule,
+        CoreModule,
         RouterModule.forRoot([
           { path: '', component: HomeViewComponent, pathMatch: 'full'},
           { path: 'lazy', loadChildren: './+lazy/lazy.module#LazyModule'}
@@ -22,7 +24,7 @@ import { MainService } from './core/services/main.service';
         Ng2PageScrollModule.forRoot()
 	],
 	declarations: [ AppComponent, HomeViewComponent, SidebarComponent ],
-  providers: [MainService],
+  //providers: [MainService],
   exports: [ AppComponent ]
 })
 export class AppModule {}

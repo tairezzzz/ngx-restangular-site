@@ -15,6 +15,7 @@ Injectable();
 })
 
 export class AppComponent implements OnInit {
+    public stars;
     
     constructor(
         private cache: TransferState,
@@ -29,10 +30,13 @@ export class AppComponent implements OnInit {
 
     ngOnInit() {
         if (isPlatformBrowser(this.platformId)) {
-            
+        this.mainService.getStars().subscribe((res) => {
+                this.stars = res.stargazers_count;
+            });
         }
         this.cache.set('cached', true);
 
+        
     }
     
     public sideBar(e) {
