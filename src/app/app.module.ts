@@ -9,6 +9,7 @@ import { TransferHttpModule } from '../modules/transfer-http/transfer-http.modul
 import { Ng2PageScrollModule } from 'ng2-page-scroll';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { CoreModule } from './core/core.module';
+import { MarkdownModule } from 'angular2-markdown';
 //import { MainService } from './core/services/main.service';
 
 @NgModule({
@@ -17,6 +18,7 @@ import { CoreModule } from './core/core.module';
         HttpModule,
         TransferHttpModule,
         CoreModule,
+    MarkdownModule.forRoot(),
         RouterModule.forRoot([
           { path: '', component: HomeViewComponent, pathMatch: 'full'},
           { path: 'lazy', loadChildren: './+lazy/lazy.module#LazyModule'}

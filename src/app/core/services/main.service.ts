@@ -12,8 +12,11 @@ export class MainService {
   ) { }
   
   getStars() {
-    return this.restangular.all('ng2-restangular').customGET();
+    return this.restangular.all('ngx-restangular').customGET();
   }
-  
-  
+  getReadmeFile() {
+    debugger;
+    return this.restangular.all('ngx-restangular').all('readme').customGET();
+  }
+
 }

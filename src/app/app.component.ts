@@ -17,6 +17,7 @@ Injectable();
 export class AppComponent implements OnInit {
     public stars;
     
+    
     constructor(
         private cache: TransferState,
         @Inject(PLATFORM_ID) private platformId: Object,
@@ -33,10 +34,9 @@ export class AppComponent implements OnInit {
         this.mainService.getStars().subscribe((res) => {
                 this.stars = res.stargazers_count;
             });
+            //stars$.unsubscribe();
         }
         this.cache.set('cached', true);
-
-        
     }
     
     public sideBar(e) {

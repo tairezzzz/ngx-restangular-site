@@ -29,6 +29,7 @@
     "@angular/platform-browser-dynamic": "^4.0.0",
     "@angular/platform-server": "^4.0.0",
     "@angular/router": "^4.0.0",
+    "angular2-markdown": "^1.5.1",
     "express": "^4.15.2",
     "font-awesome": "^4.7.0",
     "fs": "0.0.1-security",
