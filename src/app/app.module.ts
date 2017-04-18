@@ -18,7 +18,7 @@ import { MarkdownModule } from 'angular2-markdown';
         HttpModule,
         TransferHttpModule,
         CoreModule,
-    MarkdownModule.forRoot(),
+        MarkdownModule.forRoot(),
         RouterModule.forRoot([
           { path: '', component: HomeViewComponent, pathMatch: 'full'},
           { path: 'lazy', loadChildren: './+lazy/lazy.module#LazyModule'}

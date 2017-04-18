@@ -42,6 +42,14 @@ app.get('/data', (req, res) => {
   console.timeEnd(`GET: ${req.originalUrl}`);
 });
 
+app.get('/readme', (req, res) => {
+  res.send('Hello World!');
+  //console.time(`GET: ${req.originalUrl}`);
+  //res.json(api.getData());
+  //console.timeEnd(`GET: ${req.originalUrl}`);
+  console.log('test');
+});
+
 app.listen(8000,() => {
 	console.log(`Listening at ${baseUrl}`);
 });

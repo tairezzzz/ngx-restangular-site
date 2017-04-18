@@ -11,7 +11,7 @@ Injectable();
 @Component({
 	selector: 'restangular-app',
     templateUrl: './app.component.html',
-    styleUrls: [/*'../../node_modules/materialize-css/dist/css/materialize.css',*/ './app.component.css']
+    styleUrls: [/*'../../node_modules/materialize-css/dist/css/materialize.css', '../../node_modules/prismjs/themes/prism.css',*/ './app.component.css']
 })
 
 export class AppComponent implements OnInit {
