@@ -30,6 +30,8 @@
     "@angular/platform-server": "^4.0.0",
     "@angular/router": "^4.0.0",
     "angular2-markdown": "^1.5.1",
+    "cron": "^1.2.1",
+    "dotenv": "^4.0.0",
     "express": "^4.15.2",
     "font-awesome": "^4.7.0",
     "fs": "0.0.1-security",
@@ -38,6 +40,7 @@
     "ng2-restangular": "^1.0.0-beta.3",
     "primeng": "^4.0.0-rc.2",
     "rxjs": "^5.2.0",
+    "showdown": "^1.6.4",
     "xhr2": "^0.1.4",
     "zone.js": "^0.8.5"
   },

@@ -1,0 +1,1210 @@
+<h1 id="ngx-restangular">Ngx-restangular</h1>
+<p>This project is the follow-up of the <a href="https://github.com/mgonto/restangular/">Restangular</a>. Ngx-restangular is an Angular 2+ service that simplifies common GET, POST, DELETE, and UPDATE requests with a minimum of client code.<br />
+It's a perfect fit for any WebApp that consumes data from a RESTful API.</p>
+<h1 id="demo">Demo</h1>
+<p>Live Demo on Plunkr <a href="http://embed.plnkr.co/qozGPV2HowzmtKbC9a54/">Hero App</a>.<br />
+You can also check post about using ngx-restangular with <a href="https://restdb.io/">restdb.io</a> service in <a href="http://blog.2muchcoffee.com/angular_todo_application_with_ng2-restangular_and_restdb-io/">simple TODO Application</a></p>
+<h1 id="current-stage">Current stage</h1>
+<p>Ngx-restangular almost all functionality was transferred from the Restangular.<br />
+We are open to any cooperation in terms of its further development.</p>
+<h1 id="renaming-from-ng2-restangular-to-ngx-restangular">Renaming from ng2-restangular to ngx-restangular</h1>
+<p>This project was renamed from <strong>ng2-restangular</strong> to <strong>ngx-restangular</strong> due to implementation of Semantic Versioning by Angular Core Team. NPM name also changed, you can install actual version of project with <code>npm install ngx-restangular</code>.</p>
+<h1 id="table-of-contents">Table of contents</h1>
+<ul>
+<li><a href="#how-do-i-add-this-to-my-project-in-angular-2">How do I add this to my project in angular 2?</a></li>
+<li><a href="#how-do-i-add-this-to-my-project-in-angular-4">How do I add this to my project in angular 4?</a></li>
+<li><a href="#dependencies">Dependencies</a></li>
+<li><a href="#starter-guide">Starter Guide</a><ul>
+<li><a href="#quick-configuration-for-lazy-readers">Quick configuration for Lazy Readers</a></li>
+<li><a href="#using-restangular">Using Restangular</a></li>
+<li><a href="#creating-main-restangular-object">Creating Main Restangular object</a></li>
+<li><a href="#lets-code-with-observables">Lets Code with Observables!</a></li>
+<li><a href="#here-is-example-of-code-with-using-promises">Here is Example of code with using promises!</a></li>
+<li><a href="#configuring-restangular">Configuring Restangular</a></li>
+<li><a href="#properties">Properties</a><ul>
+<li><a href="#withconfig">withConfig</a></li>
+<li><a href="#setbaseurl">setBaseUrl</a></li>
+<li><a href="#setextrafields">setExtraFields</a></li>
+<li><a href="#setparentless">setParentless</a></li>
+<li><a href="#addelementtransformer">addElementTransformer</a></li>
+<li><a href="#settransformonlyserverelements">setTransformOnlyServerElements</a></li>
+<li><a href="#setonelemrestangularized">setOnElemRestangularized</a></li>
+<li><a href="#addresponseinterceptor">addResponseInterceptor</a></li>
+<li><a href="#addfullrequestinterceptor">addFullRequestInterceptor</a></li>
+<li><a href="#adderrorinterceptor">addErrorInterceptor</a></li>
+<li><a href="#setrestangularfields">setRestangularFields</a></li>
+<li><a href="#setmethodoverriders">setMethodOverriders</a></li>
+<li><a href="#setdefaultrequestparams">setDefaultRequestParams</a></li>
+<li><a href="#setfullresponse">setFullResponse</a></li>
+<li><a href="#setdefaultheaders">setDefaultHeaders</a></li>
+<li><a href="#setrequestsuffix">setRequestSuffix</a></li>
+<li><a href="#setusecannonicalid">setUseCannonicalId</a></li>
+<li><a href="#setplainbydefault">setPlainByDefault</a></li>
+<li><a href="#setencodeids">setEncodeIds</a></li></ul></li>
+<li><a href="#accessing-configuration">Accessing configuration</a></li>
+<li><a href="#how-to-configure-them-globally">How to configure them globally</a><ul>
+<li><a href="#configuring-in-the-appmodule">Configuring in the AppModule</a></li>
+<li><a href="#configuring-in-the-appmodule-with-dependency-injection-applied">Configuring in the AppModule with Dependency Injection applied</a></li></ul></li>
+<li><a href="#how-to-create-a-restangular-service-with-a-different-configuration-from-the-global-one">How to create a Restangular service with a different configuration from the global one</a></li>
+<li><a href="#decoupled-restangular-service">Decoupled Restangular Service</a></li>
+<li><a href="#methods-description">Methods description</a></li>
+<li><a href="#restangular-methods">Restangular methods</a></li>
+<li><a href="#element-methods">Element methods</a></li>
+<li><a href="#collection-methods">Collection methods</a></li>
+<li><a href="#custom-methods">Custom methods</a></li>
+<li><a href="#copying-elements">Copying elements</a></li>
+<li><a href="#using-values-directly-in-templates-with-observables">Using values directly in templates with Observables</a></li>
+<li><a href="#url-building">URL Building</a></li>
+<li><a href="#creating-new-restangular-methods">Creating new Restangular Methods</a></li>
+<li><a href="#adding-custom-methods-to-collections">Adding Custom Methods to Collections</a></li>
+<li><a href="#example">Example:</a></li>
+<li><a href="#adding-custom-methods-to-models">Adding Custom Methods to Models</a></li>
+<li><a href="#example-1">Example:</a></li></ul></li>
+<li><a href="#faq">FAQ</a><ul>
+<li><a href="#how-can-i-handle-errors">How can I handle errors?</a></li>
+<li><a href="#i-need-to-send-authorization-token-in-every-restangular-request-how-can-i-do-this">I need to send Authorization token in EVERY Restangular request, how can I do this?</a></li>
+<li><a href="#i-need-to-send-one-header-in-every-restangular-request-how-can-i-do-this">I need to send one header in EVERY Restangular request, how can I do this?</a></li>
+<li><a href="#how-can-i-send-a-delete-without-a-body">How can I send a delete WITHOUT a body?</a></li>
+<li><a href="#i-use-mongo-and-the-id-of-the-elements-is-_id-not-id-as-the-default-therefore-requests-are-sent-to-undefined-routes">I use Mongo and the ID of the elements is _id not id as the default. Therefore requests are sent to undefined routes</a></li>
+<li><a href="#what-if-each-of-my-models-has-a-different-id-name-like-customerid-for-customer">What if each of my models has a different ID name like CustomerID for Customer</a></li>
+<li><a href="#how-can-i-send-files-in-my-request-using-restangular">How can I send files in my request using Restangular?</a></li>
+<li><a href="#how-do-i-handle-crud-operations-in-a-list-returned-by-restangular">How do I handle CRUD operations in a List returned by Restangular?</a></li>
+<li><a href="#removing-an-element-from-a-collection-keeping-the-collection-restangularized">Removing an element from a collection, keeping the collection restangularized</a></li>
+<li><a href="#how-can-i-access-the-unrestangularized-element-as-well-as-the-restangularized-one">How can I access the unrestangularized element as well as the restangularized one?</a></li>
+<li><a href="#how-can-add-withcredentials-params-to-requests">How can add withCredentials params to requests?</a></li></ul></li>
+<li><a href="#server-frameworks">Server Frameworks</a></li>
+<li><a href="#license">License</a></li>
+</ul>
+<p><strong><a href="#table-of-contents">Back to top</a></strong></p>
+<h1 id="how-do-i-add-this-to-my-project-in-angular-2">How do I add this to my project in angular 2?</h1>
+<p>You can download this by:</p>
+<ul>
+<li>Using npm and running <code>npm install ng2-restangular</code></li>
+</ul>
+<p><strong><a href="#table-of-contents">Back to top</a></strong></p>
+<h1 id="how-do-i-add-this-to-my-project-in-angular-4">How do I add this to my project in angular 4?</h1>
+<p>You can download this by:</p>
+<ul>
+<li>Using npm and running <code>npm install ngx-restangular</code></li>
+</ul>
+<p><strong><a href="#table-of-contents">Back to top</a></strong></p>
+<h1 id="dependencies">Dependencies</h1>
+<p>Restangular depends on Angular2+ and Lodash.</p>
+<p><strong><a href="#table-of-contents">Back to top</a></strong></p>
+<h1 id="starter-guide">Starter Guide</h1>
+<h2 id="quick-configuration-for-lazy-readers">Quick Configuration (For Lazy Readers)</h2>
+<p>This is all you need to start using all the basic Restangular features.</p>
+<pre><code class="`javascript language-`javascript">import { NgModule } from '@angular/core';
+import { AppComponent } from './app.component';
+import { RestangularModule, Restangular } from 'ngx-restangular';
+
+// Function for settting the default restangular configuration
+export function RestangularConfigFactory (RestangularProvider) {
+  RestangularProvider.setBaseUrl('http://api.restngx.local/v1');
+  RestangularProvider.setDefaultHeaders({'Authorization': 'Bearer UDXPx-Xko0w4BRKajozCVy20X11MRZs1'});
+}
+
+// AppModule is the main entry point into Angular2 bootstraping process
+@NgModule({
+  bootstrap: [ AppComponent ],
+  declarations: [
+    AppComponent,
+  ],
+  imports: [
+    // Importing RestangularModule and making default configs for restanglar
+    RestangularModule.forRoot(RestangularConfigFactory),
+  ]
+})
+export class AppModule {
+}
+
+// later in code ...
+
+@Component({
+  ...
+})
+export class OtherComponent {
+  constructor(private restangular: Restangular) {
+  }
+
+  ngOnInit() {
+    // GET http://api.test.local/v1/users/2/accounts
+    this.restangular.one('users', 2).all('accounts').getList();
+  }</code></pre>
+<p>`<br />
+<strong><a href="#table-of-contents">Back to top</a></strong></p>
+<h2 id="using-restangular">Using Restangular</h2>
+<h3 id="creating-main-restangular-object">Creating Main Restangular object</h3>
+<p>There are 3 ways of creating a main Restangular object.<br />
+The first one and most common one is by stating the main route of all requests.<br />
+The second one is by stating the main route and object of all requests.</p>
+<pre><code class="`javascript language-`javascript">// Only stating main route
+Restangular.all('accounts')
+
+// Stating main object
+Restangular.one('accounts', 1234)
+
+// Gets a list of all of those accounts
+Restangular.several('accounts', 1234, 123, 12345);</code></pre>
+<p>`</p>
+<p><strong><a href="#table-of-contents">Back to top</a></strong></p>
+<h3 id="lets-code-with-observables">Lets Code with Observables!</h3>
+<p>Now that we have our main Object let's start playing with it.</p>
+<pre><code class="`javascript language-`javascript">// AppModule is the main entry point into Angular2 bootstraping process
+@NgModule({
+  bootstrap: [ AppComponent ],
+  declarations: [
+    AppComponent,
+  ],
+  imports: [
+    // Importing RestangularModule
+    RestangularModule,
+  ]
+})
+export class AppModule {
+}
+
+@Component({
+  ...
+})
+export class OtherComponent {
+  allAccounts;
+  accounts;
+  account;
+
+  constructor(private restangular: Restangular) {
+  }
+
+  ngOnInit() {
+    // First way of creating a this.restangular object. Just saying the base URL
+    let baseAccounts = this.restangular.all('accounts');
+
+    // This will query /accounts and return a observable.
+    baseAccounts.getList().subscribe(accounts =&gt; {
+      this.allAccounts = accounts;
+    });
+
+
+    let newAccount = {name: "Gonto's account"};
+
+    // POST /accounts
+    baseAccounts.post(newAccount);
+
+    // GET to http://www.google.com/ You set the URL in this case
+    this.restangular.allUrl('googlers', 'http://www.google.com/').getList();
+
+    // GET to http://www.google.com/1 You set the URL in this case
+    this.restangular.oneUrl('googlers', 'http://www.google.com/1').get();
+
+    // You can do RequestLess "connections" if you need as well
+
+    // Just ONE GET to /accounts/123/buildings/456
+    this.restangular.one('accounts', 123).one('buildings', 456).get();
+
+    // Just ONE GET to /accounts/123/buildings
+    this.restangular.one('accounts', 123).getList('buildings');
+
+    // Here we use Observables
+    // GET /accounts
+    let baseAccounts$ = baseAccounts.getList().subscribe(accounts =&gt; {
+      // Here we can continue fetching the tree :).
+
+      let firstAccount = accounts[0];
+      // This will query /accounts/123/buildings considering 123 is the id of the firstAccount
+      let buildings = firstAccount.getList("buildings");
+
+      // GET /accounts/123/places?query=param with request header: x-user:mgonto
+      let loggedInPlaces = firstAccount.getList("places", {query: 'param'}, {'x-user': 'mgonto'});
+
+      // This is a regular JS object, we can change anything we want :)
+      firstAccount.name = "Gonto";
+
+      // If we wanted to keep the original as it is, we can copy it to a new element
+      let editFirstAccount = this.restangular.copy(firstAccount);
+      editFirstAccount.name = "New Name";
+
+
+      // PUT /accounts/123. The name of this account will be changed from now on
+      firstAccount.put();
+      editFirstAccount.put();
+
+      // PUT /accounts/123. Save will do POST or PUT accordingly
+      firstAccount.save();
+
+      // DELETE /accounts/123 We don't have first account anymore :(
+      firstAccount.remove();
+
+    }, () =&gt; {
+      alert("Oops error from server :(");
+    });
+
+
+    // Get first account
+    let firstAccount$ = baseAccounts$.map(accounts =&gt; accounts[0]);
+
+
+    // POST /accounts/123/buildings with MyBuilding information
+    firstAccount$.switchMap(firstAccount =&gt; {
+      var myBuilding = {
+        name: "Gonto's Building",
+        place: "Argentina"
+      };
+
+      return firstAccount.post("Buildings", myBuilding)
+    })
+    .subscribe(() =&gt; {
+      console.log("Object saved OK");
+    }, () =&gt; {
+      console.log("There was an error saving");
+    });
+
+
+    // GET /accounts/123/users?query=params
+    firstAccount$.switchMap(firstAccount =&gt; {
+      var myBuilding = {
+        name: "Gonto's Building",
+        place: "Argentina"
+      };
+
+      return firstAccount.getList("users", {query: 'params'});
+    })
+    .subscribe((users) =&gt; {
+      // Instead of posting nested element, a collection can post to itself
+      // POST /accounts/123/users
+      users.post({userName: 'unknown'});
+
+      // Custom methods are available now :).
+      // GET /accounts/123/users/messages?param=myParam
+      users.customGET("messages", {param: "myParam"});
+
+      var firstUser = users[0];
+
+      // GET /accounts/123/users/456. Just in case we want to update one user :)
+      let userFromServer = firstUser.get();
+
+      // ALL http methods are available :)
+      // HEAD /accounts/123/users/456
+      firstUser.head()
+    }, () =&gt; {
+      console.log("There was an error saving");
+    });
+
+
+    // Second way of creating this.restangular object. URL and ID :)
+    var account = this.restangular.one("accounts", 123);
+
+    // GET /accounts/123?single=true
+    this.account = account.get({single: true});
+
+    // POST /accounts/123/messages?param=myParam with the body of name: "My Message"
+    account.customPOST({name: "My Message"}, "messages", {param: "myParam"}, {})
+  }
+}</code></pre>
+<p>`</p>
+<p><strong><a href="#table-of-contents">Back to top</a></strong></p>
+<h3 id="here-is-example-of-code-with-using-promises">Here is Example of code with using promises!</h3>
+<pre><code class="`javascript language-`javascript">@Component({
+  ...
+})
+export class OtherComponent {
+  allAccounts;
+  accounts;
+  account;
+
+  constructor(private restangular: Restangular) {
+  }
+
+  ngOnInit() {
+
+    // First way of creating a this.restangular object. Just saying the base URL
+    let baseAccounts = this.restangular.all('accounts');
+
+    // This will query /accounts and return a promise.
+    baseAccounts.getList().toPromise().then(function(accounts) {
+      this.allAccounts = accounts;
+    });
+
+    var newAccount = {name: "Gonto's account"};
+
+    // POST /accounts
+    baseAccounts.post(newAccount);
+
+    // GET to http://www.google.com/ You set the URL in this case
+    this.restangular.allUrl('googlers', 'http://www.google.com/').getList();
+
+    // GET to http://www.google.com/1 You set the URL in this case
+    this.restangular.oneUrl('googlers', 'http://www.google.com/1').get();
+
+    // You can do RequestLess "connections" if you need as well
+
+    // Just ONE GET to /accounts/123/buildings/456
+    this.restangular.one('accounts', 123).one('buildings', 456).get();
+
+    // Just ONE GET to /accounts/123/buildings
+    this.restangular.one('accounts', 123).getList('buildings');
+
+    // Here we use Promises then
+    // GET /accounts
+    baseAccounts.getList().toPromise().then(function (accounts) {
+      // Here we can continue fetching the tree :).
+
+      var firstAccount = accounts[0];
+      // This will query /accounts/123/buildings considering 123 is the id of the firstAccount
+      this.buildings = firstAccount.getList("buildings");
+
+      // GET /accounts/123/places?query=param with request header: x-user:mgonto
+      this.loggedInPlaces = firstAccount.getList("places", {query: 'param'}, {'x-user': 'mgonto'});
+
+      // This is a regular JS object, we can change anything we want :)
+      firstAccount.name = "Gonto";
+
+      // If we wanted to keep the original as it is, we can copy it to a new element
+      var editFirstAccount = this.restangular.copy(firstAccount);
+      editFirstAccount.name = "New Name";
+
+
+      // PUT /accounts/123. The name of this account will be changed from now on
+      firstAccount.put();
+      editFirstAccount.put();
+
+      // PUT /accounts/123. Save will do POST or PUT accordingly
+      firstAccount.save();
+
+      // DELETE /accounts/123 We don't have first account anymore :(
+      firstAccount.remove();
+
+      var myBuilding = {
+        name: "Gonto's Building",
+        place: "Argentina"
+      };
+
+      // POST /accounts/123/buildings with MyBuilding information
+      firstAccount.post("Buildings", myBuilding).toPromise().then(function() {
+        console.log("Object saved OK");
+      }, function() {
+        console.log("There was an error saving");
+      });
+
+      // GET /accounts/123/users?query=params
+      firstAccount.getList("users", {query: 'params'}).toPromise().then(function(users) {
+        // Instead of posting nested element, a collection can post to itself
+        // POST /accounts/123/users
+        users.post({userName: 'unknown'});
+
+        // Custom methods are available now :).
+        // GET /accounts/123/users/messages?param=myParam
+        users.customGET("messages", {param: "myParam"});
+
+        var firstUser = users[0];
+
+        // GET /accounts/123/users/456. Just in case we want to update one user :)
+        this.userFromServer = firstUser.get();
+
+        // ALL http methods are available :)
+        // HEAD /accounts/123/users/456
+        firstUser.head()
+
+      });
+
+    }, function errorCallback() {
+      alert("Oops error from server :(");
+    });
+
+    // Second way of creating this.restangular object. URL and ID :)
+    var account = this.restangular.one("accounts", 123);
+
+    // GET /accounts/123?single=true
+    this.account = account.get({single: true});
+
+    // POST /accounts/123/messages?param=myParam with the body of name: "My Message"
+    account.customPOST({name: "My Message"}, "messages", {param: "myParam"}, {})
+  }
+}</code></pre>
+<p>`</p>
+<p><strong><a href="#table-of-contents">Back to top</a></strong></p>
+<h2 id="configuring-restangular">Configuring Restangular</h2>
+<h3 id="properties">Properties</h3>
+<p>Restangular comes with defaults for all of its properties but you can configure them. <strong>So, if you don't need to configure something, there's no need to add the configuration.</strong><br />
+You can set all these configurations in <strong><a href="#how-to-configure-them-globally">RestangularModule</a> to change the global configuration</strong>, you can also <strong>use the <a href="#how-to-create-a-restangular-service-with-a-different-configuration-from-the-global-one">withConfig</a> method in Restangular service to create a new Restangular service with some scoped configuration</strong> or <strong>use <a href="#withconfig">withConfig</a> in component to make specified Restangular</strong>  </p>
+<h4 id="withconfig">withConfig</h4>
+<p>You can configure Restangular "withConfig" like in example below, you can also configure them globally **<a href="#how-to-configure-them-globally">RestangularModule</a> or in service with <a href="#how-to-create-a-restangular-service-with-a-different-configuration-from-the-global-one">withConfig</a></p>
+<p>````javascript<br />
+// Function for settting the default restangular configuration<br />
+export function RestangularConfigFactory (RestangularProvider) {<br />
+  RestangularProvider.setBaseUrl('http://www.google.com');<br />
+}</p>
+<p><a href="https://github.com/NgModule">@NgModule</a>({<br />
+  bootstrap: [ AppComponent ],<br />
+  declarations: [<br />
+    AppComponent,<br />
+  ],<br />
+  imports: [<br />
+    // Global configuration<br />
+    RestangularModule.forRoot(RestangularConfigFactory),<br />
+  ]<br />
+})<br />
+export class AppModule {}<br />
+// Let's use it in the component<br />
+<a href="https://github.com/Component">@Component</a>({<br />
+  ...<br />
+})<br />
+export class OtherComponent {<br />
+  constructor(private restangular: Restangular) {}</p>
+<p>ngOnInit() {<br />
+    restangular.withConfig((RestangularConfigurer) =&gt; {<br />
+      RestangularConfigurer.setBaseUrl('http://www.bing.com');<br />
+    }).all('users').getList()<br />
+  }<br />
+};<br />
+ ````</p>
+<h4 id="setbaseurl">setBaseUrl</h4>
+<p>The base URL for all calls to your API. For example if your URL for fetching accounts is <a href="http://example.com/api/v1/accounts,">http://example.com/api/v1/accounts,</a> then your baseUrl is <code>/api/v1</code>. The default baseUrl is an empty string which resolves to the same url that Angular2 is running, but you can also set an absolute url like <code>http://api.example.com/api/v1</code> if you need to set another domain.</p>
+<h4 id="setextrafields">setExtraFields</h4>
+<p>These are the fields that you want to save from your parent resources if you need to display them. By default this is an Empty Array which will suit most cases</p>
+<h4 id="setparentless">setParentless</h4>
+<p>Use this property to control whether Restangularized elements to have a parent or not. So, for example if you get an account and then get a nested list of buildings, you may want the buildings URL to be simple <code>/buildings/123</code> instead of <code>/accounts/123/buildings/123</code>. This property lets you do that.</p>
+<p>This method accepts 1 parameter, it could be:</p>
+<ul>
+<li>Boolean: Specifies if all elements should be parentless or not</li>
+<li>Array: Specifies the routes (types) of all elements that should be parentless. For example <code>['buildings']</code></li>
+</ul>
+<h4 id="addelementtransformer">addElementTransformer</h4>
+<p>This is a hook. After each element has been "restangularized" (Added the new methods from Restangular), the corresponding transformer will be called if it fits.</p>
+<p>This should be used to add your own methods / functions to entities of certain types.</p>
+<p>You can add as many element transformers as you want. The signature of this method can be one of the following:</p>
+<ul>
+<li><p><strong>addElementTransformer(route, transformer)</strong>: Transformer is called with all elements that have been restangularized, no matter if they're collections or not.</p></li>
+<li><p><strong>addElementTransformer(route, isCollection, transformer)</strong>: Transformer is called with all elements that have been restangularized and match the specification regarding if it's a collection or not (true | false)</p></li>
+</ul>
+<h4 id="settransformonlyserverelements">setTransformOnlyServerElements</h4>
+<p>This sets whether transformers will be run for local objects and not by objects returned by the server. This is by default true but can be changed to false if needed (Most people won't need this).</p>
+<h4 id="setonelemrestangularized">setOnElemRestangularized</h4>
+<p>This is a hook. After each element has been "restangularized" (Added the new methods from Restangular), this will be called. It means that if you receive a list of objects in one call, this method will be called first for the collection and then for each element of the collection.</p>
+<p><strong>I favor the usage of <code>addElementTransformer</code> instead of <code>onElemRestangularized</code> whenever possible as the implementation is much cleaner.</strong></p>
+<p>This callback is a function that has 4 parameters:</p>
+<ul>
+<li><strong>elem</strong>: The element that has just been restangularized. Can be a collection or a single element.</li>
+<li><strong>isCollection</strong>: Boolean indicating if this is a collection or a single element.</li>
+<li><strong>what</strong>: The model that is being modified. This is the "path" of this resource. For example <code>buildings</code></li>
+<li><strong>Restangular</strong>: The instanced service to use any of its methods</li>
+</ul>
+<p>This can be used together with <code>addRestangularMethod</code> (Explained later) to add custom methods to an element</p>
+<pre><code class="`javascript language-`javascript">service.setOnElemRestangularized((element, isCollection, what, Restangular) =&gt; {
+  element.newField = "newField";
+  return element;
+});</code></pre>
+<p>`</p>
+<h4 id="addresponseinterceptor">addResponseInterceptor</h4>
+<p>The responseInterceptor is called after we get each response from the server. It's a function that receives this arguments:</p>
+<ul>
+<li><strong>data</strong>: The data received got from the server</li>
+<li><strong>operation</strong>: The operation made. It'll be the HTTP method used except for a <code>GET</code> which returns a list of element which will return <code>getList</code> so that you can distinguish them.</li>
+<li><strong>what</strong>: The model that's being requested. It can be for example: <code>accounts</code>, <code>buildings</code>, etc.</li>
+<li><strong>url</strong>: The relative URL being requested. For example: <code>/api/v1/accounts/123</code></li>
+<li><strong>response</strong>: Full server response including headers</li>
+</ul>
+<p>Some of the use cases of the responseInterceptor are handling wrapped responses and enhancing response elements with more methods among others.</p>
+<p>The responseInterceptor must return the restangularized data element.</p>
+<pre><code class="`javascript language-`javascript"> RestangularProvider.addResponseInterceptor((data, operation, what, url, response)=&gt; {
+       return data;
+     });
+ });</code></pre>
+<p>`</p>
+<h4 id="addfullrequestinterceptor">addFullRequestInterceptor</h4>
+<p>This adds a new fullRequestInterceptor. The fullRequestInterceptor is similar to the <code>requestInterceptor</code> but more powerful. It lets you change the element, the request parameters and the headers as well.</p>
+<p>It's a function that receives the same as the <code>requestInterceptor</code> plus the headers and the query parameters (in that order).</p>
+<p>It can return an object with any (or all) of following properties:</p>
+<ul>
+<li><strong>headers</strong>: The headers to send</li>
+<li><strong>params</strong>: The request parameters to send</li>
+<li><strong>element</strong>: The element to send</li>
+</ul>
+<pre><code class="`javascript language-`javascript">RestangularProvider.addFullRequestInterceptor((element, operation, path, url, headers, params)=&gt; {
+   return {
+     params: Object.assign({}, params, {sort:"name"}),
+     headers: headers,
+     element: element
+   }
+ });</code></pre>
+<p>`<br />
+If a property isn't returned, the one sent is used.</p>
+<h4 id="adderrorinterceptor">addErrorInterceptor</h4>
+<p>The errorInterceptor is called whenever there's an error. It's a function that receives the response, subject and the Restangular-response handler as parameters.</p>
+<p>The errorInterceptor function, whenever it returns false, prevents the observable linked to a Restangular request to be executed. All other return values (besides false) are ignored and the observable follows the usual path, eventually reaching the success or error hooks.</p>
+<p>The refreshAccesstoken function must return observable. It`s function that will be done before repeating the request, there you can make some actions. In switchMap you might do some transformations to request.</p>
+<pre><code class="`javascript language-`javascript">// Function for settting the default restangular configuration
+export function RestangularConfigFactory (RestangularProvider, authService) {
+  RestangularProvider.setBaseUrl('http://api.test.com/v1');
+
+  // This function must return observable
+  var refreshAccesstoken = function () {
+    // Here you can make action before repeated request
+    return authService.functionForTokenUpdate();
+  };
+
+  RestangularProvider.addErrorInterceptor((response, subject, responseHandler) =&gt; {
+    if (response.status === 403) {
+
+      refreshAccesstoken()
+      .switchMap(refreshAccesstokenResponse =&gt; {
+        //If you want to change request or make with it some actions and give the request to the repeatRequest func.
+        //Or you can live it empty and request will be the same.
+
+        // update Authorization header
+        response.request.headers.set('Authorization', 'Bearer ' + refreshAccesstokenResponse)
+
+        return response.repeatRequest(response.request);
+      })
+      .subscribe(
+        res =&gt; responseHandler(res),
+        err =&gt; subject.error(err)
+      );
+
+      return false; // error handled
+    }
+    return true; // error not handled
+  });
+}
+
+// AppModule is the main entry point into Angular2 bootstraping process
+@NgModule({
+  bootstrap: [ AppComponent ],
+  imports: [ 
+    // Importing RestangularModule and making default configs for restanglar
+    RestangularModule.forRoot([authService], RestangularConfigFactory),
+  ],
+})</code></pre>
+<p>`</p>
+<h4 id="setrestangularfields">setRestangularFields</h4>
+<p>Restangular required 3 fields for every "Restangularized" element. These are:</p>
+<ul>
+<li>id: Id of the element. Default: id</li>
+<li>route: Name of the route of this element. Default: route</li>
+<li>parentResource: The reference to the parent resource. Default: parentResource</li>
+<li>restangularCollection: A boolean indicating if this is a collection or an element. Default: restangularCollection</li>
+<li>cannonicalId: If available, the path to the cannonical ID to use. Useful for PK changes</li>
+<li>etag: Where to save the ETag received from the server. Defaults to <code>restangularEtag</code></li>
+<li>selfLink: The path to the property that has the URL to this item. If your REST API doesn't return a URL to an item, you can just leave it blank. Defaults to <code>href</code></li>
+</ul>
+<p>Also all of Restangular methods and functions are configurable through restangularFields property.<br />
+All of these fields except for <code>id</code> and <code>selfLink</code> are handled by Restangular, so most of the time you won't change them. You can configure the name of the property that will be binded to all of this fields by setting restangularFields property.</p>
+<h4 id="setmethodoverriders">setMethodOverriders</h4>
+<p>You can now Override HTTP Methods. You can set here the array of methods to override. All those methods will be sent as POST and Restangular will add an X-HTTP-Method-Override header with the real HTTP method we wanted to do.</p>
+<pre><code class="`javascript language-`javascript">RestangularProvider.setMethodOverriders(["Get","Put"]);</code></pre>
+<p>`</p>
+<h4 id="setdefaultrequestparams">setDefaultRequestParams</h4>
+<p>You can set default Query parameters to be sent with every request and every method.</p>
+<p>Additionally, if you want to configure request params per method, you can use <code>requestParams</code> configuration similar to <code>$http</code>. For example <code>RestangularProvider.requestParams.get = {single: true}</code>.</p>
+<p>Supported method to configure are: remove, get, post, put, common (all)</p>
+<pre><code class="`javascript language-`javascript">// set params for multiple methods at once
+RestangularProvider.setDefaultRequestParams(['remove', 'post'], {confirm: true});
+
+// set only for get method
+RestangularProvider.setDefaultRequestParams('get', {limit: 10});
+
+// or for all supported request methods
+RestangularProvider.setDefaultRequestParams({apikey: "secret key"});</code></pre>
+<p>`</p>
+<h4 id="setfullresponse">setFullResponse</h4>
+<p>You can set fullResponse to true to get the whole response every time you do any request. The full response has the restangularized data in the <code>data</code> field, and also has the headers and config sent. By default, it's set to false. Please note that in order for Restangular to access custom HTTP headers, your server must respond having the <code>Access-Control-Expose-Headers:</code> set.</p>
+<pre><code class="`javascript language-`javascript">// set params for multiple methods at once
+RestangularProvider.setFullResponse(true);</code></pre>
+<p>`</p>
+<p>Or set it per service</p>
+<pre><code class="`javascript language-`javascript">// Restangular factory that uses setFullResponse
+export const REST_FUL_RESPONSE = new OpaqueToken('RestFulResponse');
+export function RestFulResponseFactory(restangular: Restangular) {
+  return restangular.withConfig((RestangularConfigurer) =&gt; {
+    RestangularConfigurer.setFullResponse(true);
+  });
+}
+
+
+// Configure factory in AppModule module
+// AppModule is the main entry point into Angular2 bootstraping process
+@NgModule({
+  bootstrap: [ AppComponent ],
+  declarations: [
+    AppComponent,
+  ],
+  imports: [RestangularModule],
+  providers: [
+    { provide: REST_FUL_RESPONSE, useFactory:  RestFulResponseFactory, deps: [Restangular] }
+  ]
+})
+export class AppModule {}
+
+
+// Let's use it in the component
+@Component({
+  ...
+})
+export class OtherComponent {
+  users;
+
+  constructor(@Inject(REST_FUL_RESPONSE) public restFulResponse) {
+  }
+
+  ngOnInit() {
+    this.restFulResponse.all('users').getList().subscribe( response =&gt; {
+      this.users = response.data;
+      console.log(response.headers);
+    });
+  }
+}</code></pre>
+<p>`</p>
+<h4 id="setdefaultheaders">setDefaultHeaders</h4>
+<p>You can set default Headers to be sent with every request. Send format: {header_name: header_value}</p>
+<pre><code class="`javascript language-`javascript">import { NgModule } from '@angular/core';
+import { RestangularModule, Restangular } from 'ngx-restangular';
+
+// Function for settting the default restangular configuration
+export function RestangularConfigFactory (RestangularProvider) {
+  RestangularProvider.setDefaultHeaders({'Authorization': 'Bearer UDXPx-Xko0w4BRKajozCVy20X11MRZs1'});
+}
+
+// AppModule is the main entry point into Angular2 bootstraping process
+@NgModule({
+  ...
+  imports: [
+    // Importing RestangularModule and making default configs for restanglar
+    RestangularModule.forRoot(RestangularConfigFactory),
+  ]
+})
+export class AppModule {
+}</code></pre>
+<p>`</p>
+<h4 id="setrequestsuffix">setRequestSuffix</h4>
+<p>If all of your requests require to send some suffix to work, you can set it here. For example, if you need to send the format like <code>/users/123.json</code> you can add that <code>.json</code> to the suffix using the <code>setRequestSuffix</code> method</p>
+<h4 id="setusecannonicalid">setUseCannonicalId</h4>
+<p>You can set this to either <code>true</code> or <code>false</code>. By default it's false. If set to true, then the cannonical ID from the element will be used for URL creation (in DELETE, PUT, POST, etc.). What this means is that if you change the ID of the element and then you do a put, if you set this to true, it'll use the "old" ID which was received from the server. If set to false, it'll use the new ID assigned to the element.</p>
+<h4 id="setplainbydefault">setPlainByDefault</h4>
+<p>You can set this to <code>true</code> or <code>false</code>. By default it's false. If set to true, data retrieved will be returned with no embed methods from restangular.</p>
+<h4 id="setencodeids">setEncodeIds</h4>
+<p>You can set here if you want to URL Encode IDs or not. By default, it's true.</p>
+<h3 id="accessing-configuration">Accessing configuration</h3>
+<p>You can also access the configuration via <code>RestangularModule</code> and <code>Restangular.provider</code> via the <code>configuration</code> property if you don't want to use the setters. Check it out:</p>
+<pre><code class="`js language-`js">RestangularProvider.configuration.requestSuffix = '/';</code></pre>
+<p>`</p>
+<p><strong><a href="#table-of-contents">Back to top</a></strong></p>
+<h3 id="how-to-configure-them-globally">How to configure them globally</h3>
+<p>You can configure this in either the <code>AppModule</code>.</p>
+<h4 id="configuring-in-the-appmodule">Configuring in the <code>AppModule</code></h4>
+<pre><code class="`javascript language-`javascript">import { RestangularModule } from 'ngx-restangular';
+
+// Function for settting the default restangular configuration
+export function RestangularConfigFactory (RestangularProvider) {
+  RestangularProvider.setBaseUrl('http://api.restngx.local/v1');
+  RestangularProvider.setDefaultHeaders({'Authorization': 'Bearer UDXPx-Xko0w4BRKajozCVy20X11MRZs1'});
+}
+
+// AppModule is the main entry point into Angular2 bootstraping process
+@NgModule({
+  bootstrap: [ AppComponent ],
+  declarations: [
+    AppComponent,
+  ],
+  imports: [
+    RestangularModule.forRoot(RestangularConfigFactory),
+  ]
+})
+export class AppModule {
+}</code></pre>
+<p>`</p>
+<p><strong><a href="#table-of-contents">Back to top</a></strong></p>
+<h4 id="configuring-in-the-appmodule-with-dependency-injection-applied">Configuring in the <code>AppModule</code> with Dependency Injection applied</h4>
+<pre><code class="`javascript language-`javascript">import { RestangularModule } from 'ngx-restangular';
+
+// Function for settting the default restangular configuration
+export function RestangularConfigFactory (RestangularProvider, http) {
+  RestangularProvider.setBaseUrl('http://api.restngx.local/v1');
+  RestangularProvider.setDefaultHeaders({'Authorization': 'Bearer UDXPx-Xko0w4BRKajozCVy20X11MRZs1'});
+
+  // Example of using Http service inside global config restangular
+  RestangularProvider.addElementTransformer('me', true, ()=&gt;{
+    return http.get('http://api.test.com/v1/users/2', {});
+  });
+}
+
+// AppModule is the main entry point into Angular2 bootstraping process
+@NgModule({
+  bootstrap: [ AppComponent ],
+  declarations: [
+    AppComponent,
+  ],
+  imports: [
+    RestangularModule.forRoot([Http], RestangularConfigFactory),
+  ]
+})
+export class AppModule {
+}</code></pre>
+<p>`</p>
+<p><strong><a href="#table-of-contents">Back to top</a></strong></p>
+<h3 id="how-to-create-a-restangular-service-with-a-different-configuration-from-the-global-one">How to create a Restangular service with a different configuration from the global one</h3>
+<p>Let's assume that for most requests you need some configuration (The global one), and for just a bunch of methods you need another configuration. In that case, you'll need to create another Restangular service with this particular configuration. This scoped configuration will inherit all defaults from the global one. Let's see how.</p>
+<pre><code class="`javascript language-`javascript">// Function for settting the default restangular configuration
+export function RestangularConfigFactory (RestangularProvider) {
+  RestangularProvider.setBaseUrl('http://www.google.com');
+}
+
+//Restangular service that uses Bing
+export const RESTANGULAR_BING = new OpaqueToken('RestangularBing');
+export function RestangularBingFactory(restangular: Restangular) {
+  return restangular.withConfig((RestangularConfigurer) =&gt; {
+     RestangularConfigurer.setBaseUrl('http://www.bing.com');
+   });
+}
+
+
+// AppModule is the main entry point into Angular2 bootstraping process
+@NgModule({
+  bootstrap: [ AppComponent ],
+  declarations: [
+    AppComponent,
+  ],
+  imports: [
+    // Global configuration
+    RestangularModule.forRoot(RestangularConfigFactory),
+  ],
+  providers: [
+    { provide: RESTANGULAR_BING, useFactory:  RestangularBingFactory, deps: [Restangular] }
+  ]
+})
+export class AppModule {}
+
+
+// Let's use it in the component
+@Component({
+  ...
+})
+export class OtherComponent {
+  constructor(
+    @Inject(Restangular) public Restangular,
+    @Inject(RESTANGULAR_BING) public RestangularBing
+  ) {}
+
+  ngOnInit() {
+    // GET to http://www.google.com/users
+    // Uses global configuration
+    Restangular.all('users').getList()
+
+    // GET to http://www.bing.com/users
+    // Uses Bing configuration which is based on Global one, therefore .json is added.
+    RestangularBing.all('users').getList()
+  }
+};</code></pre>
+<p>`</p>
+<p><strong><a href="#table-of-contents">Back to top</a></strong></p>
+<h3 id="decoupled-restangular-service">Decoupled Restangular Service</h3>
+<p>There're some times where you want to use Restangular but you don't want to expose Restangular object anywhere. For those cases, you can actually use the <code>service</code> feature of Restangular.</p>
+<p>Let's see how it works:</p>
+<pre><code class="`js language-`js">// Restangular factory that uses Users
+export const USER_REST = new OpaqueToken('UserRest');
+export function UserRestFactory(restangular: Restangular) {
+  return restangular.service('users');
+}
+
+
+// AppModule is the main entry point into Angular2 bootstraping process
+@NgModule({
+  bootstrap: [ AppComponent ],
+  declarations: [
+    AppComponent,
+  ],
+  imports: [RestangularModule],
+  providers: [
+    { provide: USER_REST, useFactory:  UserRestFactory, deps: [Restangular] } // Configurating our factory
+  ]
+})
+export class AppModule {
+}
+
+
+// Let's use it in the component
+export class OtherComponent {
+  constructor(@Inject(USER_REST) public User) {
+    Users.one(2).get() // GET to /users/2
+    Users.post({data}) // POST to /users
+
+    // GET to /users
+    Users.getList().subscribe( users =&gt; {
+      var user = users[0]; // user === {id: 1, name: "Tonto"}
+      user.name = "Gonto";
+      // PUT to /users/1
+      user.put();
+    })
+  }
+}</code></pre>
+<p>`</p>
+<p>We can also use Nested RESTful resources with this:</p>
+<pre><code class="`js language-`js">var Cars = Restangular.service('cars', Restangular.one('users', 1));
+
+Cars.getList() // GET to /users/1/cars</code></pre>
+<p>`</p>
+<p><strong><a href="#table-of-contents">Back to top</a></strong></p>
+<h2 id="methods-description">Methods description</h2>
+<p>There are 3 sets of methods. Collections have some methods and elements have others. There are are also some common methods for all of them</p>
+<h3 id="restangular-methods">Restangular methods</h3>
+<p>These are the methods that can be called on the Restangular object.</p>
+<ul>
+<li><strong>one(route, id)</strong>: This will create a new Restangular object that is just a pointer to one element with the route <code>route</code> and the specified id.</li>
+<li><strong>all(route)</strong>: This will create a new Restangular object that is just a pointer to a list of elements for the specified path.</li>
+<li><strong>oneUrl(route, url)</strong>: This will create a new Restangular object that is just a pointer to one element with the specified URL.</li>
+<li><strong>allUrl(route, url)</strong>: This creates a Restangular object that is just a pointer to a list at the specified URL.</li>
+<li><strong>copy(fromElement)</strong>: This will create a copy of the from element so that we can modify the copied one.</li>
+<li><strong>restangularizeElement(parent, element, route, queryParams)</strong>: Restangularizes a new element</li>
+<li><strong>restangularizeCollection(parent, element, route, queryParams)</strong>: Restangularizes a new collection</li>
+</ul>
+<p><strong><a href="#table-of-contents">Back to top</a></strong></p>
+<h3 id="element-methods">Element methods</h3>
+<ul>
+<li><strong>get([queryParams, headers])</strong>: Gets the element. Query params and headers are optionals</li>
+<li><strong>getList(subElement, [queryParams, headers])</strong>: Gets a nested resource. subElement is mandatory. <strong>It's a string with the name of the nested resource (and URL)</strong>. For example <code>buildings</code></li>
+<li><strong>put([queryParams, headers])</strong>: Does a put to the current element</li>
+<li><strong>post(subElement, elementToPost, [queryParams, headers])</strong>: Does a POST and creates a subElement. Subelement is mandatory and is the nested resource. Element to post is the object to post to the server</li>
+<li><strong>remove([queryParams, headers])</strong>: Does a DELETE. By default, <code>remove</code> sends a request with an empty object, which may cause problems with some servers or browsers. <a href="https://github.com/mgonto/restangular/issues/193">This</a> shows how to configure RESTangular to have no payload.</li>
+<li><strong>head([queryParams, headers])</strong>: Does a HEAD</li>
+<li><strong>trace([queryParams, headers])</strong>: Does a TRACE</li>
+<li><strong>options([queryParams, headers])</strong>: Does a OPTIONS</li>
+<li><strong>patch(object, [queryParams, headers])</strong>: Does a PATCH</li>
+<li><strong>one(route, id)</strong>: Used for RequestLess connections and URL Building. See section below.</li>
+<li><strong>all(route)</strong>: Used for RequestLess connections and URL Building. See section below.</li>
+<li><strong>several(route, ids*)</strong>: Used for RequestLess connections and URL Building. See section below.</li>
+<li><strong>oneUrl(route, url)</strong>: This will create a new Restangular object that is just a pointer to one element with the specified URL.</li>
+<li><strong>allUrl(route, url)</strong>: This creates a Restangular object that is just a pointer to a list at the specified URL.</li>
+<li><strong>getRestangularUrl()</strong>: Gets the URL of the current object.</li>
+<li><strong>getRequestedUrl()</strong>: Gets the real URL the current object was requested with (incl. GET parameters). Will equal getRestangularUrl() when no parameters were used, before calling <code>get()</code>, or when using on a nested child.</li>
+<li><strong>getParentList()</strong>: Gets the parent list to which it belongs (if any)</li>
+<li><strong>clone()</strong>: Copies the element. It's an alias to calling <code>Restangular.copy(elem)</code>.</li>
+<li><strong>plain()</strong>: Returns the plain element received from the server without any of the enhanced methods from Restangular. It's an alias to calling <code>Restangular.stripRestangular(elem)</code></li>
+<li><strong>save</strong>: Calling save will determine whether to do PUT or POST accordingly</li>
+</ul>
+<p><strong><a href="#table-of-contents">Back to top</a></strong></p>
+<h3 id="collection-methods">Collection methods</h3>
+<ul>
+<li><strong>getList([queryParams, headers]): Gets itself again (Remember this is a collection)</strong>.</li>
+<li><strong>get(id): Gets one item from the collection by id</strong>.</li>
+<li><strong>post(elementToPost, [queryParams, headers])</strong>: Creates a new element of this collection.</li>
+<li><strong>head([queryParams, headers])</strong>: Does a HEAD</li>
+<li><strong>trace: ([queryParams, headers])</strong>: Does a TRACE</li>
+<li><strong>options: ([queryParams, headers])</strong>: Does a OPTIONS</li>
+<li><strong>patch(object, [queryParams, headers])</strong>: Does a PATCH</li>
+<li><strong>remove([queryParams, headers])</strong>: Does a DELETE. By default, <code>remove</code> sends a request with an empty object, which may cause problems with some servers or browsers. <a href="https://github.com/mgonto/restangular/issues/193">This</a> shows how to configure RESTangular to have no payload.</li>
+<li><strong>putElement(index, params, headers)</strong>: Puts the element on the required index and returns a observable of the updated new array</li>
+</ul>
+<pre><code class="`js language-`js">Restangular.all('users').getList()
+.subscribe( users =&gt; {
+  users.putElement(2, {'name': 'new name'});
+});</code></pre>
+<p>`</p>
+<ul>
+<li><strong>getRestangularUrl()</strong>: Gets the URL of the current object.</li>
+<li><strong>getRequestedUrl()</strong>: Gets the real URL the current object was requested with (incl. GET parameters). Will equal getRestangularUrl() when no parameters were used, before calling <code>getList()</code>, or when using on a nested child.</li>
+<li><strong>one(route, id)</strong>: Used for RequestLess connections and URL Building. See section below.</li>
+<li><strong>all(route)</strong>: Used for RequestLess connections and URL Building. See section below.</li>
+<li><strong>several(route, ids*)</strong>: Used for RequestLess connections and URL Building. See section below.</li>
+<li><strong>oneUrl(route, url)</strong>: This will create a new Restangular object that is just a pointer to one element with the specified URL.</li>
+<li><strong>allUrl(route, url)</strong>: This creates a Restangular object that is just a pointer to a list at the specified URL.</li>
+<li><strong>clone()</strong>: Copies the collection. It's an alias to calling <code>Restangular.copy(collection)</code>.</li>
+</ul>
+<p><strong><a href="#table-of-contents">Back to top</a></strong></p>
+<h3 id="custom-methods">Custom methods</h3>
+<ul>
+<li><strong>customGET(path, [params, headers])</strong>: Does a GET to the specific path. Optionally you can set params and headers.</li>
+<li><strong>customGETLIST(path, [params, headers])</strong>: Does a GET to the specific path. <strong>In this case, you expect to get an array, not a single element</strong>. Optionally you can set params and headers.</li>
+<li><strong>customDELETE(path, [params, headers])</strong>: Does a DELETE to the specific path. Optionally you can set params and headers.</li>
+<li><strong>customPOST([elem, path, params, headers])</strong>: Does a POST to the specific path. Optionally you can set params and headers and elem. Elem is the element to post. If it's not set, it's assumed that it's the element itself from which you're calling this function.</li>
+<li><strong>customPUT([elem, path, params, headers])</strong>: Does a PUT to the specific path. Optionally you can set params and headers and elem. Elem is the element to post. If it's not set, it's assumed that it's the element itself from which you're calling this function.</li>
+<li><strong>customPATCH([elem, path, params, headers])</strong>: Does a PATCH to the specific path. Accepts the same arguments as customPUT.</li>
+<li><strong>customOperation(operation, path, [params, headers, elem])</strong>: This does a custom operation to the path that we specify. This method is actually used from all the others in this subsection. Operation can be one of: get, post, put, remove, head, options, patch, trace</li>
+<li><strong>addRestangularMethod(name, operation, [path, params, headers, elem])</strong>: This will add a new restangular method to this object with the name <code>name</code> to the operation and path specified (or current path otherwise). There's a section on how to do this later.</li>
+</ul>
+<p>Let's see an example of this:</p>
+<pre><code class="`javascript language-`javascript">// GET /accounts/123/messages
+Restangular.one("accounts", 123).customGET("messages")
+
+// GET /accounts/messages?param=param2
+Restangular.all("accounts").customGET("messages", {param: "param2"})</code></pre>
+<p>`</p>
+<p><strong><a href="#table-of-contents">Back to top</a></strong></p>
+<h2 id="copying-elements">Copying elements</h2>
+<p>Before modifying an object, we sometimes want to copy it and then modify the copied object. We can use <code>Restangular.copy(fromElement)</code>.</p>
+<p><strong><a href="#table-of-contents">Back to top</a></strong></p>
+<h2 id="using-values-directly-in-templates-with-observables">Using values directly in templates with Observables</h2>
+<p>If you want to use values directly in templates use <code>AsyncPipe</code></p>
+<pre><code class="`js language-`js">this.accounts = this.restangular.all('accounts').getList();</code></pre>
+<p>`</p>
+<pre><code class="`html language-`html">&lt;tr *ngFor="let account of accounts | async"&gt;
+  &lt;td&gt;{{account.fullName}}&lt;/td&gt;
+&lt;/tr&gt;</code></pre>
+<p>`</p>
+<p><strong><a href="#table-of-contents">Back to top</a></strong></p>
+<h2 id="url-building">URL Building</h2>
+<p>Sometimes, we have a lot of nested entities (and their IDs), but we just want the last child. In those cases, doing a request for everything to get the last child is overkill. For those cases, I've added the possibility to create URLs using the same API as creating a new Restangular object. This connections are created without making any requests. Let's see how to do this:</p>
+<pre><code class="`javascript language-`javascript">var restangularSpaces = Restangular.one("accounts",123).one("buildings", 456).all("spaces");
+
+// This will do ONE get to /accounts/123/buildings/456/spaces
+restangularSpaces.getList()
+
+// This will do ONE get to /accounts/123/buildings/456/spaces/789
+Restangular.one("accounts", 123).one("buildings", 456).one("spaces", 789).get()
+
+// POST /accounts/123/buildings/456/spaces
+Restangular.one("accounts", 123).one("buildings", 456).all("spaces").post({name: "New Space"});
+
+// DELETE /accounts/123/buildings/456
+Restangular.one("accounts", 123).one("buildings", 456).remove();</code></pre>
+<p>`</p>
+<p><strong><a href="#table-of-contents">Back to top</a></strong></p>
+<h2 id="creating-new-restangular-methods">Creating new Restangular Methods</h2>
+<p>Let's assume that your API needs some custom methods to work. If that's the case, always calling customGET or customPOST for that method with all parameters is a pain in the ass. That's why every element has a <code>addRestangularMethod</code> method.</p>
+<p>This can be used together with the hook <code>addElementTransformer</code> to do some neat stuff. Let's see an example to learn this:</p>
+<pre><code class="`javascript language-`javascript">// Function for settting the default restangular configuration
+export function RestangularConfigFactory (RestangularProvider) {
+  // It will transform all building elements, NOT collections
+  RestangularProvider.addElementTransformer('buildings', false, function(building) {
+    // This will add a method called evaluate that will do a get to path evaluate with NO default
+    // query params and with some default header
+    // signature is (name, operation, path, params, headers, elementToPost)
+
+    building.addRestangularMethod('evaluate', 'get', 'evaluate', undefined, {'myHeader': 'value'});
+
+    return building;
+  });
+
+  RestangularProvider.addElementTransformer('users', true, function(user) {
+    // This will add a method called login that will do a POST to the path login
+    // signature is (name, operation, path, params, headers, elementToPost)
+
+    user.addRestangularMethod('login', 'post', 'login');
+
+    return user;
+  });
+}
+
+// AppModule is the main entry point into Angular2 bootstraping process
+@NgModule({
+  bootstrap: [ AppComponent ],
+  imports: [ // import Angular's modules
+    RestangularModule.forRoot(RestangularConfigFactory),
+  ],
+})
+
+// Then, later in your code you can do the following:
+
+// GET to /buildings/123/evaluate?myParam=param with headers myHeader: value
+
+// Signature for this "custom created" methods is (params, headers, elem) if it's a safe operation (GET, OPTIONS, etc.)
+// If it's an unsafe operation (POST, PUT, etc.), signature is (elem, params, headers).
+
+// If something is set to any of this variables, the default set in the method creation will be overridden
+// If nothing is set, then the defaults are sent
+Restangular.one('buildings', 123).evaluate({myParam: 'param'});
+
+// GET to /buildings/123/evaluate?myParam=param with headers myHeader: specialHeaderCase
+
+Restangular.one('buildings', 123).evaluate({myParam: 'param'}, {'myHeader': 'specialHeaderCase'});
+
+// Here the body of the POST is going to be {key: value} as POST is an unsafe operation
+Restangular.all('users').login({key: value});</code></pre>
+<p>`</p>
+<p><strong><a href="#table-of-contents">Back to top</a></strong></p>
+<h2 id="adding-custom-methods-to-collections">Adding Custom Methods to Collections</h2>
+<p>Create custom methods for your collection using Restangular.extendCollection(). This is an alias for:</p>
+<pre><code class="js language-js">  RestangularProvider.addElementTransformer(route, true, fn);</code></pre>
+<h3 id="example">Example:</h3>
+<pre><code class="js language-js">  // create methods for your collection
+  Restangular.extendCollection('accounts', function(collection) {
+    collection.totalAmount = function() {
+      // implementation here
+    };
+
+    return collection;
+  });
+
+  var accounts$ = Restangular.all('accounts').getList();
+
+  accounts$.subscribe( accounts =&gt; {
+    accounts.totalAmount(); // invoke your custom collection method
+  });</code></pre>
+<p><strong><a href="#table-of-contents">Back to top</a></strong></p>
+<h2 id="adding-custom-methods-to-models">Adding Custom Methods to Models</h2>
+<p>Create custom methods for your models using Restangular.extendModel(). This is an alias for:</p>
+<pre><code class="js language-js">  RestangularProvider.addElementTransformer(route, false, fn);</code></pre>
+<p><strong><a href="#table-of-contents">Back to top</a></strong></p>
+<h3 id="example-1">Example:</h3>
+<pre><code class="js language-js">  Restangular.extendModel('accounts', function(model) {
+    model.prettifyAmount = function() {};
+    return model;
+  });
+
+  var account$ = Restangular.one('accounts', 1).get();
+
+  account$.subscribe(function(account) {
+    account.prettifyAmount(); // invoke your custom model method
+  });</code></pre>
+<p><strong><a href="#table-of-contents">Back to top</a></strong></p>
+<h1 id="faq">FAQ</h1>
+<h4 id="how-can-i-handle-errors"><strong>How can I handle errors?</strong></h4>
+<p>Errors can be checked on the second argument of the subscribe.</p>
+<pre><code class="`javascript language-`javascript">Restangular.all("accounts").getList().subscribe( response =&gt; {
+  console.log("All ok");
+}, errorResponse =&gt; {
+  console.log("Error with status code", errorResponse.status);
+});</code></pre>
+<p>`</p>
+<h4 id="i-need-to-send-authorization-token-in-every-restangular-request-how-can-i-do-this"><strong>I need to send Authorization token in EVERY Restangular request, how can I do this?</strong></h4>
+<p>You can use <code>setDefaultHeaders</code> or <code>addFullRequestInterceptor</code></p>
+<pre><code class="`javascript language-`javascript">import { NgModule } from '@angular/core';
+import { AppComponent } from './app.component';
+import { RestangularModule } from 'ngx-restangular';
+import { authService } from '../your-services';
+
+// Function for settting the default restangular configuration
+export function RestangularConfigFactory (RestangularProvider, authService) {
+
+  // set static header
+  RestangularProvider.setDefaultHeaders({'Authorization': 'Bearer UDXPx-Xko0w4BRKajozCVy20X11MRZs1'});
+
+  // by each request to the server receive a token and update headers with it
+  RestangularProvider.addFullRequestInterceptor((element, operation, path, url, headers, params) =&gt; {
+    let bearerToken = authService.getBearerToken();
+
+    return {
+      headers: Object.assign({}, headers, {Authorization: `Bearer ${bearerToken}`})
+    };
+  });
+}
+
+// AppModule is the main entry point into Angular2 bootstraping process
+@NgModule({
+  bootstrap: [ AppComponent ],
+  declarations: [
+    AppComponent,
+  ],
+  imports: [
+    // Importing RestangularModule and making default configs for restanglar
+    RestangularModule.forRoot([authService], RestangularConfigFactory),
+  ]
+})
+export class AppModule {
+}</code></pre>
+<p>`<br />
+<strong><a href="#table-of-contents">Back to top</a></strong></p>
+<h4 id="i-need-to-send-one-header-in-every-restangular-request-how-can-i-do-this"><strong>I need to send one header in EVERY Restangular request, how can I do this?</strong></h4>
+<p>You can use <code>defaultHeaders</code> property for this. <code>defaultsHeaders</code> can be scoped with <code>withConfig</code> so it's really cool.</p>
+<h4 id="how-can-i-send-a-delete-without-a-body"><strong>How can I send a delete WITHOUT a body?</strong></h4>
+<p>You must add a requestInterceptor for this.</p>
+<pre><code class="`js language-`js">RestangularProvider.setRequestInterceptor(function(elem, operation) {
+  if (operation === "remove") {
+     return null;
+  }
+  return elem;
+})</code></pre>
+<p>`</p>
+<h4 id="i-use-mongo-and-the-id-of-the-elements-is-_id-not-id-as-the-default-therefore-requests-are-sent-to-undefined-routes"><strong>I use Mongo and the ID of the elements is <code>_id</code> not <code>id</code> as the default. Therefore requests are sent to undefined routes</strong></h4>
+<p>What you need to do is to configure the <code>RestangularFields</code> and set the <code>id</code> field to <code>_id</code>. Let's see how:</p>
+<pre><code class="`javascript language-`javascript">RestangularProvider.setRestangularFields({
+  id: "_id"
+});</code></pre>
+<p>`</p>
+<h4 id="what-if-each-of-my-models-has-a-different-id-name-like-customerid-for-customer"><strong>What if each of my models has a different ID name like CustomerID for Customer</strong></h4>
+<p>In some cases, people have different ID name for each entity. For example, they have CustomerID for customer and EquipmentID for Equipment. If that's the case, you can override Restangular's getIdFromElem. For that, you need to do:</p>
+<pre><code class="`js language-`js">RestangularProvider.configuration.getIdFromElem = function(elem) {
+  // if route is customers ==&gt; returns customerID
+  return elem[_.initial(elem.route).join('') + "ID"];
+}</code></pre>
+<p>`<br />
+With that, you'd get what you need :)</p>
+<h4 id="how-can-i-send-files-in-my-request-using-restangular"><strong>How can I send files in my request using Restangular?</strong></h4>
+<p>This can be done using the customPOST / customPUT method. Look at the following example:</p>
+<pre><code class="`js language-`js">Restangular.all('users')
+.customPOST(formData, undefined, undefined, { 'Content-Type': undefined });</code></pre>
+<p>`<br />
+This basically tells the request to use the <em>Content-Type: multipart/form-data</em> as the header. Also <em>formData</em> is the body of the request, be sure to add all the params here, including the File you want to send of course.</p>
+<h4 id="how-do-i-handle-crud-operations-in-a-list-returned-by-restangular"><strong>How do I handle CRUD operations in a List returned by Restangular?</strong></h4>
+<pre><code class="`javascript language-`javascript">Restangular.all('users').getList().subscribe( users =&gt; {
+  this.users = users;
+  var userWithId = _.find(users, function(user) {
+    return user.id === 123;
+  });
+
+  userWithId.name = "Gonto";
+  userWithId.put();
+
+  // Alternatively delete the element from the list when finished
+  userWithId.remove().subscribe( () =&gt; {
+    // Updating the list and removing the user after the response is OK.
+    this.users = _.without(this.users, userWithId);
+  });
+
+});</code></pre>
+<p>`</p>
+<h4 id="removing-an-element-from-a-collection-keeping-the-collection-restangularized">Removing an element from a collection, keeping the collection restangularized</h4>
+<p>While the example above removes the deleted user from the collection, it also overwrites the collection object with a plain array (because of <code>_.without</code>) which no longer knows about its Restangular attributes.</p>
+<p>If want to keep the restangularized collection, remove the element by modifying the collection in place:</p>
+<pre><code class="javascript language-javascript">userWithId.remove().subscribe( () =&gt; {
+  let index = $scope.users.indexOf(userWithId);
+  if (index &gt; -1) this.users.splice(index, 1);
+});</code></pre>
+<h4 id="how-can-i-access-the-unrestangularized-element-as-well-as-the-restangularized-one">How can I access the <code>unrestangularized</code> element as well as the <code>restangularized</code> one?</h4>
+<p>In order to get this done, you need to use the <code>responseExtractor</code>. You need to set a property there that will point to the original response received. Also, you need to actually copy this response as that response is the one that's going to be <code>restangularized</code> later</p>
+<pre><code class="`javascript language-`javascript">RestangularProvider.setResponseExtractor( (response) =&gt; {
+  var newResponse = response;
+  if (_.isArray(response)) {
+    _.forEach(newResponse, function(value, key) {
+      newResponse[key].originalElement = _.clone(value);
+    });
+  } else {
+    newResponse.originalElement = _.clone(response);
+  }
+
+  return newResponse;
+});</code></pre>
+<p>`<br />
+Alternatively, if you just want the stripped out response on any given call, you can use the .plain() method, doing something like this:</p>
+<pre><code class="`javascript language-`javascript">this.showData = function () {
+  baseUrl.post(someData).subscribe( (response) =&gt; {
+    console.log(response.plain());
+  });
+};</code></pre>
+<p>`</p>
+<p><strong><a href="#table-of-contents">Back to top</a></strong></p>
+<h4 id="how-can-add-withcredentials-params-to-requests">How can add withCredentials params to requests?</h4>
+<p>````javascript<br />
+// Function for settting the default restangular configuration<br />
+export function RestangularConfigFactory (RestangularProvider) {<br />
+  // Adding withCredential parametr to all Restangular requests<br />
+  RestangularProvider.setDefaultHttpFields({ withCredentials: true });<br />
+}</p>
+<p><a href="https://github.com/NgModule">@NgModule</a>({<br />
+  bootstrap: [ AppComponent ],<br />
+  declarations: [<br />
+    AppComponent,<br />
+  ],<br />
+  imports: [<br />
+    // Global configuration<br />
+    RestangularModule.forRoot(RestangularConfigFactory),<br />
+  ]<br />
+})<br />
+export class AppModule {}<br />
+ ````</p>
+<p><strong><a href="#table-of-contents">Back to top</a></strong></p>
+<h1 id="server-frameworks">Server Frameworks</h1>
+<p>Users reported that this server frameworks play real nice with Ngx-restangular, as they let you create a Nested RESTful Resources API easily:</p>
+<ul>
+<li>Ruby on Rails</li>
+<li>CakePHP, Laravel and FatFREE, Symfony2 with RestBundle, Silex for PHP</li>
+<li>Play1 &amp; 2 for Java &amp; scala</li>
+<li>Dropwizard for Java</li>
+<li>Restify and Express for NodeJS</li>
+<li>Tastypie and Django Rest Framework for Django</li>
+<li>Slim Framework</li>
+<li>Symfony2 with FOSRestBundle (PHP)</li>
+<li>Microsoft ASP.NET Web API 2</li>
+<li>Grails Framework (<a href="https://github.com/rmondejar/grails-angular-duo">example</a>)</li>
+</ul>
+<p><strong><a href="#table-of-contents">Back to top</a></strong></p>
+<h1 id="license">License</h1>
+<p>The MIT License</p>
+<p><strong><a href="#table-of-contents">Back to top</a></strong></p>

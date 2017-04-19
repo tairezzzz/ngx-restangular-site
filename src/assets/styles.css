@@ -1,8 +1,48 @@
 html {
     font-family: 'Open Sans', sans-serif;
 }
-a[href='#table-of-contents'] {
+a[href='#table-of-contents'], #table-of-contents, #table-of-contents + ul {
     display: none;
+}
+pre {
+    background: #E0E0E0;
+    padding: 15px;
+    border: 1px solid #BDBDBD;
+    border-radius: 4px;
+}
+code {
+    background: #E0E0E0;
+}
+h2, h3, h4, h5, h6 {
+    font-weight: bold;
+}
+
+h1 {
+    font-size: 2.8rem;
+    border-bottom: 1px solid #eaecef;
+}
+h2 {
+    font-size: 2.4rem;
+}
+h3 {
+    font-size: 2rem;
+}
+h4 {
+    font-size: 1.8rem;
+}
+h5 {
+    font-size: 1.6rem;
+}
+h6 {
+    font-size: 1.2rem;
+}
+main ul:not(.browser-default) {
+    padding-left: 20px;
+    list-style-type: disc;
+}
+
+main ul:not(.browser-default) li {
+    list-style-type: disc;
 }
 code[class*="language-"],
 pre[class*="language-"] {
