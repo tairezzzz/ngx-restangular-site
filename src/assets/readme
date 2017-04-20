@@ -427,36 +427,37 @@ export class OtherComponent {
 <p>Restangular comes with defaults for all of its properties but you can configure them. <strong>So, if you don't need to configure something, there's no need to add the configuration.</strong><br />
 You can set all these configurations in <strong><a href="#how-to-configure-them-globally">RestangularModule</a> to change the global configuration</strong>, you can also <strong>use the <a href="#how-to-create-a-restangular-service-with-a-different-configuration-from-the-global-one">withConfig</a> method in Restangular service to create a new Restangular service with some scoped configuration</strong> or <strong>use <a href="#withconfig">withConfig</a> in component to make specified Restangular</strong>  </p>
 <h4 id="withconfig">withConfig</h4>
-<p>You can configure Restangular "withConfig" like in example below, you can also configure them globally **<a href="#how-to-configure-them-globally">RestangularModule</a> or in service with <a href="#how-to-create-a-restangular-service-with-a-different-configuration-from-the-global-one">withConfig</a></p>
-<p>````javascript<br />
-// Function for settting the default restangular configuration<br />
-export function RestangularConfigFactory (RestangularProvider) {<br />
-  RestangularProvider.setBaseUrl('http://www.google.com');<br />
-}</p>
-<p><a href="https://github.com/NgModule">@NgModule</a>({<br />
-  bootstrap: [ AppComponent ],<br />
-  declarations: [<br />
-    AppComponent,<br />
-  ],<br />
-  imports: [<br />
-    // Global configuration<br />
-    RestangularModule.forRoot(RestangularConfigFactory),<br />
-  ]<br />
-})<br />
-export class AppModule {}<br />
-// Let's use it in the component<br />
-<a href="https://github.com/Component">@Component</a>({<br />
-  ...<br />
-})<br />
-export class OtherComponent {<br />
-  constructor(private restangular: Restangular) {}</p>
-<p>ngOnInit() {<br />
-    restangular.withConfig((RestangularConfigurer) =&gt; {<br />
-      RestangularConfigurer.setBaseUrl('http://www.bing.com');<br />
-    }).all('users').getList()<br />
-  }<br />
-};<br />
- ````</p>
+<p>You can configure Restangular "withConfig" like in example below, you can also configure them globally <a href="#how-to-configure-them-globally">RestangularModule</a> or in service with <a href="#how-to-create-a-restangular-service-with-a-different-configuration-from-the-global-one">withConfig</a></p>
+<pre><code class="`javascript language-`javascript">// Function for settting the default restangular configuration
+export function RestangularConfigFactory (RestangularProvider) {
+  RestangularProvider.setBaseUrl('http://www.google.com');
+}
+
+@NgModule({
+  bootstrap: [ AppComponent ],
+  declarations: [
+    AppComponent,
+  ],
+  imports: [
+    // Global configuration
+    RestangularModule.forRoot(RestangularConfigFactory),
+  ]
+})
+export class AppModule {}
+// Let's use it in the component
+@Component({
+  ...
+})
+export class OtherComponent {
+  constructor(private restangular: Restangular) {}
+
+  ngOnInit() {
+    restangular.withConfig((RestangularConfigurer) =&gt; {
+      RestangularConfigurer.setBaseUrl('http://www.bing.com');
+    }).all('users').getList()
+  }
+};</code></pre>
+<p>`</p>
 <h4 id="setbaseurl">setBaseUrl</h4>
 <p>The base URL for all calls to your API. For example if your URL for fetching accounts is <a href="http://example.com/api/v1/accounts,">http://example.com/api/v1/accounts,</a> then your baseUrl is <code>/api/v1</code>. The default baseUrl is an empty string which resolves to the same url that Angular2 is running, but you can also set an absolute url like <code>http://api.example.com/api/v1</code> if you need to set another domain.</p>
 <h4 id="setextrafields">setExtraFields</h4>
@@ -1171,24 +1172,24 @@ Alternatively, if you just want the stripped out response on any given call, you
 <p>`</p>
 <p><strong><a href="#table-of-contents">Back to top</a></strong></p>
 <h4 id="how-can-add-withcredentials-params-to-requests">How can add withCredentials params to requests?</h4>
-<p>````javascript<br />
-// Function for settting the default restangular configuration<br />
-export function RestangularConfigFactory (RestangularProvider) {<br />
-  // Adding withCredential parametr to all Restangular requests<br />
-  RestangularProvider.setDefaultHttpFields({ withCredentials: true });<br />
-}</p>
-<p><a href="https://github.com/NgModule">@NgModule</a>({<br />
-  bootstrap: [ AppComponent ],<br />
-  declarations: [<br />
-    AppComponent,<br />
-  ],<br />
-  imports: [<br />
-    // Global configuration<br />
-    RestangularModule.forRoot(RestangularConfigFactory),<br />
-  ]<br />
-})<br />
-export class AppModule {}<br />
- ````</p>
+<pre><code class="`javascript language-`javascript">// Function for settting the default restangular configuration
+export function RestangularConfigFactory (RestangularProvider) {
+  // Adding withCredential parametr to all Restangular requests
+  RestangularProvider.setDefaultHttpFields({ withCredentials: true });
+}
+
+@NgModule({
+  bootstrap: [ AppComponent ],
+  declarations: [
+    AppComponent,
+  ],
+  imports: [
+    // Global configuration
+    RestangularModule.forRoot(RestangularConfigFactory),
+  ]
+})
+export class AppModule {}</code></pre>
+<p>`</p>
 <p><strong><a href="#table-of-contents">Back to top</a></strong></p>
 <h1 id="server-frameworks">Server Frameworks</h1>
 <p>Users reported that this server frameworks play real nice with Ngx-restangular, as they let you create a Nested RESTful Resources API easily:</p>
