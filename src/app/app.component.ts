@@ -9,45 +9,33 @@ import { MainService } from './core/services/main.service';
 Injectable();
 
 @Component({
-	selector: 'restangular-app',
-    templateUrl: './app.component.html',
-    styleUrls: [/*'../../node_modules/materialize-css/dist/css/materialize.css', '../../node_modules/prismjs/themes/prism.css',*/ './app.component.css']
+  selector: 'restangular-app',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
 })
 
 export class AppComponent implements OnInit {
-    public stars;
-    
-    
-    constructor(
-        private cache: TransferState,
-        @Inject(PLATFORM_ID) private platformId: Object,
-        //private pageScrollService: PageScrollService,
-        @Inject(DOCUMENT) private document: any,
-        private renderer:Renderer2,
-        public mainService: MainService
-    ) {
-        PageScrollConfig.defaultScrollOffset = 64;
-    }
-
-    ngOnInit() {
-        if (isPlatformBrowser(this.platformId)) {
-        this.mainService.getStars().subscribe((res) => {
-                this.stars = res.stargazers_count;
-            });
-            //stars$.unsubscribe();
-        }
-        this.cache.set('cached', true);
-    }
-    
-    public sideBar(e) {
-        e.stopPropagation();
-        if (this.mainService.isSideBarShowen) {
-            this.mainService.isSideBarShowen = false;
-        } else {
-            this.mainService.isSideBarShowen = true;
-        }
-    }
-
+  public stars;
+  
+  
+  constructor(
+    public mainService: MainService
+  ) {
+    PageScrollConfig.defaultScrollOffset = 64;
+  }
+  
+  ngOnInit() {
+    this.mainService.getStars()
+    .subscribe((res) => {
+      this.stars = res.stargazers_count;
+    });
+  }
+  
+  public toggleSideBar(e) {
+    e.stopPropagation();
+    this.mainService.isSideBarShow = !this.mainService.isSideBarShow;
+  }
+  
 }
 
 

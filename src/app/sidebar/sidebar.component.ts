@@ -427,10 +427,8 @@ export class SidebarComponent implements OnInit {
   }
   
   public goToHead(target, children): void {
-    if (isPlatformBrowser(this.platformId)) {
-      let pageScrollInstance: PageScrollInstance = PageScrollInstance.simpleInstance(this.document, target);
-      this.pageScrollService.start(pageScrollInstance);
-    }
+    let pageScrollInstance: PageScrollInstance = PageScrollInstance.simpleInstance(this.document, target);
+    this.pageScrollService.start(pageScrollInstance);
   };
   
   handleClick(event){
@@ -443,9 +441,9 @@ export class SidebarComponent implements OnInit {
       clickedComponent = clickedComponent.parentNode;
     } while (clickedComponent);
     if(inside){
-      this.mainService.isSideBarShowen = true;
+      this.mainService.isSideBarShow = true;
     }else{
-      this.mainService.isSideBarShowen = false;
+      this.mainService.isSideBarShow = false;
     }
   };
 }

@@ -13,20 +13,21 @@ import { MarkdownModule } from 'angular2-markdown';
 //import { MainService } from './core/services/main.service';
 
 @NgModule({
-	imports: [
-        CommonModule,
-        HttpModule,
-        TransferHttpModule,
-        CoreModule,
-        MarkdownModule.forRoot(),
-        RouterModule.forRoot([
-          { path: '', component: HomeViewComponent, pathMatch: 'full'},
-          { path: 'lazy', loadChildren: './+lazy/lazy.module#LazyModule'}
-        ]),
-        Ng2PageScrollModule.forRoot()
-	],
-	declarations: [ AppComponent, HomeViewComponent, SidebarComponent ],
+  imports: [
+    CommonModule,
+    HttpModule,
+    TransferHttpModule,
+    CoreModule,
+    MarkdownModule.forRoot(),
+    RouterModule.forRoot([
+      {path: '', component: HomeViewComponent, pathMatch: 'full'},
+      {path: 'lazy', loadChildren: './+lazy/lazy.module#LazyModule'}
+    ]),
+    Ng2PageScrollModule.forRoot()
+  ],
+  declarations: [AppComponent, HomeViewComponent, SidebarComponent],
   //providers: [MainService],
-  exports: [ AppComponent ]
+  exports: [AppComponent]
 })
-export class AppModule {}
+export class AppModule {
+}
