@@ -16,7 +16,7 @@ enableProdMode();
 const fs = require ('fs');
 const app = express();
 const api = new App();
-const port = 8000;
+const port = 53100;
 const baseUrl = `http://localhost:${port}`;
 let myDirName = fs.realpathSync('.');
 app.engine('html', ngExpressEngine({
@@ -50,6 +50,6 @@ app.get('/data', (req, res) => {
   console.timeEnd(`GET: ${req.originalUrl}`);
 });
 
-app.listen(8000, () => {
+app.listen(53100, () => {
   console.log(`Listening at ${baseUrl}`);
 });

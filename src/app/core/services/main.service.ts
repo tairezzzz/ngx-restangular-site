@@ -22,7 +22,9 @@ export class MainService {
   
   getReadmeFile(): any {
     let location = this.document.location;
-    let port = location? location.port : process.env.PORT;
+    
+    // TODO fix process.env.PORT in AOT
+    let port = location? location.port : process.env.PORT || 53100;
     
     return this.http.get(`http://localhost:${port}/assets/readme`);
   }

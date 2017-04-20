@@ -16,7 +16,7 @@ import { MainService } from '../core/services/main.service';
 })
 export class SidebarComponent implements OnInit {
   
-  private menu:any = [
+  public menu:any = [
     {
       title:'How do I add this to my project in angular 2?',
       inputName:'Level-1',
