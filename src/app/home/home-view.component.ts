@@ -1,41 +1,33 @@
-import { Component, OnInit, Renderer2, PLATFORM_ID, Inject, ElementRef, ViewChild } from '@angular/core';
-import { TransferHttp } from '../../modules/transfer-http/transfer-http';
+import { Component, OnInit } from '@angular/core';
 import { MainService } from '../core/services/main.service';
-import { elementAt } from 'rxjs/operator/elementAt';
-import { isPlatformBrowser, isPlatformServer } from '@angular/common';
+import { Observable } from 'rxjs/Observable';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
-	selector: 'main-content',
+  selector: 'main-content',
   templateUrl: 'home-view.component.html',
-  styleUrls: [ './home-view.component.css']
+  styleUrls: ['./home-view.component.css']
 })
 export class HomeViewComponent implements OnInit {
+  public readme$: Observable<any>;
   
   constructor(
-    private http: TransferHttp,
     public mainService: MainService,
-    public renderer: Renderer2,
-    @Inject(PLATFORM_ID) private platformId: Object
-  ) {}
-  
-  @ViewChild('dataContainer') dataContainer: ElementRef;
-  
-  ngOnInit() {
-    //
-    //this.mainService.getReadmeFile().subscribe((res) => {
-    //  debugger;
-    //  this.dataContainer.nativeElement.innerHTML = res['_body'];
-    //});
-      if (isPlatformBrowser(this.platformId)) {
-        this.mainService.getReadmeFile().subscribe((res) => {
-          this.dataContainer.nativeElement.innerHTML = res['_body'];
-        });
-      }
-    if (isPlatformServer(this.platformId)) {
-      this.mainService.getReadmeFileServ().subscribe((r) => {
-        this.dataContainer.nativeElement.innerHTML = r['_body'];
-      });
-    }
+    private sanitized: DomSanitizer
+  ) {
   }
   
+  ngOnInit() {
+    this.readme$ = this.mainService.getReadmeFile()
+    .startWith({'_body': ''})
+    .map(res => res['_body'])
+    .map(body => {
+      // TODO fix markdown in backend
+      let re = /(<p>`<\/p>|`\n)/gi;
+      return body.replace(re, '');
+    })
+    .map(body => {
+      return this.sanitized.bypassSecurityTrustHtml(body);
+    })
+  }
 }
