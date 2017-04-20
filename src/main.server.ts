@@ -15,7 +15,7 @@ enableProdMode();
 const fs = require ('fs');
 const app = express();
 const api = new App();
-const port = 8000;
+const port = 53100;
 const baseUrl = `http://localhost:${port}`;
 
 let myDirName = fs.realpathSync('.');

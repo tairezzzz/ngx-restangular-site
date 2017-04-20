@@ -22,8 +22,8 @@ export class MainService {
   
   getReadmeFile(): any {
     let location = this.document.location;
-    let port = location? location.port : process.env.PORT;
     
-    return this.http.get(`http://localhost:${port}/assets/readme`);
+    // TODO fix process.env in AOT
+    return this.http.get(`http://ngx-restangular.com/assets/readme`);
   }
 }
