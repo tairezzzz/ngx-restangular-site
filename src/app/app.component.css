@@ -1,4 +1,6 @@
-
+nav {
+    padding-left: 300px;
+}
 :host-context(html) html {
     background-color: #c50033;
 }
@@ -43,6 +45,9 @@ footer {
 }
 
 @media only screen and (max-width: 992px) {
+    nav {
+        padding-left: 0;
+    }
     .custom-sidebar {
         left: -300px;
     }
@@ -50,5 +55,6 @@ footer {
         padding-left: 0;
     }
 }
+
 
 

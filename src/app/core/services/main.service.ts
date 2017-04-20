@@ -25,5 +25,6 @@ export class MainService {
     
     // TODO fix process.env in AOT
     return this.http.get(`http://ngx-restangular.com/assets/readme`);
+    //return this.http.get(`http://localhost:53100/assets/readme`);
   }
 }

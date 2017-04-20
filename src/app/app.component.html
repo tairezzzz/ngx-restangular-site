@@ -1,16 +1,22 @@
 <header>
     <nav class="top-nav">
         <div class="container">
+          <div class="row">
             <div class="nav-wrapper">
-                <a href="https://github.com/2muchcoffeecom/ngx-restangular/" target="_blank" class="brand-logo">{{ stars }} Stars on GitHub</a>
-                <a data-activates="mobile-demo" class="custom-burger-menu hide-on-large-only button-collapse" (click)="toggleSideBar($event)">
-                    <i class="material-icons">menu</i>
-                </a>
-                <ul id="top-nav-mobile" class="right hide-on-med-and-down">
-                    <li><a href="https://github.com/2muchcoffeecom/ngx-restangular/" target="_blank">Download</a></li>
-                    <li><a href="http://embed.plnkr.co/qozGPV2HowzmtKbC9a54/" target="_blank">Demo</a></li>
-                </ul>
+              <!--<a href="https://github.com/2muchcoffeecom/ngx-restangular/" target="_blank" class="brand-logo">{{ stars }} Stars on GitHub</a>-->
+              <a data-activates="mobile-demo" class="custom-burger-menu hide-on-large-only button-collapse" (click)="toggleSideBar($event)">
+                <i class="material-icons">menu</i>
+              </a>
+              <div id="top-nav-mobile">
+                <div class="badge"><a href="https://github.com/2muchcoffeecom/ngx-restangular/" target="_blank" class="stars">
+                  <span><span class="material-icons">grade</span> Star</span>
+                  <span>{{ stars }}</span>
+                </a></div>
+                <!--<li><a href="https://github.com/2muchcoffeecom/ngx-restangular/" target="_blank">Download</a></li>-->
+                <!--<li><a href="http://embed.plnkr.co/qozGPV2HowzmtKbC9a54/" target="_blank">Demo</a></li>-->
+              </div>
             </div>
+          </div>
         </div>
     </nav>
   <sidebar></sidebar>
