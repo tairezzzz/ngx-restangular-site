@@ -1,13 +1,8 @@
 nav {
     padding-left: 300px;
-}
-:host-context(html) html {
-    background-color: #c50033;
-}
-
-nav {
     background: #c50033;
 }
+
 nav .button-collapse {
     margin: 0;
 }
@@ -53,6 +48,12 @@ footer {
     }
     footer {
         padding-left: 0;
+    }
+}
+
+@media only screen and (max-width: 420px) {
+    nav .button-collapse {
+        margin: 0 18px;
     }
 }
 
