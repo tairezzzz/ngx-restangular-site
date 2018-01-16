@@ -1,0 +1,44 @@
+@import '../../../../styles/media.scss';
+
+.header {
+  width: 100%;
+  background-color: $darkBlue;
+  position: fixed;
+  left: 0;
+  top: 0;
+  padding: rem(10px) 0;
+  z-index: 1000;
+
+  &-container {
+    padding: 0 20px;
+    height: 100%;
+    width: 100%;
+    position: relative;
+
+    @include tablets {
+      max-width: rem(704px);
+      margin: 0 auto;
+    }
+    @include desktop {
+      max-width: rem(1210px);
+      margin: 0 auto;
+    }
+  }
+
+  &-logo {
+    display: inline-block;
+    &__item {
+      width: rem(199px);
+      height: rem(35px);
+      fill: #fff;
+      @include tablets {
+        width: rem(275px);
+        height: rem(48px);
+      }
+      @include desktop {
+        width: rem(275px);
+        height: rem(48px);
+      }
+    }
+  }
+}

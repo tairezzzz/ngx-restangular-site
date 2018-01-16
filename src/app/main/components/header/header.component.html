@@ -1,0 +1,24 @@
+<header class="header" fxLayout="column" fxLayoutAlign="left start">
+  <div class="header-container"
+    fxLayout="row"
+    fxLayoutAlign="space-between center">
+    <a class="header-logo" routerLink="/">
+      <svg class="header-logo__item">
+        <use xlink:href="/assets/img/svg/sprite.min.svg#2mclogo"></use>
+      </svg>
+    </a>
+    <div class="header-socials"
+      fxHide="true"
+      fxHide.gt-xs="false">
+      <ul class="socials-list" fxLayout="row">
+        <li class="socials-list__item" *ngFor="let headerSocialsItem of headerSocialsList">
+          <a class="socials-list__link" href="">
+            <svg class="socials-list__link-item">
+              <use [attr.xlink:href]="[headerSocialsItem.imgPath]"></use>
+            </svg>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</header>

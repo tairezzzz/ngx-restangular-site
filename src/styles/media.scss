@@ -1,0 +1,58 @@
+// colors
+$darkBlue: #373A85;
+
+// resolutions
+$desktop: 1280px;
+$laptops: 960px;
+$tablets: 600px;
+$phones: 480px;
+$vertical: 321px;
+
+@function rem($px) {
+  @return $px / 16px + 0rem;
+}
+
+@mixin desktop {
+  @media screen and (min-width: $desktop) {
+    @content;
+  }
+}
+
+@mixin laptops {
+  @media screen and (min-width: $laptops)  {
+    @content;
+  }
+}
+
+@mixin tablets {
+  @media screen and (min-width: $tablets) {
+    @content;
+  }
+}
+
+@mixin phones {
+  @media screen and (min-width: $phones) {
+    @content;
+  }
+}
+
+@mixin vertical {
+  @media screen and (min-width: $vertical)  {
+    @content;
+  }
+}
+
+@mixin btn-gradient {
+  background-image: -moz-linear-gradient(270deg, #4EB3FE 0%, #7043F3 100%);
+  background-image: -webkit-linear-gradient(270deg, #4EB3FE 0%, #7043F3 100%);
+  background-image: -ms-linear-gradient(270deg, #4EB3FE 0%, #7043F3 100%);
+  background-image: linear-gradient(270deg, #4EB3FE 0%, #7043F3 100%);
+}
+
+@mixin home-titles-anim {
+  transition-delay: .65s;
+  transition-duration: .3s;
+  transition-property: transform, opacity;
+  transition-timing-function: cubic-bezier(0.215,0.61,0.355,1);
+  animation: 1.5s cubic-bezier(0.215,0.61,0.355,1) 1s backwards home-titles-anim;
+}

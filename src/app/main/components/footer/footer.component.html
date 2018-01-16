@@ -1,0 +1,44 @@
+<footer class="footer">
+  <div class="footer-container container"
+    fxLayout="column"
+    fxLayoutAlign="start center"
+    fxLayout.sm="row"
+    fxLayoutAlign.sm="space-between center"
+    fxLayout.gt-md="row"
+    fxLayoutWrap
+    fxLayoutAlign.gt-md="space-between center">
+    <div class="footer-logo" fxLayout="column" fxLayoutAlign="start center" fxLayoutAlign.lg="start start">
+      <a class="footer-logo__link" routerLink="/">
+        <svg class="footer-logo__item">
+          <use xlink:href="/assets/img/svg/sprite.min.svg#2mclogo"></use>
+        </svg>
+      </a>
+      <div class="footer-logo__text">Full-stack mobile (iOS, Android) and web app design and development company.
+      </div>
+    </div>
+    <div class="footer-socials" fxLayout="column" fxLayoutAlign="start center" fxLayoutAlign.gt-md="end end">
+      <ul class="footer-socials__list" fxLayout="row" fxLayoutAlign="end end">
+        <li class="footer-socials__item" *ngFor="let footerSocialsItem of footerSocialsList">
+          <a href="#" class="footer-socials__link">
+            <svg class="footer-socials__link-item">
+              <use [attr.xlink:href]="[footerSocialsItem.imgPath]"></use>
+            </svg>
+          </a>
+        </li>
+      </ul>
+      <div class="footer-socials__btn">
+        <a href="" class="footer-socials__btn-link ">
+          <span class="footer-socials__btn-text btn hvr-sweep-to-right">Start your career with us</span>
+        </a>
+      </div>
+    </div>
+    <div class="footer-rights">
+      <div class="footer-rights__text">
+        © Copyright 2017 2muchcoffee
+        – Mobile App Design
+        and Development Company.
+        All Rights Reserved
+      </div>
+    </div>
+  </div>
+</footer>
