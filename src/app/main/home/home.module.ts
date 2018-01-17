@@ -4,6 +4,7 @@ import { SharedModule } from '../shared/shared.module';
 
 import { HomeComponent } from './home.component';
 import { IndexSectionModule } from './index-section/index-section.module';
+import { BenefitsSectionModule } from './benefits-section/benefits-section.module';
 
 
 
@@ -11,8 +12,9 @@ import { IndexSectionModule } from './index-section/index-section.module';
   declarations: [HomeComponent],
   imports: [
     SharedModule,
-    IndexSectionModule,
     HomeRoutingModule,
+    IndexSectionModule,
+    BenefitsSectionModule,
     ]
 })
 

@@ -1,0 +1,77 @@
+@import '../../../../styles/media.scss';
+
+.index {
+  width: 100%;
+  min-height: 95vh;
+  padding: rem(10px) 0 rem(19px) 0;
+  overflow: hidden;
+  background-color: #ffffff;
+  @include vertical {
+    padding: rem(35px) 0 rem(19px) 0;
+  }
+  @include tablets {
+    min-height: 95vh;
+    padding: rem(125px) 0 rem(19px) 0;
+  }
+  @include laptops {
+    padding: rem(105px) 0 rem(24px) 0;
+    min-height: 100vh;
+  }
+  @include desktop {
+    padding: 7% 0 rem(24px) 0;
+  }
+  &-container {
+    position: relative;
+    max-width: 100%;
+    min-height: 76vh;
+    margin: 0 auto;
+    @include vertical {
+      min-height: 79vh;
+    }
+    @include tablets {
+      min-height: 77vh;
+      width: rem(704px);
+      max-width: rem(704px);
+      margin: 0 auto;
+    }
+    @include laptops {
+      width: rem(960px);
+      max-width: rem(960px);
+      margin: 0 auto;
+
+    }
+    @include desktop {
+      min-height: 83vh;
+      width: rem(1140px);
+      max-width: rem(1140px);
+      margin: 0 auto;
+      padding: 0;
+    }
+  }
+  &-description {
+    @include desktop {
+      margin-bottom: rem(25px);
+    }
+  }
+  &-title {
+    padding: 0 5%;
+    margin-bottom: rem(23px);
+
+    @include tablets {
+      padding: 0;
+      margin-bottom: rem(39px);
+    }
+    @include desktop {
+      margin-bottom: rem(10px);
+    }
+  }
+  &-text {
+    padding: 0 7%;
+    @include tablets {
+      padding: 0 12%;
+    }
+    @include laptops {
+      padding: 0 20%;
+    }
+  }
+}
