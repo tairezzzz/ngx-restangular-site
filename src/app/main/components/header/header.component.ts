@@ -8,7 +8,11 @@ import { Component, ViewChild, ElementRef, OnDestroy, OnInit } from '@angular/co
 })
 export class HeaderComponent implements OnInit {
   
- headerSocialsList: { imgPath: string, linkPath: string }[];
+ headerSocialsList: {
+   imgPath: string,
+   linkPath: string,
+   modifier: boolean
+ }[];
   
   @ViewChild('header') header: ElementRef;
   
@@ -19,23 +23,28 @@ export class HeaderComponent implements OnInit {
     this.headerSocialsList = [
       {
         imgPath: '/assets/img/svg/sprite.min.svg#fb',
-        linkPath: '01'
+        linkPath: '01',
+        modifier: false
       },
       {
         imgPath: '/assets/img/svg/sprite.min.svg#in',
-        linkPath: '02'
+        linkPath: '02',
+        modifier: false
       },
       {
         imgPath: '/assets/img/svg/sprite.min.svg#github',
-        linkPath: '03'
+        linkPath: '03',
+        modifier: true
       },
       {
-        imgPath: '/assets/img/svg/sprite.min.svg#behance ',
-        linkPath: '04'
+        imgPath: '/assets/img/svg/sprite.min.svg#behance',
+        linkPath: '04',
+        modifier: true
       },
       {
         imgPath: '/assets/img/svg/sprite.min.svg#tw',
-        linkPath: '05'
+        linkPath: '05',
+        modifier: false
       }
     ];
   }

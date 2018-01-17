@@ -15,16 +15,18 @@
     display: inline-block;
 
     &-item {
-      width: rem(25px);
-      height: rem(25px);
+      width: rem(20px);
+      height: rem(20px);
       fill: #fff;
       @include desktop {
-        width: rem(30px);
-        height: rem(30px);
         &:hover {
-          fill: #7043F3;
+          fill: red;
         }
       }
+    }
+    &-item_size {
+      width: rem(23px);
+      height: rem(23px);
     }
   }
 }

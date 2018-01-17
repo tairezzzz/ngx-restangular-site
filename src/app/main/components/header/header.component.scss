@@ -6,38 +6,57 @@
   position: fixed;
   left: 0;
   top: 0;
-  padding: rem(10px) 0;
+  padding: rem(7px) 0 rem(2px);
   z-index: 1000;
+  @include desktop {
+    padding: rem(11px) 0 rem(6px);
+  }
 
   &-container {
-    padding: 0 20px;
-    height: 100%;
+    padding: 0 rem(5px);
     width: 100%;
     position: relative;
 
     @include tablets {
       max-width: rem(704px);
       margin: 0 auto;
+      padding: 0 rem(15px);
+    }
+    @include laptops {
+      max-width: rem(960px);
+      margin: 0 auto;
+      padding: 0 rem(15px);
     }
     @include desktop {
-      max-width: rem(1210px);
+      max-width: rem(1140px);
       margin: 0 auto;
+      padding: 0 rem(20px);
     }
   }
 
   &-logo {
     display: inline-block;
+    margin-left: rem(30px);
+    @include vertical {
+      margin-left: rem(30px);
+    }
+    @include phones {
+      margin-left: rem(45px);
+    }
+    @include tablets {
+      margin-left: 0;
+    }
     &__item {
-      width: rem(199px);
-      height: rem(35px);
+      width: rem(145px);
+      height: rem(25px);
       fill: #fff;
       @include tablets {
-        width: rem(275px);
-        height: rem(48px);
+        width: rem(202px);
+        height: rem(35px);
       }
       @include desktop {
-        width: rem(275px);
-        height: rem(48px);
+        width: rem(212px);
+        height: rem(37px);
       }
     }
   }
