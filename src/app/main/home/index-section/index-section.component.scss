@@ -8,6 +8,7 @@
   background-color: #ffffff;
   @include vertical {
     padding: rem(35px) 0 rem(19px) 0;
+    min-height: 92vh;
   }
   @include tablets {
     min-height: 95vh;
@@ -26,7 +27,7 @@
     min-height: 76vh;
     margin: 0 auto;
     @include vertical {
-      min-height: 79vh;
+      min-height: 74vh;
     }
     @include tablets {
       min-height: 77vh;

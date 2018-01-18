@@ -5,31 +5,46 @@
   <div class="benefits-container"
     fxLayout="column"
     fxLayoutAlign="space-between center">
-    <div class="benefits-description">
-      <div class="benefits-title">
-        <h2 class="block-title">BENEFITS OF</h2>
-        <h2 class="block-title">NGX-RESTANGULAR</h2>
-      </div>
-      <div class="benefits-text">
-        <div class="block-text">Use rich features for complex tasks
-          Convenient when working on complex client-side tasks. Supports promises and observables, has clear structure and a long list of features.
-        </div>
+    <div class="benefits-title">
+      <h2 class="block-title">BENEFITS OF</h2>
+      <h2 class="block-title">NGX-RESTANGULAR</h2>
+    </div>
+    <div class="benefits-text">
+      <div class="block-text">Use rich features for complex tasks
+        Convenient when working on complex client-side tasks. Supports promises and observables, has clear structure and a long list of features.
       </div>
     </div>
+    <ul class="benefits-list">
+      <li class="benefits-list__item"
+        *ngFor="let BenefitsListItem of BenefitsList"
+        [ngClass]="[BenefitsListItem.itemBorderModifier]">
+        <div class="benefits-list__title"
+          [ngClass]="[BenefitsListItem.titleBorderModifier]">{{ BenefitsListItem.title }}
+        </div>
+        <div class="benefits-list__description"
+          fxLayout="column"
+          fxLayoutAlign="center center"
+          fxLayout.gt-md="row"
+          fxLayoutAlign.gt-md="space-between center">
+          <div class="benefits-list__text">
+            <div class="block-text">{{ BenefitsListItem.text }}</div>
+          </div>
+          <div class="benefits-list__img"
+            fxLayout="column"
+            fxLayoutAlign="center center"
+            [ngClass]="[BenefitsListItem.imgBorderModifier]">
+            <img class="benefits-list__img-bg"
+              [ngClass]="[BenefitsListItem.bgSizeModifier]"
+              [src]="BenefitsListItem.bgPath"
+              [alt]="BenefitsListItem.imgName">
+            <img class="benefits-list__img-pic"
+              [ngClass]="[BenefitsListItem.picSizeModifier]"
+              [src]="BenefitsListItem.imgPath"
+              [alt]="BenefitsListItem.imgName">
+          </div>
+        </div>
+      </li>
+    </ul>
   </div>
-  <ul class="benefits-list">
-    <li class="benefits-list__item" *ngFor="let BenefitsListItem of BenefitsList">
-      <div class="benefits-list__title">
-        {{ BenefitsListItem.title }}
-      </div>
-      <div class="benefits-list__description">
-        <div class="benefits-list__text">
-          {{ BenefitsListItem.text }}
-        </div>
-        <div class="benefits-list__img">
-          <img class="benefits-list__img-item" [src]="BenefitsListItem.path" [alt]="BenefitsListItem.imgName">
-        </div>
-      </div>
-    </li>
-  </ul>
+
 </section>

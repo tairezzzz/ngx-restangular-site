@@ -1,6 +1,6 @@
 // colors
 $darkBlue: #373A85;
-
+$border: #E1C857;
 // resolutions
 $desktop: 1280px;
 $laptops: 960px;
@@ -42,12 +42,24 @@ $vertical: 321px;
   }
 }
 
-@mixin btn-gradient {
-  background-image: -moz-linear-gradient(270deg, #4EB3FE 0%, #7043F3 100%);
-  background-image: -webkit-linear-gradient(270deg, #4EB3FE 0%, #7043F3 100%);
-  background-image: -ms-linear-gradient(270deg, #4EB3FE 0%, #7043F3 100%);
-  background-image: linear-gradient(270deg, #4EB3FE 0%, #7043F3 100%);
+@mixin border-right {
+  background-repeat: no-repeat;
+  background-size: 3px 100%, 30% 3px, 3px 30%, 100% 3px, calc(100% - 8px) calc(100% - 8px);
+  background-position: left bottom, left bottom, right top, right top, 4px 4px;
+  @include tablets {
+    background-size: 4px 100%, 30% 4px, 4px 30%, 100% 4px, calc(100% - 8px) calc(100% - 8px);
+  }
 }
+
+@mixin border-left {
+  background-repeat: no-repeat;
+  background-size: 3px 30%, 100% 3px, 3px 100%, 30% 3px, calc(100% - 8px) calc(100% - 8px);
+  background-position: left top, left top, right bottom, right bottom, 4px 4px;
+  @include tablets {
+    background-size: 4px 30%, 100% 4px, 4px 100%, 30% 4px, calc(100% - 8px) calc(100% - 8px);
+  }
+}
+
 
 @mixin home-titles-anim {
   transition-delay: .65s;
