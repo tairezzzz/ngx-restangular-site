@@ -3,30 +3,33 @@
 .socials-list {
 
   &__item {
-    margin-right: rem(20px);
+    margin-right: rem(24px);
     &:last-child {
       margin-right: 0;
-    }
-    @include tablets {
-      margin-right: rem(20px);
     }
   }
   &__link {
     display: inline-block;
 
     &-item {
-      width: rem(20px);
-      height: rem(20px);
+      width: rem(22px);
+      height: rem(22px);
       fill: #fff;
+      transition: .4s;
+
       @include desktop {
         &:hover {
-          fill: red;
+          transform: translateY(15%);
+          transition: .4s;
         }
       }
     }
     &-item_size {
-      width: rem(23px);
-      height: rem(23px);
+      width: rem(25px);
+      height: rem(25px);
+    }
+    &-item_color {
+      fill: $footer;
     }
   }
 }

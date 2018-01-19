@@ -2,172 +2,110 @@
 
 .footer {
   width: 100%;
-  background-color: #f2f2f2;
+  background-color: #ffffff;
 
   &-container {
     width: 90%;
-    padding-top: rem(50px);
+    padding-top: rem(100px);
     padding-bottom: rem(36px);
-    border-top: 1px solid #b8b8b8;
     margin: 0 auto;
     @include tablets {
       width: rem(600px);
       max-width: rem(600px);
-      border-top: 1px solid #b8b8b8;
       padding: rem(43px) 0;
     }
+    @include laptops {
+      width: rem(700px);
+      max-width: rem(700px);
+      margin: 0 auto;
+    }
     @include desktop {
-      width: rem(1236px);
-      max-width: rem(1236px);
-      border-top: 1px solid #b8b8b8;
-      padding: rem(36px) 0;
+      width: rem(1140px);
+      max-width: rem(1140px);
+      padding-top: rem(36px);
+      padding-bottom: rem(80px);
     }
   }
-
-  &-logo {
-    margin-bottom: rem(55px);
+  &-title {
+    font-size: rem(24px);
+    font-weight: 600;
+    color: #000;
+    text-align: center;
+    letter-spacing: 1.2px;
+    line-height: rem(29px);
+    margin-bottom: rem(30px);
     @include tablets {
-      width: 220px;
-      margin-bottom: rem(55px);
+      font-size: rem(36px);
+      letter-spacing: 1.7px;
+      line-height: rem(47px);
+      margin-bottom: rem(80px);
     }
     @include desktop {
-      width: 290px;
+      font-size: rem(48px);
+      letter-spacing: 1.7px;
+      line-height: rem(60px);
+      margin-bottom: rem(130px);
+    }
+  }
+  &-form {
+    width: 100%;
+    margin-bottom: rem(60px);
+    @include desktop {
       margin-bottom: 0;
-      order: 1;
-    }
-    &__link {
-      display: inline-block;
-      margin-bottom: rem(24px);
-      @include vertical {
-        padding: 0;
-      }
-      @include tablets {
-        margin-bottom: rem(5px);
-      }
-      @include desktop {
-        margin-bottom: rem(15px);
-        padding: 0;
-      }
-    }
-    &__item {
-      width: rem(276px);
-      height: rem(50px);
-      @include tablets {
-        width: rem(213px);
-        height: rem(36px);
-      }
-      @include desktop {
-        &:hover {
-          fill: #7043F3;
-        }
-      }
-    }
-    &__text {
-      font-family: "Montserrat";
-      font-weight: 400;
-      text-align: center;
-      color: #7f8fab;
-      @include tablets {
-        font-size: rem(12px);
-        font-weight: 500;
-      }
-      @include desktop {
-        font-size: rem(12px);
-      }
-
+      width: 75%;
     }
   }
-  &-socials {
-    margin-bottom: rem(55px);
-    @include tablets {
+}
+
+.form {
+  width: 100%;
+  &-row {
+    width: 100%;
+    @include desktop {
       margin-bottom: rem(60px);
-    }
-    @include desktop {
-      margin-bottom: 0;
-      order: 3;
-    }
-
-    &__list {
-      margin-bottom: rem(55px);
-      @include tablets {
-        margin-bottom: rem(15px);
-      }
-      @include desktop {
-        margin-bottom: rem(15px);
-      }
-    }
-    &__item {
-      margin-right: rem(20px);
+      width: 90%;
       &:last-child {
-        margin-right: 0;
+        margin-bottom: 0;
       }
     }
-    &__link {
-      display: inline-block;
-
-    }
-    &__link-item {
-      width: rem(35px);
-      height: rem(35px);
+    &__cell {
+      cursor: pointer;
+      width: 100%;
       @include tablets {
-        width: rem(25px);
-        height: rem(25px);
-      }
-      @include desktop {
-        &:hover {
-          fill: #7043F3;
+        margin-left: rem(60px);
+        flex: 1;
+        &:first-child {
+          margin-left: 0;
         }
       }
     }
-    &__btn-link {
-      position: relative;
-      padding: rem(3px);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    &__btn-text {
-      background-color: #f2f2f2;
-      color: #5844ff;
-      padding: rem(10px) rem(16px);
-      border: 2px solid #7043F3;
-      border-radius: rem(8px);
-      transition: .5s;
-      &:hover {
-        color: #fff;
-        transition: .5s;
-        border: 2px solid #416dea;
-      }
-    }
-  }
-
-  &-rights {
-    padding: 0 rem(25px);
-    @include tablets {
-      padding: 0 8%;
-    }
-    @include desktop {
-      padding: 0;
-      order: 2;
-    }
-
-    &__text {
-      font-family: "Montserrat";
-      font-weight: 400;
-      text-align: center;
+    &__input {
+      width: 100%;
+      padding: rem(10px) rem(40px) rem(10px) rem(10px);
+      border: none;
+      outline: none;
+      font-family: Montserrat;
       font-size: rem(14px);
-      color: #7f8fab;
+      font-weight: 300;
+      line-height:rem(17px);
+      color: #000;
+      background-color: #fff;
+      border-bottom: 1px solid $footer;
+      margin-bottom: rem(30px);
       @include tablets {
-        font-size: rem(12px);
-        font-weight: 500;
+        font-size: rem(16px);
+        line-height:rem(20px);
+        border-bottom: 2px solid $footer;
       }
       @include desktop {
-        max-width: 260px;
-        margin-left: rem(-35px);
-        font-size: rem(12px);
+        font-size: rem(18px);
+        line-height:rem(22px);
       }
     }
+    &__submit {
+      border: none;
+      cursor: pointer;
+      margin-top: rem(30px);
+    }
   }
-
 }

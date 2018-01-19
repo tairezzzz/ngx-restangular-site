@@ -11,23 +11,34 @@ export class FooterComponent {
   footerSocialsList = [
     {
       imgPath: '/assets/img/svg/sprite.min.svg#fb',
-      linkPath: '01'
+      linkPath: '01',
+      modifier: false,
+      colorModifier: true,
     },
     {
       imgPath: '/assets/img/svg/sprite.min.svg#in',
-      linkPath: '02'
+      linkPath: '02',
+      modifier: false,
+      colorModifier: true,
     },
     {
       imgPath: '/assets/img/svg/sprite.min.svg#github',
-      linkPath: '03'
+      linkPath: '03',
+      modifier: true,
+      colorModifier: true,
     },
     {
-      imgPath: '/assets/img/svg/sprite.min.svg#behance ',
-      linkPath: '04'
+      imgPath: '/assets/img/svg/sprite.min.svg#behance',
+      linkPath: '04',
+      modifier: true,
+      colorModifier: true,
+  
     },
     {
       imgPath: '/assets/img/svg/sprite.min.svg#tw',
-      linkPath: '05'
+      linkPath: '05',
+      modifier: false,
+      colorModifier: true,
     }
   ];
   

@@ -14,7 +14,9 @@
         Convenient when working on complex client-side tasks. Supports promises and observables, has clear structure and a long list of features.
       </div>
     </div>
-    <ul class="benefits-list">
+    <ul class="benefits-list"
+      fxLayout="column"
+      fxLayoutAlign="center center">
       <li class="benefits-list__item"
         *ngFor="let BenefitsListItem of BenefitsList"
         [ngClass]="[BenefitsListItem.itemBorderModifier]">
@@ -27,7 +29,9 @@
           fxLayout.gt-md="row"
           fxLayoutAlign.gt-md="space-between center">
           <div class="benefits-list__text">
-            <div class="block-text">{{ BenefitsListItem.text }}</div>
+            <div class="block-text" [ngClass]="[BenefitsListItem.textAlignModifier]">
+              {{ BenefitsListItem.text }}
+            </div>
           </div>
           <div class="benefits-list__img"
             fxLayout="column"

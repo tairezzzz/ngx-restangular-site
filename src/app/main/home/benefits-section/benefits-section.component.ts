@@ -4,7 +4,8 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-benefits-section',
   templateUrl: './benefits-section.component.html',
-  styleUrls: ['./benefits-section.component.scss']
+  styleUrls: ['./benefits-section.component.scss'],
+
 })
 
 export class BenefitsSectionComponent implements OnInit {
@@ -20,6 +21,7 @@ export class BenefitsSectionComponent implements OnInit {
     title: string,
     titleBorderModifier: string,
     text: string,
+    textAlignModifier: string,
   }[];
   
   ngOnInit() {
@@ -36,6 +38,7 @@ export class BenefitsSectionComponent implements OnInit {
         title: 'Send requests easily using different settings',
         titleBorderModifier: 'benefits-list__title_border_1',
         text: 'Configure an application to use different settings in different parts of your application. Generate different requests to different services without troubles.',
+        textAlignModifier: 'benefits-list__text_align_1',
       },
       {
         bgPath: '/assets/img/svg/bg-2.svg',
@@ -48,6 +51,7 @@ export class BenefitsSectionComponent implements OnInit {
         title: 'Send request from within an object',
         titleBorderModifier: 'benefits-list__title_border_2',
         text: 'Once you have got an object as an response for an URL you are able to send further quests using that object. No need to specify the URL each time.',
+        textAlignModifier: 'benefits-list__text_align_2',
       },
       {
         bgPath: '/assets/img/svg/bg-3.svg',
@@ -60,7 +64,7 @@ export class BenefitsSectionComponent implements OnInit {
         title: 'Use meaningful names instead of URLs',
         titleBorderModifier: 'benefits-list__title_border_3',
         text: 'Once you receive an object from an URL you can use meaningful names to access data next time. There is no need to remember each URL you use.',
-
+        textAlignModifier: 'benefits-list__text_align_3',
       },
       {
         bgPath: '/assets/img/svg/bg-4.svg',
@@ -73,6 +77,7 @@ export class BenefitsSectionComponent implements OnInit {
         title: 'Specify custom HTTP methods',
         titleBorderModifier: 'benefits-list__title_border_4',
         text: 'It is possible to add custom HTTP methods. Add unique logic to a custom method and receive what you need with a server response.',
+        textAlignModifier: 'benefits-list__text_align_4',
       },
       {
         bgPath: '/assets/img/svg/bg-5.svg',
@@ -85,6 +90,7 @@ export class BenefitsSectionComponent implements OnInit {
         title: 'Work with nested RESTful resources',
         titleBorderModifier: 'benefits-list__title_border_5',
         text: 'Ngx-restantugal has built-in features to work with nested entities.',
+        textAlignModifier: 'benefits-list__text_align_5',
       },
       {
         bgPath: '/assets/img/svg/bg-6.svg',
@@ -97,6 +103,7 @@ export class BenefitsSectionComponent implements OnInit {
         title: 'Do not create new object for each request',
         titleBorderModifier: 'benefits-list__title_border_6',
         text: 'Send first request, receive an object and use it further to make server requests instead of creating new objects each time.',
+        textAlignModifier: 'benefits-list__text_align_6',
       }
     ];
   }

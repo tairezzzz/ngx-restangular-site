@@ -37,7 +37,6 @@
       width: rem(960px);
       max-width: rem(960px);
       margin: 0 auto;
-
     }
     @include desktop {
       width: rem(1140px);
@@ -83,6 +82,7 @@
       margin-bottom: rem(80px);
     }
     @include desktop {
+      width: 80%;
       margin-bottom: rem(180px);
       padding-top: rem(110px);
       border-radius: rem(7px);
@@ -155,7 +155,7 @@
     &:after {
       content: "";
       display: block;
-      margin-left: 0;
+      margin: 0 auto;
       width: 40%;
       padding-top: rem(30px);
       @include tablets {
@@ -175,9 +175,9 @@
       padding: 0 19%;
     }
     @include desktop {
-      font-size: rem(48px);
+      font-size: rem(36px);
       letter-spacing: 1.7px;
-      line-height: rem(60px);
+      line-height: rem(50px);
       padding: 0 40% 0 4%;
       text-align: left;
     }
@@ -189,18 +189,26 @@
           border-bottom: rem(3px) solid #E7C563;
         }
         @include desktop {
-          border-bottom: rem(5px) solid #E7C563;
+          border-bottom: rem(4px) solid #E7C563;
+          margin-left: 0;
         }
       }
     }
     &_border_2 {
+      @include desktop {
+        text-align: right;
+        padding-right: 4%;
+        padding-left: 40%;
+      }
+
       &:after {
         border-bottom: rem(2px) solid #C86F85;
         @include tablets {
           border-bottom: rem(3px) solid #C86F85;
         }
         @include desktop {
-          border-bottom: rem(5px) solid #C86F85;
+          border-bottom: rem(4px) solid #C86F85;
+          margin-right: 0;
         }
       }
     }
@@ -211,18 +219,25 @@
           border-bottom: rem(3px) solid #A75FA2;
         }
         @include desktop {
-          border-bottom: rem(5px) solid #A75FA2;
+          border-bottom: rem(4px) solid #A75FA2;
+          margin-left: 0;
         }
       }
     }
     &_border_4 {
+      @include desktop {
+        text-align: right;
+        padding-right: 4%;
+        padding-left: 40%;
+      }
       &:after {
         border-bottom: rem(2px) solid #8D5DB4;
         @include tablets {
           border-bottom: rem(3px) solid #8D5DB4;
         }
         @include desktop {
-          border-bottom: rem(5px) solid #8D5DB4;
+          border-bottom: rem(4px) solid #8D5DB4;
+          margin-right: 0;
         }
       }
     }
@@ -233,18 +248,25 @@
           border-bottom: rem(3px) solid #5B19A9;
         }
         @include desktop {
-          border-bottom: rem(5px) solid #5B19A9;
+          border-bottom: rem(4px) solid #5B19A9;
+          margin-left: 0;
         }
       }
     }
     &_border_6 {
+      @include desktop {
+        text-align: right;
+        padding-right: 4%;
+        padding-left: 40%;
+      }
       &:after {
         border-bottom: rem(2px) solid #5B40B7;
         @include tablets {
           border-bottom: rem(3px) solid #5B40B7;
         }
         @include desktop {
-          border-bottom: rem(5px) solid #5B40B7;
+          border-bottom: rem(4px) solid #5B40B7;
+          margin-right: 0;
         }
       }
     }
@@ -264,6 +286,48 @@
       padding-right: 4%;
       max-width: rem(900px);
       order: 1;
+      &_align_1 {
+        @include desktop {
+          text-align: left;
+          font-size: rem(18px);
+          line-height: rem(30px);
+        }
+      }
+      &_align_2 {
+        @include desktop {
+          text-align: right;
+          font-size: rem(18px);
+          line-height: rem(30px);
+        }
+      }
+      &_align_3 {
+        @include desktop {
+          text-align: left;
+          font-size: rem(18px);
+          line-height: rem(30px);
+        }
+      }
+      &_align_4 {
+        @include desktop {
+          text-align: right;
+          font-size: rem(18px);
+          line-height: rem(30px);
+        }
+      }
+      &_align_5 {
+        @include desktop {
+          text-align: left;
+          font-size: rem(18px);
+          line-height: rem(30px);
+        }
+      }
+      &_align_6 {
+        @include desktop {
+          text-align: right;
+          font-size: rem(18px);
+          line-height: rem(30px);
+        }
+      }
     }
   }
   &__img {
@@ -362,6 +426,10 @@
           width: 390px;
           height: 400px;
         }
+        @include desktop {
+          width: 290px;
+          height: 300px;
+        }
       }
       &_size_2 {
         width: rem(200px);
@@ -418,6 +486,12 @@
           top: 16%;
           left: 10%;
         }
+        @include desktop {
+          width: 290px;
+          height: 300px;
+          top: 16%;
+          left: 15%;
+        }
       }
       &_size_2 {
         width: rem(235px);
@@ -466,7 +540,6 @@
           top: 12%;
           left: 15%;
         }
-
       }
       &_size_6 {
         width: rem(215px);

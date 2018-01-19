@@ -75,15 +75,26 @@
       padding: 0 20%;
     }
   }
+  &-btn {
+    @include desktop {
+      margin-top: -5%;
+    }
+  }
   &-img {
     position: relative;
+    @include vertical {
+      margin-bottom: 5%;
+    }
+    @include desktop {
+      margin-bottom: 3%;
+    }
 
     &__item {
-      width: rem(177px);
-      height: rem(200px);
+      width: rem(157px);
+      height: rem(180px);
       @include vertical {
-        width: rem(269px);
-        height: rem(292px);
+        width: rem(219px);
+        height: rem(242px);
       }
       @include tablets {
         width: rem(419px);
@@ -99,26 +110,50 @@
       }
       &_ngx {
         position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-56%, -55%);
+        top: 58%;
+        left: 56%;
+        transform: translate(-56%, -58%);
+        width: rem(110px);
+        height: rem(173px);
+        @include home-logo-anim;
         @include vertical {
-          top: 52%;
-          left: 49%;
+          top: 61%;
+          left: 56%;
+          width: rem(150px);
+          height: rem(213px);
         }
         @include tablets {
-          top: 54%;
-          left: 49%;
+          top: 62%;
+          left: 56%;
+          width: rem(320px);
+          height: rem(383px);
         }
         @include laptops {
-          top: 52%;
-          left: 49%;
+          top: 60%;
+          left: 56%;
+          width: rem(210px);
+          height: rem(263px);
         }
         @include desktop {
-          top: 50%;
-          left: 48%;
+          top: 60%;
+          left: 57%;
+          width: rem(350px);
+          height: rem(413px);
         }
       }
     }
+  }
+}
+
+@keyframes home-logo-anim {
+  from {
+    transform: translate(-56%,-55%);
+  }
+  50% {
+    transform: translate(-56%,-47%);
+
+  }
+  to {
+    transform: translate(-56%,-55%);
   }
 }
