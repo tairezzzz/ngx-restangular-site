@@ -70,6 +70,7 @@
     }
     &__cell {
       cursor: pointer;
+      position: relative;
       width: 100%;
       @include tablets {
         margin-left: rem(60px);
@@ -81,7 +82,7 @@
     }
     &__input {
       width: 100%;
-      padding: rem(10px) rem(40px) rem(10px) rem(10px);
+      padding: rem(10px) rem(40px) rem(3px) rem(10px);
       border: none;
       outline: none;
       font-family: Montserrat;
@@ -106,6 +107,25 @@
       border: none;
       cursor: pointer;
       margin-top: rem(30px);
+    }
+    &__alert {
+      width: 100%;
+      font-size: rem(14px);
+      color: #fff;
+      background-color: $footer;
+      padding: rem(5px) rem(15px);
+      cursor: default;
+      position: absolute;
+      top: rem(29px);
+      left: 0;
+
+      @include desktop {
+        font-size: rem(18px);
+        line-height:rem(22px);
+        padding: rem(10px) rem(15px);
+        top: rem(35px);
+        left: 0;
+      }
     }
   }
 }

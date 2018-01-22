@@ -6,29 +6,38 @@
       Got project on mind?
     </h3>
     <div class="footer-form">
-      <form action="" class="form" id="form" fxLayout="column" fxLayoutAlign="start center">
+      <form #contactsForm="ngForm" (ngSubmit)="onSubmit(contactsForm)" class="form" id="form" fxLayout="column" fxLayoutAlign="start center">
         <div class="form-row"
           fxLayout="column"
           fxLayoutAlign="start center"
           fxLayout.gt-xs="row"
           fxLayoutAlign="center center">
           <label class="form-row__cell">
-            <input class="form-row__input" name="name" placeholder="Your Name" type="text">
+            <input class="form-row__input" name="name" placeholder="Your Name" type="text" required #name="ngModel" [(ngModel)]="dataInfo.name">
+            <div class="form-row__alert" *ngIf="name.invalid && name.dirty">
+              Name is required
+            </div>
           </label>
           <label class="form-row__cell">
-            <input class="form-row__input" name="e-mail" placeholder="Your Email" type="text">
-          </label>
-        </div>
-        <div class="form-row">
-          <label class="form-row__cell">
-            <input class="form-row__input" name="message" placeholder="Message your question" type="text">
+            <input class="form-row__input" name="email" placeholder="Your Email" type="email" required #email="ngModel" ngModel [email]="true" [(ngModel)]="dataInfo.email" >
+            <div class="form-row__alert" *ngIf="email.invalid && email.dirty">
+              <div *ngIf="email.errors.email">Email is required</div>
+            </div>
           </label>
         </div>
         <div class="form-row" fxLayout="column" fxLayoutAlign="start center">
-          <button class="form-row__submit btn" type="submit" form="form" value="submit" name="submit">Contact us</button>
+          <label class="form-row__cell">
+            <input class="form-row__input" name="message" placeholder="Message your question" type="text" required #msg="ngModel" [(ngModel)]="dataInfo.text" >
+            <div class="form-row__alert" *ngIf="msg.invalid && msg.dirty">
+              Message is required
+            </div>
+          </label>
+        </div>
+        <div class="form-row" fxLayout="column" fxLayoutAlign="start center">
+          <button [disabled]="!contactsForm.form.valid" class="form-row__submit btn" type="submit" form="form" value="submit" name="submit">Contact us</button>
         </div>
       </form>
-     </div>
+    </div>
     <div class="footer-socials" fxHide="false"
       fxHide.gt-xs="true">
       <ul class="socials-list" fxLayout="row">

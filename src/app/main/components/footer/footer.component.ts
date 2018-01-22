@@ -1,4 +1,6 @@
-import { Component, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { EmailValidator } from '@angular/forms';
 
 @Component({
   selector: 'app-footer',
@@ -6,8 +8,8 @@ import { Component, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
   styleUrls: ['./footer.component.scss']
   
 })
-export class FooterComponent {
-  
+export class FooterComponent implements OnInit {
+  dataInfo;
   footerSocialsList = [
     {
       imgPath: '/assets/img/svg/sprite.min.svg#fb',
@@ -32,7 +34,7 @@ export class FooterComponent {
       linkPath: '04',
       modifier: true,
       colorModifier: true,
-  
+      
     },
     {
       imgPath: '/assets/img/svg/sprite.min.svg#tw',
@@ -41,5 +43,18 @@ export class FooterComponent {
       colorModifier: true,
     }
   ];
+  ngOnInit() {
+    
+    this.dataInfo = {
+      name: '',
+      email:  '',
+      text: '',
+    };
+  }
   
+  onSubmit(form: NgForm) {
+    if (form.valid) {
+      form.reset();
+    }
+  }
 }
