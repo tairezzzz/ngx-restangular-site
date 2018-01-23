@@ -79,6 +79,9 @@
     @include desktop {
       margin-top: -5%;
     }
+    @include laptopsHeight {
+      margin-top: 0;
+    }
   }
   &-img {
     position: relative;
@@ -107,6 +110,10 @@
       @include desktop {
         width: rem(400px);
         height: rem(463px);
+      }
+      @include laptopsHeight {
+        width: rem(329px);
+        height: rem(352px);
       }
       &_ngx {
         position: absolute;
@@ -139,6 +146,10 @@
           left: 57%;
           width: rem(350px);
           height: rem(413px);
+        }
+        @include laptopsHeight {
+          width: rem(230px);
+          height: rem(393px);
         }
       }
     }

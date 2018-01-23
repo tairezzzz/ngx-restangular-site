@@ -1,4 +1,4 @@
-<section class="benefits"
+<section class="benefits" #sectionBg
   fxLayout="column"
   fxLayoutAlign="center center"
   fxLayoutAlign.gt-md="start center">
@@ -17,7 +17,7 @@
     <ul class="benefits-list"
       fxLayout="column"
       fxLayoutAlign="center center">
-      <li class="benefits-list__item"
+      <li class="benefits-list__item" #listItem
         *ngFor="let BenefitsListItem of BenefitsList"
         [ngClass]="[BenefitsListItem.itemBorderModifier]">
         <div class="benefits-list__title"
@@ -42,6 +42,7 @@
               [src]="BenefitsListItem.bgPath"
               [alt]="BenefitsListItem.imgName">
             <img class="benefits-list__img-pic"
+              #images
               [ngClass]="[BenefitsListItem.picSizeModifier]"
               [src]="BenefitsListItem.imgPath"
               [alt]="BenefitsListItem.imgName">

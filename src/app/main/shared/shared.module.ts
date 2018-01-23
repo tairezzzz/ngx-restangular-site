@@ -4,8 +4,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 
-
 import { APP_DIRECTIVES } from './directives/index';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -14,6 +14,7 @@ import { APP_DIRECTIVES } from './directives/index';
   ],
   imports: [],
   exports: [
+    HttpClientModule,
     CommonModule,
     FormsModule,
     FlexLayoutModule,

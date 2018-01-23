@@ -2,11 +2,12 @@ import 'zone.js/dist/zone-node';
 import 'reflect-metadata';
 import { renderModuleFactory } from '@angular/platform-server';
 import { enableProdMode } from '@angular/core';
-
+import * as cors from  'cors';
 import * as express from 'express';
+import bodyParser = require('body-parser');
 import { join } from 'path';
 import { readFileSync } from 'fs';
-
+import { sendMail} from './sendMail';
 // Faster server renders w/ Prod mode (dev mode never needed)
 enableProdMode();
 
@@ -37,20 +38,27 @@ app.engine('html', ngExpressEngine({
 
 app.set('view engine', 'html');
 app.set('views', join(DIST_FOLDER, 'browser'));
-
+app.use(cors());
+app.use(bodyParser.json());
 /* - Example Express Rest API endpoints -
-  app.get('/api/**', (req, res) => { });
-*/
+ app.get('/api/**', (req, res) => { });
+ */
 
+//mail Route
+app.post('/send-mail', (req, res) =>  {
+  sendMail(req, res);
+});
 // Server static files from /browser
 app.get('*.*', express.static(join(DIST_FOLDER, 'browser'), {
   maxAge: '1y'
 }));
 
+
 // ALl regular routes use the Universal engine
 app.get('*', (req, res) => {
   res.render('index', { req });
 });
+
 
 // Start up the Node server
 app.listen(PORT, () => {

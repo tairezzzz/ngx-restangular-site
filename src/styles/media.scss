@@ -18,6 +18,15 @@ $vertical: 321px;
     @content;
   }
 }
+// <-------
+//Do not use this breakpoint(it was created only for fixing height bug on index page)
+
+@mixin laptopsHeight {
+  @media screen and (min-width: $desktop) and (max-width: 1500px) and (min-height: 725px) {
+    @content;
+  }
+}
+// ------->
 
 @mixin laptops {
   @media screen and (min-width: $laptops)  {
@@ -50,6 +59,9 @@ $vertical: 321px;
   @include tablets {
     background-size: 4px 100%, 30% 4px, 4px 30%, 100% 4px, calc(100% - 8px) calc(100% - 8px);
   }
+  @include desktop {
+    background-size: 5px 100%, 50% 5px, 5px 30%, 100% 5px, calc(100% - 8px) calc(100% - 8px);
+  }
 }
 
 @mixin border-left {
@@ -59,8 +71,10 @@ $vertical: 321px;
   @include tablets {
     background-size: 4px 30%, 100% 4px, 4px 100%, 30% 4px, calc(100% - 8px) calc(100% - 8px);
   }
+  @include desktop {
+    background-size: 5px 30%, 100% 5px, 5px 100%, 50% 5px, calc(100% - 8px) calc(100% - 8px);
+  }
 }
-
 
 @mixin home-logo-anim {
   transition-delay: .65s;

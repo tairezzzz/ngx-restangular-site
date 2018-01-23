@@ -6,7 +6,12 @@
       Got project on mind?
     </h3>
     <div class="footer-form">
-      <form #contactsForm="ngForm" (ngSubmit)="onSubmit(contactsForm)" class="form" id="form" fxLayout="column" fxLayoutAlign="start center">
+      <form class="form" id="form"
+        #contactsForm="ngForm"
+        (ngSubmit)="onSubmit(contactsForm)"
+        method="post"
+        fxLayout="column"
+        fxLayoutAlign="start center">
         <div class="form-row"
           fxLayout="column"
           fxLayoutAlign="start center"

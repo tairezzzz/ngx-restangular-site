@@ -7,7 +7,7 @@ import { APP_SERVICE_PROVIDERS } from './services/index';
 @NgModule({
   declarations: [],
   imports: [
-    CommonModule
+    CommonModule,
   ],
   providers: [
     APP_SERVICE_PROVIDERS

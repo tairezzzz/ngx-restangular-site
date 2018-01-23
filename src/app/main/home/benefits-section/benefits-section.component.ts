@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit, Inject, ViewChildren, HostListener, PLATFORM_ID } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 
 
 @Component({
@@ -8,7 +9,20 @@ import { Component, OnInit } from '@angular/core';
 
 })
 
-export class BenefitsSectionComponent implements OnInit {
+export class BenefitsSectionComponent implements OnInit, AfterViewInit {
+  
+  constructor(
+    @Inject(PLATFORM_ID) private platformId: Object,
+  ) { }
+  
+  @ViewChildren ('images') bgImgs: any;
+  @ViewChildren ('listItem') listItem: any;
+  
+  parallax : {
+    className: string,
+    count: string,
+    state: string,
+  }[];
   
   BenefitsList: {
     bgPath: string,
@@ -24,8 +38,33 @@ export class BenefitsSectionComponent implements OnInit {
     textAlignModifier: string,
   }[];
   
+  @HostListener('window:scroll')
+
+  onScroll() {
+    if ( isPlatformBrowser(this.platformId) ) {
+      for (let i = 0; i < this.listItem._results.length; i++) {
+        this.parallax[i].count = this.listItem._results[i].nativeElement.getBoundingClientRect().top / parseInt(this.parallax[i].state) + '%';
+      }
+      for (let j = 0; j < this.bgImgs._results.length; j++) {
+        this.bgImgs._results[j].nativeElement.style.transform = 'translateY(' + this.parallax[j].count + ')';
+      }
+    }
+  }
+  
+  ngAfterViewInit() {
+    this.onScroll();
+  }
+  
   ngOnInit() {
-    
+    this.parallax = [
+      { className: '', count: '', state: '25'},
+      { className: '', count: '', state: '50'},
+      { className: '', count: '', state: '50'},
+      { className: '', count: '', state: '35'},
+      { className: '', count: '', state: '35'},
+      { className: '', count: '', state: '30'},
+    ];
+  
     this.BenefitsList = [
       {
         bgPath: '/assets/img/svg/bg-1.svg',
