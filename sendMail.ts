@@ -21,7 +21,7 @@ export function sendMail(req, res){
 
   let mailOptions = {
     from: `"2mc 👥" <${email}>`,
-    to: process.env.EMAIL_FROM,
+    to: process.env.EMAIL_TO,
     subject: 'Hello',
     text: `Sender ${name} - ${email}. ${text}`,
     html: `<b>Sender ${name} - ${email}.</b><br /> ${text}`
@@ -29,11 +29,16 @@ export function sendMail(req, res){
 
   // send mail with defined transport object
   transporter.sendMail(mailOptions, function(error, info){
-    if(error){
-      res.status(error.responseCode).send({message: error.response});
+    if (error) {
+      res.json({
+          status: error.statusCode
+      });
+    } else {
+      res.send({
+        status: 200,
+        data: info
+      });
     }
-    res.json({
-      data: info
-    });
+    
   });
 }

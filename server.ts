@@ -2,7 +2,7 @@ import 'zone.js/dist/zone-node';
 import 'reflect-metadata';
 import { renderModuleFactory } from '@angular/platform-server';
 import { enableProdMode } from '@angular/core';
-import * as cors from  'cors';
+import * as cors from 'cors';
 import * as express from 'express';
 import bodyParser = require('body-parser');
 import { join } from 'path';
@@ -14,7 +14,7 @@ enableProdMode();
 // Express server
 const app = express();
 
-const PORT = process.env.PORT || 54800;
+const PORT = process.env.PORT || 53100;
 const DIST_FOLDER = join(process.cwd(), 'dist');
 
 // Our index.html we'll use as our template
@@ -44,7 +44,7 @@ app.use(bodyParser.json());
  app.get('/api/**', (req, res) => { });
  */
 
-//mail Route
+// mail Route
 app.post('/send-mail', (req, res) =>  {
   sendMail(req, res);
 });

@@ -1,23 +1,45 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { MailService } from '../../core/services/mail.service';
-  
+import { ContactsFormService } from '../../core/services/contacts-form.service';
+import { Observable } from "rxjs/Rx";
+
 @Component({
   selector: 'app-footer',
   templateUrl: './footer.component.html',
   styleUrls: ['./footer.component.scss']
   
 })
-export class FooterComponent implements OnInit {
-  dataInfo;
-  footerSocialsList: {
-      imgPath: string,
-      linkPath: string,
-      modifier: boolean,
-      colorModifier: boolean,
-    }[];
+export class FooterComponent implements OnInit, OnDestroy {
+  dataInfo: {
+    name: string,
+    email:  string,
+    text: string,
+  };
+  serverRequest = false;
+  request;
   
-  constructor(public mailService: MailService) {}
+  responseText: string;
+  responseStatus: boolean;
+
+  labels: {
+    hiddenLabelName: boolean;
+    hiddenLabelEmail: boolean;
+    hiddenLabelMsg: boolean;
+  };
+  
+  footerSocialsList: {
+    imgPath: string,
+    linkPath: string,
+    modifier: boolean,
+    colorModifier: boolean,
+  }[];
+  
+  
+  constructor(
+    public contactsFormService: ContactsFormService,
+    //public request: Observable,
+  ) {}
+
   ngOnInit() {
     
     this.dataInfo = {
@@ -25,7 +47,13 @@ export class FooterComponent implements OnInit {
       email:  '',
       text: '',
     };
-    
+
+    this.labels = {
+      hiddenLabelName: false,
+      hiddenLabelEmail: false,
+      hiddenLabelMsg: false,
+    };
+  
     this.footerSocialsList = [
       {
         imgPath: '/assets/img/svg/sprite.min.svg#fb',
@@ -63,10 +91,31 @@ export class FooterComponent implements OnInit {
   
   onSubmit(form: NgForm) {
     if (form.valid) {
-      console.log(form.form.getRawValue());
-      this.mailService.sendEmail(form.form.getRawValue())
-      .subscribe(res => console.log(res));
+      this.request = this.contactsFormService.sendEmail(form.form.getRawValue())
+      .subscribe((res: any) => {
+        if (res.status) {
+          this.responseText = "Thank you, your message has been sent!";
+        } else {
+          this.responseText = "Sorry, there's happened something wrong!";
+        }
+        this.responseStatus = true;
+      });
+      
       form.reset();
+      for (let key in this.labels) {
+        this.labels[key] = false;
+      }
+      this.serverRequest = true;
     }
+  }
+  
+  ngOnDestroy() {
+    if (this.serverRequest) {
+      this.request.unsubscribe();
+    }
+  }
+
+  onEdit(value) {
+    this.contactsFormService.hideLabel(value, this.labels);
   }
 }

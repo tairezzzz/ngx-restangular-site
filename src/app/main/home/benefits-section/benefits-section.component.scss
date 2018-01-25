@@ -64,10 +64,10 @@
       padding: 0 8%;
     }
     @include tablets {
-      padding: 0 8%;
+      padding: 0 10%;
     }
     @include laptops {
-      padding: 0 20%;
+      padding: 0 16%;
     }
     @include desktop {
       margin-bottom: rem(100px);
@@ -279,7 +279,7 @@
     margin-bottom: rem(34px);
     line-height: rem(25px);
     @include vertical {
-      padding: 0 10%;
+      padding: 0 8%;
     }
     @include tablets {
       padding: 0 16%;
@@ -550,7 +550,7 @@
           width: 290px;
           height: 475px;
           top: -40%;
-          left: 25%;
+          left: 24.5%;
         }
       }
       &_size_4 {

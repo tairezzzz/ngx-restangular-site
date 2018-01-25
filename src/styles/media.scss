@@ -22,7 +22,7 @@ $vertical: 321px;
 //Do not use this breakpoint(it was created only for fixing height bug on index page)
 
 @mixin laptopsHeight {
-  @media screen and (min-width: $desktop) and (max-width: 1500px) and (min-height: 725px) {
+  @media screen and (min-width: $desktop) and (max-width: 1450px) and (min-height: 650px) {
     @content;
   }
 }

@@ -3,8 +3,10 @@
     fxLayout="column"
     fxLayoutAlign="start center">
     <h3 class="footer-title" fxLayout="column" fxLayoutAlign="start center">
-      Got project on mind?
+      Got a project in mind?
+      <p class="footer-notification" *ngIf="responseStatus">{{ responseText }}</p>
     </h3>
+
     <div class="footer-form">
       <form class="form" id="form"
         #contactsForm="ngForm"
@@ -12,51 +14,82 @@
         method="post"
         fxLayout="column"
         fxLayoutAlign="start center">
+
         <div class="form-row"
           fxLayout="column"
           fxLayoutAlign="start center"
           fxLayout.gt-xs="row"
           fxLayoutAlign="center center">
-          <label class="form-row__cell">
-            <input class="form-row__input" name="name" placeholder="Your Name" type="text" required #name="ngModel" [(ngModel)]="dataInfo.name">
+          <div class="form-row__cell">
+            <input class="form-row__input" name="name"id="name" type="text" required
+              #name="ngModel"
+              [(ngModel)]="dataInfo.name"
+              (blur)="onEdit(name)">
+            <label class="form-row__label" for="name"
+              [style.opacity]="labels.hiddenLabelName ? '0' : '1'">
+              Your Name
+            </label>
             <div class="form-row__alert" *ngIf="name.invalid && name.dirty">
-              Name is required
+              Please fill in your name
             </div>
-          </label>
-          <label class="form-row__cell">
-            <input class="form-row__input" name="email" placeholder="Your Email" type="email" required #email="ngModel" ngModel [email]="true" [(ngModel)]="dataInfo.email" >
+          </div>
+          <div class="form-row__cell">
+            <input class="form-row__input" id="email" name="email" type="email" required
+              #email="ngModel"
+              ngModel [email]="true"
+              [(ngModel)]="dataInfo.email"
+              (blur)="onEdit(email)">
+            <label class="form-row__label" for="email"
+              [style.opacity]="labels.hiddenLabelEmail ? '0' : '1'">
+              Your Email
+            </label>
             <div class="form-row__alert" *ngIf="email.invalid && email.dirty">
-              <div *ngIf="email.errors.email">Email is required</div>
+              <div *ngIf="email.errors.email">Please fill in your email</div>
             </div>
-          </label>
+          </div>
         </div>
+
         <div class="form-row" fxLayout="column" fxLayoutAlign="start center">
-          <label class="form-row__cell">
-            <input class="form-row__input" name="message" placeholder="Message your question" type="text" required #msg="ngModel" [(ngModel)]="dataInfo.text" >
+          <div class="form-row__cell">
+            <div class="form-row__input-fake">{{ dataInfo.text }}</div>
+            <textarea class="form-row__textarea" name="message" id="message"
+              #msg="ngModel"
+              [(ngModel)]="dataInfo.text"
+              (blur)="onEdit(msg)"
+              required></textarea>
+            <label class="form-row__label" for="message"
+              [style.opacity]="labels.hiddenLabelMsg ? '0' : '1'">
+              Message or question
+            </label>
             <div class="form-row__alert" *ngIf="msg.invalid && msg.dirty">
-              Message is required
+            Please fill in your message or question
             </div>
-          </label>
+          </div>
         </div>
+
         <div class="form-row" fxLayout="column" fxLayoutAlign="start center">
           <button [disabled]="!contactsForm.form.valid" class="form-row__submit btn" type="submit" form="form" value="submit" name="submit">Contact us</button>
         </div>
       </form>
     </div>
-    <div class="footer-socials" fxHide="false"
-      fxHide.gt-xs="true">
-      <ul class="socials-list" fxLayout="row">
-        <li class="socials-list__item" *ngFor="let footerSocialsItem of footerSocialsList">
-          <a class="socials-list__link" href="">
-            <svg class="socials-list__link-item"
-              [class.socials-list__link-item_size]="footerSocialsItem.modifier"
-              [class.socials-list__link-item_color]="footerSocialsItem.colorModifier">
-              <use [attr.xlink:href]="[footerSocialsItem.imgPath]"></use>
-            </svg>
-          </a>
-        </li>
-      </ul>
-    </div>
+
+<!-- Feel free to uncomment socials after filling in urls in footerSocialsList variable at footerComponent
+-->
+
+    <!--<div class="footer-socials" fxHide="false"-->
+      <!--fxHide.gt-xs="true">-->
+      <!--<ul class="socials-list" fxLayout="row">-->
+        <!--<li class="socials-list__item" *ngFor="let footerSocialsItem of footerSocialsList">-->
+          <!--<a class="socials-list__link" href="">-->
+            <!--<svg class="socials-list__link-item"-->
+              <!--[class.socials-list__link-item_size]="footerSocialsItem.modifier"-->
+              <!--[class.socials-list__link-item_color]="footerSocialsItem.colorModifier">-->
+              <!--<use [attr.xlink:href]="[footerSocialsItem.imgPath]"></use>-->
+            <!--</svg>-->
+          <!--</a>-->
+        <!--</li>-->
+      <!--</ul>-->
+    <!--</div>-->
   </div>
 </footer>
 

@@ -102,3 +102,16 @@
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
+
+input {
+  line-height: 45px;
+  height: 45px;
+  font-size: 45px;
+
+  @include desktop {
+    line-height: 40px;
+    height: 40px;
+    font-size: 40px;
+  }
+}
+

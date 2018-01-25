@@ -21,6 +21,9 @@
   @include desktop {
     padding: 7% 0 rem(24px) 0;
   }
+  @include laptopsHeight {
+    padding: 6% 0 rem(24px) 0;
+  }
   &-container {
     position: relative;
     max-width: 100%;
@@ -50,8 +53,13 @@
     }
   }
   &-description {
+    margin-bottom: rem(10px);
+
     @include desktop {
       margin-bottom: rem(25px);
+    }
+    @include laptopsHeight {
+      margin-bottom: rem(20px);
     }
   }
   &-title {
@@ -62,25 +70,37 @@
       padding: 0;
       margin-bottom: rem(39px);
     }
+    @include laptops {
+      margin-bottom: rem(19px);
+    }
     @include desktop {
-      margin-bottom: rem(10px);
+      margin-bottom: rem(39px);
     }
   }
   &-text {
     padding: 0 7%;
+    @include vertical {
+      padding: 0 5.5%;
+    }
     @include tablets {
       padding: 0 12%;
     }
     @include laptops {
       padding: 0 20%;
+      margin-bottom: rem(10px);
+    }
+    @include desktop {
+      margin-bottom: 0;
     }
   }
   &-btn {
+    @include laptops {
+      margin-bottom: rem(10px);
+    }
     @include desktop {
-      margin-top: -5%;
     }
     @include laptopsHeight {
-      margin-top: 0;
+      margin-bottom: rem(10px);
     }
   }
   &-img {
@@ -91,7 +111,6 @@
     @include desktop {
       margin-bottom: 3%;
     }
-
     &__item {
       width: rem(157px);
       height: rem(180px);
@@ -112,8 +131,8 @@
         height: rem(463px);
       }
       @include laptopsHeight {
-        width: rem(329px);
-        height: rem(352px);
+        width: rem(299px);
+        height: rem(322px);
       }
       &_ngx {
         position: absolute;
@@ -123,11 +142,13 @@
         width: rem(110px);
         height: rem(173px);
         @include home-logo-anim;
+
         @include vertical {
           top: 61%;
           left: 56%;
           width: rem(150px);
           height: rem(213px);
+          @include home-logo-anim;
         }
         @include tablets {
           top: 62%;
@@ -148,8 +169,10 @@
           height: rem(413px);
         }
         @include laptopsHeight {
-          width: rem(230px);
-          height: rem(393px);
+          top: 60%;
+          left: 55%;
+          width: rem(200px);
+          height: rem(363px);
         }
       }
     }
