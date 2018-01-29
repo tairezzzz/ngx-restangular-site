@@ -7,7 +7,7 @@ export class ContactsFormService {
   constructor(private http: HttpClient) { }
   
   sendEmail(model) {
-    return this.http.post('http://localhost:54800/send-mail', model);
+    return this.http.post('/send-mail', model);
   }
   hideLabel(value, labels) {
     if (value.dirty && value.name === 'name') {
