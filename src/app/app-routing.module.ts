@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { MainModule } from './main/main.module';
 
 const appRoutes: Routes = [
   {path: '', loadChildren: './main/main.module#MainModule'},
@@ -10,6 +11,10 @@ const appRoutes: Routes = [
   imports: [
     RouterModule.forRoot(
       appRoutes,
+      {
+        preloadingStrategy: PreloadAllModules,
+        initialNavigation: 'enabled'
+      }
     ),
   ],
   exports: [
