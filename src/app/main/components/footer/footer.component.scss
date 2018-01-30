@@ -97,9 +97,9 @@
     &__cell {
       position: relative;
       min-height: rem(30px);
-      width: 100%;
+      width: 100%!important; // Feature to override inline-styles of Grammarly plugin for Browser's
       margin-bottom: rem(50px);
-
+      overflow: inherit!important; // Feature to override inline-styles of Grammarly plugin for Browser's
       &.active {
         opacity: 0;
       }
@@ -264,6 +264,11 @@
         padding: rem(10px) rem(10px);
         top: rem(45px);
         left: 0;
+      }
+      &_position {
+        @include desktop {
+          top: rem(65px);
+        }
       }
     }
   }

@@ -37,7 +37,6 @@ export class FooterComponent implements OnInit, OnDestroy {
   
   constructor(
     public contactsFormService: ContactsFormService,
-    //public request: Observable,
   ) {}
 
   ngOnInit() {

@@ -61,7 +61,7 @@
               [style.opacity]="labels.hiddenLabelMsg ? '0' : '1'">
               Message or question
             </label>
-            <div class="form-row__alert" *ngIf="msg.invalid && msg.dirty">
+            <div class="form-row__alert form-row__alert_position" *ngIf="msg.invalid && msg.dirty">
             Please fill in your message or question
             </div>
           </div>
