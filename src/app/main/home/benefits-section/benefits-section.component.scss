@@ -84,7 +84,7 @@
     @include desktop {
       width: 80%;
       margin-bottom: rem(180px);
-      padding-top: rem(60px);
+      padding-top: rem(80px);
       padding-bottom: 3%;
 
       border-radius: rem(7px);
@@ -178,7 +178,7 @@
     }
     @include desktop {
       font-size: rem(36px);
-      letter-spacing: 1.7px;
+      letter-spacing: 1px;
       line-height: rem(50px);
       padding: 0 40% 0 4%;
       text-align: left;
@@ -288,6 +288,7 @@
       max-width: rem(900px);
       padding-left: 4%;
       padding-right: 4%;
+      margin-bottom: 0;
       order: 1;
       &_align_1 {
         @include desktop {
@@ -322,6 +323,7 @@
           text-align: left;
           font-size: rem(18px);
           line-height: rem(30px);
+          padding-right: 0;
         }
       }
       &_align_6 {

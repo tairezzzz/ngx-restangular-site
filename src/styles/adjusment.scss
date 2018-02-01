@@ -39,7 +39,7 @@
   }
   @include desktop {
     font-size: rem(16px);
-    padding: rem(13px) rem(40px);
+    padding: rem(13px) rem(40px) rem(12px);
     letter-spacing: 1.5px;
   }
 }
@@ -59,7 +59,7 @@
   @include tablets {
     font-size: rem(48px);
     font-weight: 600;
-    letter-spacing: 2px;
+    letter-spacing: 2.5px;
   }
   @include desktop {
     font-weight: 700;

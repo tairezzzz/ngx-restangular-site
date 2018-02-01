@@ -6,7 +6,7 @@
 
   &-container {
     width: 90%;
-    padding-top: rem(100px);
+    padding-top: rem(10px);
     padding-bottom: rem(36px);
     margin: 0 auto;
     @include tablets {
@@ -27,46 +27,67 @@
     }
   }
   &-title {
-    position: relative;
     font-size: rem(24px);
     font-weight: 600;
     color: #000;
     text-align: center;
     letter-spacing: 1.2px;
     line-height: rem(29px);
-    margin-bottom: rem(60px);
+    margin-bottom: rem(20px);
     @include tablets {
       font-size: rem(36px);
       letter-spacing: 1.7px;
       line-height: rem(47px);
-      margin-bottom: rem(80px);
+      margin-bottom: rem(20px);
     }
     @include desktop {
       font-size: rem(48px);
       letter-spacing: 1.7px;
       line-height: rem(60px);
-      margin-bottom: rem(130px);
+      margin-bottom: rem(40px);
+    }
+    @include laptopsHeight {
+      margin-bottom: rem(40px);
+    }
+  }
+  &-text {
+    position: relative;
+    margin-bottom: rem(60px);
+    @include tablets {
+      margin-bottom: rem(60px);
+    }
+    @include laptops {
+      padding: 0 rem(18px);
+    }
+    @include desktop {
+      padding: 0 200px;
+      margin-bottom: rem(100px);
+    }
+    @include laptopsHeight {
+      padding: 0 200px;
     }
   }
   &-notification {
     width: 100%;
     position: absolute;
-    bottom: -70%;
+    bottom: -30%;
     left: 50%;
     transform: translateX(-50%);
     font-size: rem(10px);
     color: $footer;
+    text-align: center;
     @include vertical {
-      bottom: -120%;
+      bottom: -45%;
       font-size: rem(11px);
     }
     @include tablets {
-      bottom: -120%;
+      bottom: -50%;
       font-size: rem(14px);
     }
     @include desktop {
-      bottom: -120%;
+      bottom: -60%;
       font-size: rem(18px);
+      padding: 0 17%;
     }
   }
   &-form {
