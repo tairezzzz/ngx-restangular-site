@@ -21,6 +21,7 @@
   text-align: center;
   letter-spacing: 1.2px;
   background-color: $darkBlue;
+  box-shadow: 0px 2px 4px 0px rgba(100,100,100,0.5);
   padding: rem(7px) rem(25px);
   border-radius: 4px;
   z-index: 10;
@@ -46,7 +47,7 @@
 
 .block-title {
   font-family: "Montserrat", Helvetica, sans-serif;
-  font-size: rem(24px);
+  font-size: rem(21px);
   font-weight: 600;
   color: #000;
   text-transform: uppercase;
@@ -57,13 +58,20 @@
     font-size: rem(32px);
   }
   @include tablets {
-    font-size: rem(48px);
+    font-size: rem(40px);
     font-weight: 600;
     letter-spacing: 2.5px;
   }
+  @include laptops {
+    font-size: rem(36px);
+  }
+  @include laptopsHDPI {
+    font-size: rem(48px);
+    font-weight: 700;
+  }
   @include desktop {
     font-weight: 700;
-    line-height: rem(60px);
+    font-size: rem(42px);
   }
 }
 
@@ -103,15 +111,27 @@
   overflow: hidden;
 }
 
-input {
-  line-height: 45px;
-  height: 45px;
-  font-size: 45px;
+@keyframes home-logo-anim {
+  from {
+    transform: translate(-56%,-55%);
+  }
+  50% {
+    transform: translate(-56%,-47%);
 
-  @include desktop {
-    line-height: 40px;
-    height: 40px;
-    font-size: 40px;
+  }
+  to {
+    transform: translate(-56%,-55%);
   }
 }
 
+@keyframes home-scroll-text {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}

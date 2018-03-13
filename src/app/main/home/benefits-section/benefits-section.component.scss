@@ -17,7 +17,7 @@
     padding: rem(105px) 0 rem(24px) 0;
     min-height: 100vh;
   }
-  @include desktop {
+  @include laptopsMDPI {
     padding: 7% 0 rem(24px) 0;
   }
   &-container {
@@ -38,7 +38,7 @@
       max-width: rem(960px);
       margin: 0 auto;
     }
-    @include desktop {
+    @include laptopsMDPI {
       width: rem(1140px);
       max-width: rem(1140px);
       margin: 0 auto;
@@ -47,14 +47,27 @@
   }
 
   &-title {
+    padding: 0 rem(30px);
     margin-bottom: rem(23px);
-
+    @include vertical {
+      padding: 0 rem(45px);
+    }
     @include tablets {
-      padding: 0;
+      padding: 0 15%;
       margin-bottom: rem(39px);
     }
-    @include desktop {
+    @include laptops {
+      padding: 0 28%;
       margin-bottom: rem(40px);
+    }
+    @include laptopsMDPI {
+      padding: 0 30%;
+    }
+    @include laptopsHDPI {
+      padding: 0 25%;
+    }
+    @include desktop {
+      padding: 0 27%;
     }
   }
   &-text {
@@ -69,7 +82,7 @@
     @include laptops {
       padding: 0 16%;
     }
-    @include desktop {
+    @include laptopsMDPI {
       margin-bottom: rem(100px);
     }
   }
@@ -81,7 +94,7 @@
     @include tablets {
       margin-bottom: rem(80px);
     }
-    @include desktop {
+    @include laptopsMDPI {
       width: 80%;
       margin-bottom: rem(180px);
       padding-top: rem(80px);
@@ -90,7 +103,7 @@
       border-radius: rem(7px);
     }
     &_border_1 {
-      @include desktop {
+      @include laptopsMDPI {
         background-image: linear-gradient(#E7C563, #E7C563),
         linear-gradient(#E7C563, #E7C563),
         linear-gradient(#E7C563, #E7C563),
@@ -100,7 +113,7 @@
     }
 
     &_border_2 {
-      @include desktop {
+      @include laptopsMDPI {
         background-image: linear-gradient(#C86F85, #C86F85),
         linear-gradient(#C86F85, #C86F85),
         linear-gradient(#C86F85, #C86F85),
@@ -109,7 +122,7 @@
       }
     }
     &_border_3 {
-      @include desktop {
+      @include laptopsMDPI {
         background-image: linear-gradient(#A75FA2, #A75FA2),
         linear-gradient(#A75FA2, #A75FA2),
         linear-gradient(#A75FA2, #A75FA2),
@@ -118,7 +131,7 @@
       }
     }
     &_border_4 {
-      @include desktop {
+      @include laptopsMDPI {
         background-image: linear-gradient(#8D5DB4, #8D5DB4),
         linear-gradient(#8D5DB4, #8D5DB4),
         linear-gradient(#8D5DB4, #8D5DB4),
@@ -127,7 +140,7 @@
       }
     }
     &_border_5 {
-      @include desktop {
+      @include laptopsMDPI {
         background-image: linear-gradient(#5B19A9, #5B19A9),
         linear-gradient(#5B19A9, #5B19A9),
         linear-gradient(#5B19A9, #5B19A9),
@@ -136,7 +149,7 @@
       }
     }
     &_border_6 {
-      @include desktop {
+      @include laptopsMDPI {
         background-image: linear-gradient(#5B40B7, #5B40B7),
         linear-gradient(#5B40B7, #5B40B7),
         linear-gradient(#5B40B7, #5B40B7),
@@ -146,12 +159,10 @@
     }
   }
   &__title {
-    font-size: rem(24px);
-    font-weight: 600;
+    font-size: rem(20px);
+    font-weight: 500;
     color: #000;
     text-align: center;
-    letter-spacing: 1.2px;
-    line-height: rem(29px);
     padding: 0 10%;
     margin-bottom: rem(30px);
     &:after {
@@ -163,20 +174,23 @@
       @include tablets {
         width: 45%;
       }
-      @include desktop {
+      @include laptopsMDPI {
         width: 25%;
       }
     }
     @include vertical {
-      padding: 0 13%;
+      padding: 0 19%;
     }
     @include tablets {
       font-size: rem(36px);
       letter-spacing: 1.7px;
       line-height: rem(47px);
-      padding: 0 19%;
+      padding: 0 15%;
     }
-    @include desktop {
+    @include laptops {
+      padding: 0 23%;
+    }
+    @include laptopsMDPI {
       font-size: rem(36px);
       letter-spacing: 1px;
       line-height: rem(50px);
@@ -191,14 +205,14 @@
         @include tablets {
           border-bottom: rem(3px) solid #E7C563;
         }
-        @include desktop {
+        @include laptopsMDPI {
           border-bottom: rem(3px) solid #E7C563;
           margin-left: 0;
         }
       }
     }
     &_border_2 {
-      @include desktop {
+      @include laptopsMDPI {
         text-align: right;
         padding-right: 4%;
         padding-left: 40%;
@@ -209,7 +223,7 @@
         @include tablets {
           border-bottom: rem(3px) solid #C86F85;
         }
-        @include desktop {
+        @include laptopsMDPI {
           border-bottom: rem(4px) solid #C86F85;
           margin-right: 0;
         }
@@ -221,14 +235,14 @@
         @include tablets {
           border-bottom: rem(3px) solid #A75FA2;
         }
-        @include desktop {
+        @include laptopsMDPI {
           border-bottom: rem(4px) solid #A75FA2;
           margin-left: 0;
         }
       }
     }
     &_border_4 {
-      @include desktop {
+      @include laptopsMDPI {
         text-align: right;
         padding-right: 4%;
         padding-left: 40%;
@@ -238,7 +252,7 @@
         @include tablets {
           border-bottom: rem(3px) solid #8D5DB4;
         }
-        @include desktop {
+        @include laptopsMDPI {
           border-bottom: rem(4px) solid #8D5DB4;
           margin-right: 0;
         }
@@ -250,14 +264,14 @@
         @include tablets {
           border-bottom: rem(3px) solid #5B19A9;
         }
-        @include desktop {
+        @include laptopsMDPI {
           border-bottom: rem(4px) solid #5B19A9;
           margin-left: 0;
         }
       }
     }
     &_border_6 {
-      @include desktop {
+      @include laptopsMDPI {
         text-align: right;
         padding-right: 4%;
         padding-left: 40%;
@@ -267,7 +281,7 @@
         @include tablets {
           border-bottom: rem(3px) solid #5B40B7;
         }
-        @include desktop {
+        @include laptopsMDPI {
           border-bottom: rem(4px) solid #5B40B7;
           margin-right: 0;
         }
@@ -284,42 +298,42 @@
     @include tablets {
       padding: 0 16%;
     }
-    @include desktop {
+    @include laptopsMDPI {
       max-width: rem(900px);
       padding-left: 4%;
       padding-right: 4%;
       margin-bottom: 0;
       order: 1;
       &_align_1 {
-        @include desktop {
+        @include laptopsMDPI {
           text-align: left;
           font-size: rem(18px);
           line-height: rem(30px);
         }
       }
       &_align_2 {
-        @include desktop {
+        @include laptopsMDPI {
           text-align: right;
           font-size: rem(18px);
           line-height: rem(30px);
         }
       }
       &_align_3 {
-        @include desktop {
+        @include laptopsMDPI {
           text-align: left;
           font-size: rem(18px);
           line-height: rem(30px);
         }
       }
       &_align_4 {
-        @include desktop {
+        @include laptopsMDPI {
           text-align: right;
           font-size: rem(18px);
           line-height: rem(30px);
         }
       }
       &_align_5 {
-        @include desktop {
+        @include laptopsMDPI {
           text-align: left;
           font-size: rem(18px);
           line-height: rem(30px);
@@ -327,7 +341,7 @@
         }
       }
       &_align_6 {
-        @include desktop {
+        @include laptopsMDPI {
           text-align: right;
           font-size: rem(18px);
           line-height: rem(30px);
@@ -347,7 +361,7 @@
       height: 570px;
       border-radius: 6px;
     }
-    @include desktop {
+    @include laptopsMDPI {
       width: 100%;
       height: 100%;
     }
@@ -359,7 +373,7 @@
       linear-gradient(#E7C563, #E7C563);
       @include border-right;
 
-      @include desktop {
+      @include laptopsMDPI {
         background-image: inherit;
         order: 2;
       }
@@ -371,7 +385,7 @@
       linear-gradient(#C86F85, #C86F85);
       @include border-left;
 
-      @include desktop {
+      @include laptopsMDPI {
         background-image: inherit;
         order: 0;
       }
@@ -383,7 +397,7 @@
       linear-gradient(#A75FA2, #A75FA2);
       @include border-right;
 
-      @include desktop {
+      @include laptopsMDPI {
         background-image: inherit;
         order: 2;
       }
@@ -395,7 +409,7 @@
       linear-gradient(#8D5DB4, #8D5DB4);
       @include border-left;
 
-      @include desktop {
+      @include laptopsMDPI {
         background-image: inherit;
       }
     }
@@ -406,7 +420,7 @@
       linear-gradient(#5B19A9, #5B19A9);
       @include border-right;
 
-      @include desktop {
+      @include laptopsMDPI {
         background-image: inherit;
         order: 2;
       }
@@ -418,7 +432,7 @@
       linear-gradient(#5B40B7, #5B40B7);
       @include border-left;
 
-      @include desktop {
+      @include laptopsMDPI {
         background-image: inherit;
       }
     }
@@ -431,7 +445,7 @@
           width: 390px;
           height: 400px;
         }
-        @include desktop {
+        @include laptopsMDPI {
           width: 290px;
           height: 300px;
           margin-left: rem(50px);
@@ -444,7 +458,7 @@
           width: 370px;
           height: 350px;
         }
-        @include desktop {
+        @include laptopsMDPI {
           width: 335px;
           height: 310px;
         }
@@ -457,7 +471,7 @@
           width: 335px;
           height: 320px;
         }
-        @include desktop {
+        @include laptopsMDPI {
           margin-left: rem(50px);
         }
       }
@@ -468,7 +482,7 @@
           width: 365px;
           height: 385px;
         }
-        @include desktop {
+        @include laptopsMDPI {
           width: 300px;
           height: 320px;
         }
@@ -480,7 +494,7 @@
           width: 390px;
           height: 390px;
         }
-        @include desktop {
+        @include laptopsMDPI {
           width: 360px;
           height: 360px;
           margin-left: rem(50px);
@@ -493,7 +507,7 @@
           width: 400px;
           height: 400px;
         }
-        @include desktop {
+        @include laptopsMDPI {
           width: 330px;
           height: 330px;
         }
@@ -512,7 +526,7 @@
           top: 16%;
           left: 10%;
         }
-        @include desktop {
+        @include laptopsMDPI {
           width: 290px;
           height: 300px;
           top: -5%;
@@ -530,7 +544,7 @@
           top: 0%;
           left: 15%;
         }
-        @include desktop {
+        @include laptopsMDPI {
           width: 410px;
           height: 395px;
           top: -30%;
@@ -548,7 +562,7 @@
           top: 5%;
           left: 30%;
         }
-        @include desktop {
+        @include laptopsMDPI {
           width: 290px;
           height: 475px;
           top: -40%;
@@ -566,7 +580,7 @@
           top: 12%;
           left: 15%;
         }
-        @include desktop {
+        @include laptopsMDPI {
           width: 400px;
           height: 340px;
           top: -15%;
@@ -584,7 +598,7 @@
           top: 12%;
           left: 15%;
         }
-        @include desktop {
+        @include laptopsMDPI {
           width: 445px;
           height: 415px;
           top: -15%;
@@ -602,7 +616,7 @@
           top: 12%;
           left: 22%;
         }
-        @include desktop {
+        @include laptopsMDPI {
           width: 335px;
           height: 345px;
           top: -10%;

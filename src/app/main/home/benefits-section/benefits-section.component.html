@@ -6,8 +6,7 @@
     fxLayout="column"
     fxLayoutAlign="space-between center">
     <div class="benefits-title">
-      <h2 class="block-title">BENEFITS OF</h2>
-      <h2 class="block-title">NGX-RESTANGULAR</h2>
+      <h2 class="block-title">ADVANTAGES OF NGX-RESTANGULAR</h2>
     </div>
     <div class="benefits-text">
       <div class="block-text">Easy to use when working on complex client-side tasks. Supports promises and observables, has clear structure and a long list of features.
@@ -19,9 +18,9 @@
       <li class="benefits-list__item" #listItem
         *ngFor="let BenefitsListItem of BenefitsList"
         [ngClass]="[BenefitsListItem.itemBorderModifier]">
-        <div class="benefits-list__title"
+        <h3 class="benefits-list__title"
           [ngClass]="[BenefitsListItem.titleBorderModifier]">{{ BenefitsListItem.title }}
-        </div>
+        </h3>
         <div class="benefits-list__description"
           fxLayout="column"
           fxLayoutAlign="center center"

@@ -46,9 +46,6 @@
       line-height: rem(60px);
       margin-bottom: rem(40px);
     }
-    @include laptopsHeight {
-      margin-bottom: rem(40px);
-    }
   }
   &-text {
     position: relative;
@@ -62,9 +59,6 @@
     @include desktop {
       padding: 0 200px;
       margin-bottom: rem(100px);
-    }
-    @include laptopsHeight {
-      padding: 0 200px;
     }
   }
   &-notification {

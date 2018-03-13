@@ -46,4 +46,16 @@ body {
   line-height: 1.42;
   -webkit-font-smoothing: antialiased;
 }
+
+input {
+  line-height: 45px;
+  height: 45px;
+  font-size: 45px;
+
+  @include desktop {
+    line-height: 40px;
+    height: 40px;
+    font-size: 40px;
+  }
+}
 /*End of Basic Styles*/

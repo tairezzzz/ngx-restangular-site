@@ -7,22 +7,25 @@
   overflow: hidden;
   background-color: #ffffff;
   @include vertical {
-    padding: rem(35px) 0 rem(19px) 0;
+    padding: rem(50px) 0 rem(19px) 0;
     min-height: 92vh;
   }
   @include tablets {
     min-height: 95vh;
-    padding: rem(125px) 0 rem(19px) 0;
+    padding: rem(105px) 0 rem(19px) 0;
   }
   @include laptops {
-    padding: rem(105px) 0 rem(24px) 0;
+    padding: rem(55px) 0 rem(24px) 0;
     min-height: 100vh;
   }
-  @include desktop {
-    padding: 7% 0 rem(24px) 0;
+  @include laptopsMDPI {
+    padding: 3% 0 rem(24px) 0;
   }
-  @include laptopsHeight {
-    padding: 6% 0 rem(24px) 0;
+  @include laptopsHDPI {
+    padding: 2% 0 rem(24px) 0;
+  }
+  @include desktop {
+    padding: 4% 0 rem(24px) 0;
   }
   &-container {
     position: relative;
@@ -33,7 +36,7 @@
       min-height: 74vh;
     }
     @include tablets {
-      min-height: 77vh;
+      min-height: 80vh;
       width: rem(704px);
       max-width: rem(704px);
       margin: 0 auto;
@@ -42,71 +45,103 @@
       width: rem(960px);
       max-width: rem(960px);
       margin: 0 auto;
-
     }
     @include desktop {
       min-height: 83vh;
       width: rem(1140px);
       max-width: rem(1140px);
       margin: 0 auto;
-      //padding: 0;
     }
   }
   &-description {
-    margin-bottom: rem(10px);
-
+    margin-bottom: rem(5px);
+    @include vertical {
+      margin-bottom: rem(20px);
+    }
+    @include tablets {
+      margin-bottom: rem(20px);
+    }
+    @include laptopsMDPI {
+      margin-bottom: rem(15px);
+    }
     @include desktop {
       margin-bottom: rem(25px);
-    }
-    @include laptopsHeight {
-      margin-bottom: rem(20px);
     }
   }
   &-title {
     padding: 0 5%;
-    margin-bottom: rem(5px);
-
+    margin-bottom: rem(15px);
+    @include vertical {
+      margin-bottom: rem(10px);
+    }
     @include tablets {
       padding: 0;
-      margin-bottom: rem(39px);
+      margin-bottom: rem(30px);
     }
     @include laptops {
       margin-bottom: rem(19px);
     }
+    @include laptopsMDPI {
+      margin-bottom: rem(15px);
+    }
+    @include laptopsHDPI {
+      padding: 0 10%;
+      margin-bottom: rem(15px);
+    }
     @include desktop {
-      margin-bottom: rem(39px);
+      padding: 0;
+      margin-bottom: rem(35px);
     }
   }
   &-text {
+    font-family: "Montserrat", Helvetica, sans-serif;
+    font-size: rem(13px);
+    font-weight: 300;
+    color: #000;
+    text-align: center;
+    opacity: .65;
     padding: 0 7%;
     @include vertical {
-      padding: 0 5.5%;
+      padding: 0 6%;
     }
     @include tablets {
-      padding: 0 12%;
+      font-size: rem(20px);
+      font-weight: 500;
+      text-align: center;
+      line-height: rem(30px);
+      letter-spacing: .2px;
+      padding: 0 9%;
     }
     @include laptops {
-      padding: 0 20%;
+      padding: 0 15%;
       margin-bottom: rem(10px);
     }
     @include desktop {
+      font-size: rem(20px);
+      font-weight: 400;
+      line-height: rem(35px);
+      letter-spacing: .4px;
       margin-bottom: 0;
     }
   }
   &-btn {
+    @include vertical {
+      margin-bottom: rem(20px);
+    }
     @include laptops {
-      margin-bottom: rem(10px);
+      margin-bottom: rem(30px);
     }
-    @include desktop {
-    }
-    @include laptopsHeight {
-      margin-bottom: rem(10px);
+    @include laptopsMDPI {
+      margin-bottom: rem(25px);
     }
   }
   &-img {
     position: relative;
     @include vertical {
       margin-bottom: 5%;
+    }
+    @include tablets {
+      margin-bottom: 0;
     }
     @include desktop {
       margin-bottom: 3%;
@@ -126,13 +161,13 @@
         width: rem(269px);
         height: rem(292px);
       }
+      @include laptopsMDPI {
+        width: rem(299px);
+        height: rem(322px);
+      }
       @include desktop {
         width: rem(400px);
         height: rem(463px);
-      }
-      @include laptopsHeight {
-        width: rem(299px);
-        height: rem(322px);
       }
       &_ngx {
         position: absolute;
@@ -162,32 +197,45 @@
           width: rem(210px);
           height: rem(263px);
         }
+        @include laptopsMDPI {
+          top: 60%;
+          left: 55%;
+          width: rem(200px);
+          height: rem(363px);
+        }
         @include desktop {
           top: 60%;
           left: 57%;
           width: rem(350px);
           height: rem(413px);
         }
-        @include laptopsHeight {
-          top: 60%;
-          left: 55%;
-          width: rem(200px);
-          height: rem(363px);
-        }
       }
     }
   }
-}
-
-@keyframes home-logo-anim {
-  from {
-    transform: translate(-56%,-55%);
-  }
-  50% {
-    transform: translate(-56%,-47%);
-
-  }
-  to {
-    transform: translate(-56%,-55%);
+  &-scroll {
+    visibility: hidden;
+    @include laptopsMDPI {
+      visibility: visible;
+      display: block;
+      font-family: "Montserrat", Helvetica, sans-serif;
+      font-size: rem(15px);
+      font-weight: 500;
+      color: rgba(55,58,133,1);
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: .3px;
+      position: absolute;
+      bottom: -45px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
+      transition: opacity .3s;
+      margin-left: 4px;
+      animation: home-scroll-text 2.5s infinite;
+    }
+    @include desktop {
+      bottom: -30px;
+      margin-left: 8px;
+    }
   }
 }
