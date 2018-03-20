@@ -136,7 +136,7 @@
     }
     &__label {
       width: 100%;
-      margin-left: rem(10px);
+      padding-left: rem(10px);
       position: absolute;
       left: 0;
       top: 0;
@@ -149,13 +149,22 @@
       overflow: hidden;
       text-overflow: ellipsis;
       font-size: rem(14px);
-      line-height: 17px;
+      line-height: rem(17px);
       z-index: 5;
       @include desktop {
-        top: -20px;
+        top: -25px;
         font-size: rem(18px);
         transform: translate(0, 35px);
         line-height: 22px;
+      }
+      &_position {
+        top: rem(5px);
+        @include tablets {
+          top: rem(9px);
+        }
+        @include desktop {
+          top: rem(-20px);
+        }
       }
     }
     &__input {
@@ -168,12 +177,7 @@
       font-weight: 300;
       color: #000;
       border-bottom: 1px solid $footer;
-      position: absolute;
-      top: rem(10px);
-      left: 0;
-      bottom: 0;
-      padding: rem(5px) rem(10px);
-      padding-top: rem(18px);
+      padding: rem(25px) rem(10px) 0;
       background: #fff;
       z-index: 5;
       &:-webkit-autofill {
@@ -186,12 +190,13 @@
       @include tablets {
         font-size: rem(16px);
         line-height:rem(20px);
+        padding-top: rem(22px);
         border-bottom: 2px solid $footer;
       }
       @include desktop {
         font-size: rem(18px);
         line-height: inherit;
-        padding: rem(2px) rem(10px);
+        padding-top: rem(12px);
       }
       &-fake {
         display: block;
@@ -201,7 +206,7 @@
         background: transparent;
         white-space: pre-wrap;
         word-wrap: break-word;
-        padding: 0 0 0 0;
+        padding: 0;
         opacity: 0;
         margin-top: rem(15px);
         visibility: hidden;
@@ -226,7 +231,7 @@
       position: absolute;
       left: 0;
       top: 0;
-      bottom: 25px;
+      bottom: 0;
       resize: none;
       overflow: hidden;
       font-size: rem(14px);
@@ -241,7 +246,7 @@
       font-family: Montserrat;
       color: #000;
       margin-top: 20px;
-      padding: 0 rem(10px) 0 rem(10px);
+      padding: 13px rem(10px) 0 rem(10px);
 
       &:focus + .form-row__label {
         transform: translate(0, 0);
@@ -252,9 +257,10 @@
         font-size: rem(16px);
       }
       @include desktop {
-        padding: rem(12px) rem(10px);
+        padding: rem(20px) rem(10px) 0;
         font-size: rem(18px);
         bottom: 25px;
+        top: -20px;
       }
     }
     &__submit {
@@ -268,21 +274,25 @@
       padding: rem(5px) rem(13px);
       cursor: default;
       position: absolute;
-      top: rem(55px);
+      top: rem(45px);
       left: 0;
       @include tablets {
-        top: rem(55px);
+        top: rem(47px);
       }
       @include desktop {
         font-size: rem(18px);
         line-height:rem(22px);
         padding: rem(10px) rem(10px);
-        top: rem(45px);
+        top: rem(43px);
         left: 0;
       }
       &_position {
+        top: rem(52px);
+        @include tablets {
+          top: rem(55px);
+        }
         @include desktop {
-          top: rem(65px);
+          top: rem(48px);
         }
       }
     }

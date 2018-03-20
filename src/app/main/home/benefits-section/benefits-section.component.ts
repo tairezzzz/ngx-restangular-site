@@ -29,8 +29,8 @@ export class BenefitsSectionComponent implements OnInit {
     itemBorderModifier: string,
     title: string,
     titleBorderModifier: string,
-    textPaddingModifier: string,
     text: string,
+    textPaddingModifier: string,
     svg: any,
   }[];
 
