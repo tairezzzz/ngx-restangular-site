@@ -1,9 +1,17 @@
 // colors
 $darkBlue: #373A85;
 $footer: #3D278C;
+$robot: #E7C563;
+$satellite: #C86F85;
+$rocket: #A75FA2;
+$train: #8D5DB4;
+$ufo: #5B19A9;
+$one: #5B40B7;
 
 // resolutions
-$desktop: 1280px;
+$desktop: 1920px;
+$laptopsHDPI: 1440px;
+$laptopsMDPI: 1280px;
 $laptops: 960px;
 $tablets: 600px;
 $phones: 480px;
@@ -18,15 +26,18 @@ $vertical: 321px;
     @content;
   }
 }
-// <-------
-//Do not use this breakpoint(it was created only for fixing height bug on index page)
 
-@mixin laptopsHeight {
-  @media screen and (min-width: $desktop) and (max-width: 1450px) and (min-height: 650px) {
+@mixin laptopsHDPI {
+  @media screen and (min-width: $laptopsHDPI)  {
     @content;
   }
 }
-// ------->
+
+@mixin laptopsMDPI {
+  @media screen and (min-width: $laptopsMDPI)  {
+    @content;
+  }
+}
 
 @mixin laptops {
   @media screen and (min-width: $laptops)  {
@@ -76,10 +87,43 @@ $vertical: 321px;
   }
 }
 
+@mixin border-color($color) {
+  background-image: linear-gradient($color, $color),
+  linear-gradient($color, $color),
+  linear-gradient($color, $color),
+  linear-gradient($color, $color);
+}
+
+// Animations
 @mixin home-logo-anim {
   transition-delay: .65s;
   transition-duration: .3s;
   transition-property: transform, opacity;
   transition-timing-function: cubic-bezier(0.215,0.61,0.355,1);
   animation: 2.5s cubic-bezier(0.215,0.61,0.355,1) backwards infinite home-logo-anim;
+}
+
+@keyframes home-logo-anim {
+  from {
+    transform: translate(1.5%,6%);
+  }
+  50% {
+    transform: translate(1.5%,-2%);
+
+  }
+  to {
+    transform: translate(1.5%,6%);
+  }
+}
+
+@keyframes home-scroll-text {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }

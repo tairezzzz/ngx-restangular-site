@@ -7,7 +7,6 @@ import { IndexSectionModule } from './index-section/index-section.module';
 import { BenefitsSectionModule } from './benefits-section/benefits-section.module';
 
 
-
 @NgModule({
   declarations: [HomeComponent],
   imports: [

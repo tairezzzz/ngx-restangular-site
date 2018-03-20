@@ -4,8 +4,12 @@
     fxLayoutAlign="start center">
     <h3 class="footer-title" fxLayout="column" fxLayoutAlign="start center">
       Got a project in mind?
-      <p class="footer-notification" *ngIf="responseStatus">{{ responseText }}</p>
     </h3>
+    <div class="footer-text">
+      <div class="block-text">To support the project our developers core team is open to cooperation and ready to integrate Ngx-Restangular into your product. Feel free to drop us a message.
+      </div>
+      <p class="footer-notification" *ngIf="responseStatus">{{ responseText }}</p>
+    </div>
 
     <div class="footer-form">
       <form class="form" id="form"
@@ -57,11 +61,11 @@
               [(ngModel)]="dataInfo.text"
               (blur)="onEdit(msg)"
               required></textarea>
-            <label class="form-row__label" for="message"
+            <label class="form-row__label form-row__label_position" for="message"
               [style.opacity]="labels.hiddenLabelMsg ? '0' : '1'">
               Message or question
             </label>
-            <div class="form-row__alert" *ngIf="msg.invalid && msg.dirty">
+            <div class="form-row__alert form-row__alert_position" *ngIf="msg.invalid && msg.dirty">
             Please fill in your message or question
             </div>
           </div>

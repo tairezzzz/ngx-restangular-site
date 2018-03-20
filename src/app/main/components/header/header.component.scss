@@ -16,7 +16,9 @@
     padding: 0 rem(5px);
     width: 100%;
     position: relative;
-
+    @include vertical {
+      padding: 0;
+    }
     @include tablets {
       max-width: rem(704px);
       margin: 0 auto;
@@ -36,15 +38,15 @@
 
   &-logo {
     display: inline-block;
-    margin-left: rem(30px);
+    margin-left: rem(15px);
     @include vertical {
-      margin-left: rem(30px);
+      margin-left: rem(22px);
     }
     @include phones {
-      margin-left: rem(45px);
+      margin-left: rem(35px);
     }
     @include tablets {
-      margin-left: 0;
+      margin-left: rem(5px);
     }
     &__item {
       width: rem(145px);
