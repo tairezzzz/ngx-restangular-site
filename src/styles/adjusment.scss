@@ -12,6 +12,10 @@
   min-height: 100%;
 }
 
+svg {
+  overflow: visible!important; // for vertical parallax effect and main logo animation
+}
+
 .btn {
   display: inline-block;
   font-size: rem(14px);
@@ -65,12 +69,14 @@
   @include laptops {
     font-size: rem(36px);
   }
+  @include laptopsMDPI {
+    font-weight: 700;
+  }
   @include laptopsHDPI {
     font-size: rem(48px);
     font-weight: 700;
   }
   @include desktop {
-    font-weight: 700;
     font-size: rem(42px);
   }
 }
@@ -109,29 +115,4 @@
   clip-path: inset(100%);
   clip: rect(0 0 0 0);
   overflow: hidden;
-}
-
-@keyframes home-logo-anim {
-  from {
-    transform: translate(-56%,-55%);
-  }
-  50% {
-    transform: translate(-56%,-47%);
-
-  }
-  to {
-    transform: translate(-56%,-55%);
-  }
-}
-
-@keyframes home-scroll-text {
-  0% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
 }

@@ -82,7 +82,7 @@
       margin-bottom: rem(19px);
     }
     @include laptopsMDPI {
-      margin-bottom: rem(15px);
+      margin-bottom: rem(10px);
     }
     @include laptopsHDPI {
       padding: 0 10%;
@@ -135,89 +135,13 @@
       margin-bottom: rem(25px);
     }
   }
-  &-img {
-    position: relative;
-    @include vertical {
-      margin-bottom: 5%;
-    }
-    @include tablets {
-      margin-bottom: 0;
-    }
-    @include desktop {
-      margin-bottom: 3%;
-    }
-    &__item {
-      width: rem(157px);
-      height: rem(180px);
-      @include vertical {
-        width: rem(219px);
-        height: rem(242px);
-      }
-      @include tablets {
-        width: rem(419px);
-        height: rem(442px);
-      }
-      @include laptops {
-        width: rem(269px);
-        height: rem(292px);
-      }
-      @include laptopsMDPI {
-        width: rem(299px);
-        height: rem(322px);
-      }
-      @include desktop {
-        width: rem(400px);
-        height: rem(463px);
-      }
-      &_ngx {
-        position: absolute;
-        top: 58%;
-        left: 56%;
-        transform: translate(-56%, -58%);
-        width: rem(110px);
-        height: rem(173px);
-        @include home-logo-anim;
 
-        @include vertical {
-          top: 61%;
-          left: 56%;
-          width: rem(150px);
-          height: rem(213px);
-          @include home-logo-anim;
-        }
-        @include tablets {
-          top: 62%;
-          left: 56%;
-          width: rem(320px);
-          height: rem(383px);
-        }
-        @include laptops {
-          top: 60%;
-          left: 56%;
-          width: rem(210px);
-          height: rem(263px);
-        }
-        @include laptopsMDPI {
-          top: 60%;
-          left: 55%;
-          width: rem(200px);
-          height: rem(363px);
-        }
-        @include desktop {
-          top: 60%;
-          left: 57%;
-          width: rem(350px);
-          height: rem(413px);
-        }
-      }
-    }
-  }
   &-scroll {
     visibility: hidden;
     @include laptopsMDPI {
       visibility: visible;
       display: block;
-      font-family: "Montserrat", Helvetica, sans-serif;
+      font-family: "Montserrat", sans-serif;
       font-size: rem(15px);
       font-weight: 500;
       color: rgba(55,58,133,1);

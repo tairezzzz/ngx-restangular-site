@@ -1,13 +1,11 @@
-<section class="benefits" #sectionBg
+<section class="benefits"
   fxLayout="column"
   fxLayoutAlign="center center"
   fxLayoutAlign.gt-md="start center">
   <div class="benefits-container"
     fxLayout="column"
     fxLayoutAlign="space-between center">
-    <div class="benefits-title">
-      <h2 class="block-title">ADVANTAGES OF NGX-RESTANGULAR</h2>
-    </div>
+    <h2 class="benefits-title block-title">ADVANTAGES OF NGX-RESTANGULAR</h2>
     <div class="benefits-text">
       <div class="block-text">Easy to use when working on complex client-side tasks. Supports promises and observables, has clear structure and a long list of features.
       </div>
@@ -15,39 +13,31 @@
     <ul class="benefits-list"
       fxLayout="column"
       fxLayoutAlign="center center">
-      <li class="benefits-list__item" #listItem
-        *ngFor="let BenefitsListItem of BenefitsList"
-        [ngClass]="[BenefitsListItem.itemBorderModifier]">
-        <h3 class="benefits-list__title"
-          [ngClass]="[BenefitsListItem.titleBorderModifier]">{{ BenefitsListItem.title }}
-        </h3>
+      <li class="benefits-list__item"
+        fxLayout="column"
+        fxLayoutAlign="center center"
+        fxLayout.gt-md="row"
+        *ngFor="let benefitsListItem of benefitsList"
+        [ngClass]="[benefitsListItem.itemBorderModifier]">
         <div class="benefits-list__description"
+             fxLayout="column"
+             fxLayoutAlign="center center"
+             fxLayoutAlign.gt-md="space-between center">
+          <h3 class="benefits-list__title"
+            [ngClass]="[benefitsListItem.titleBorderModifier]">{{ benefitsListItem.title }}
+          </h3>
+          <div class="benefits-list__text block-text"
+             [ngClass]="[benefitsListItem.textPaddingModifier]">
+            {{ benefitsListItem.text }}
+          </div>
+        </div>
+        <div class="benefits-list__img"
           fxLayout="column"
           fxLayoutAlign="center center"
-          fxLayout.gt-md="row"
-          fxLayoutAlign.gt-md="space-between center">
-          <div class="benefits-list__text">
-            <div class="block-text" [ngClass]="[BenefitsListItem.textAlignModifier]">
-              {{ BenefitsListItem.text }}
-            </div>
-          </div>
-          <div class="benefits-list__img"
-            fxLayout="column"
-            fxLayoutAlign="center center"
-            [ngClass]="[BenefitsListItem.imgBorderModifier]">
-            <img class="benefits-list__img-bg"
-              [ngClass]="[BenefitsListItem.bgSizeModifier]"
-              [src]="BenefitsListItem.bgPath"
-              [alt]="BenefitsListItem.imgName">
-            <img class="benefits-list__img-pic"
-              #images
-              [ngClass]="[BenefitsListItem.picSizeModifier]"
-              [src]="BenefitsListItem.imgPath"
-              [alt]="BenefitsListItem.imgName">
-          </div>
+          [ngClass]="[benefitsListItem.imgBorderModifier]">
+          <ng-container *ngComponentOutlet="benefitsListItem.svg"></ng-container>
         </div>
       </li>
     </ul>
   </div>
-
 </section>

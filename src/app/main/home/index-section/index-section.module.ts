@@ -1,9 +1,13 @@
 import { NgModule } from '@angular/core';
-import { IndexSectionComponent } from './index-section.component';
 import { SharedModule } from '../../shared/shared.module';
+import { IndexSectionComponent } from './index-section.component';
+import { NgxSvgComponent } from './ngx-svg/ngx-svg.component';
 
 @NgModule({
-  declarations: [IndexSectionComponent],
+  declarations: [ 
+    IndexSectionComponent,
+    NgxSvgComponent
+  ],
   imports: [
     SharedModule,
   ],
