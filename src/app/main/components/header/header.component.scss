@@ -8,6 +8,7 @@
   top: 0;
   padding: rem(7px) 0 rem(2px);
   z-index: 1000;
+  transform: translateZ(0);
   @include desktop {
     padding: rem(11px) 0 rem(6px);
   }
