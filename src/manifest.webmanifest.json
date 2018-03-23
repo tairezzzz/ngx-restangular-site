@@ -19,12 +19,8 @@
     "sizes": "96x96",
     "type": "image/png"
   }, {
-    "src": "/assets/favicon/favicon-128x128.png",
+    "src": "/assets/favicon/favicon-128.png",
     "sizes": "128x128",
-    "type": "image/png"
-  }, {
-    "src": "/assets/favicon/favicon-168x168.png",
-    "sizes": "168x168",
     "type": "image/png"
   }, {
     "src": "/assets/favicon/favicon-196x196.png",
