@@ -36,17 +36,17 @@
   <app-root></app-root>
     <div itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="2muchcoffee"/>
-      <ul class="schema-list">
-        <li class="schema-list__item">
+      <div class="schema-list">
+        <div class="schema-list__item">
           <address itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
             <meta itemprop="addressCountry" content="UA" />
             <meta itemprop="addressLocality" content="Ukraine, Kiev"/>
           </address>
-        </li>
-        <li class="schema-list__item">
+        </div>
+        <div class="schema-list__item">
           <meta itemprop="email" content="ngx-restangular@2muchcoffee.com" />
-        </li>
-      </ul>
+        </div>
+      </div>
       <div itemprop="founder" itemscope itemtype="http://schema.org/Person">
         <meta itemprop="name" content="Dmitriy Melnichenko" />
       </div>
@@ -88,6 +88,12 @@
 
       gtag('config', 'UA-114184864-1');
   </script>
+
+  <noscript>
+    <h3 style="color: #373A85; font-family: Helvetica; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center">
+      Sorry, but app is not available without JavaScript
+    </h3>
+  </noscript>
 
 </body>
 </html>
