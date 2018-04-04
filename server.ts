@@ -8,6 +8,8 @@ import bodyParser = require('body-parser');
 import { join } from 'path';
 import { readFileSync } from 'fs';
 import { sendMail} from './sendMail';
+
+const compression = require('compression');
 // Faster server renders w/ Prod mode (dev mode never needed)
 enableProdMode();
 
@@ -35,7 +37,7 @@ app.engine('html', ngExpressEngine({
     provideModuleMap(LAZY_MODULE_MAP)
   ]
 }));
-
+app.use(compression());
 app.set('view engine', 'html');
 app.set('views', join(DIST_FOLDER, 'browser'));
 app.use(cors());
