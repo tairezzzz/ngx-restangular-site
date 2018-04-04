@@ -3,8 +3,8 @@
   "short_name": "Restangular",
   "start_url": "/index.html",
   "display": "standalone",
-  "background_color": "#fff",
-  "theme_color": "#fff",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
   "description": "Create HTTP requests with no hassle and overhead. ☑ Build your own HTTP methods. ☑  Easily use it for any WebApp that catches data from RESTful API. ♨ [Make Angular Fast!]",
   "icons": [{
     "src": "/assets/favicon/favicon-16x16.png",
@@ -34,6 +34,6 @@
 
   "related_applications": [{
     "platform": "web",
-    "url": "https://www.2muchcoffee.com"
+    "url": "https://2muchcoffee.com"
   }]
 }

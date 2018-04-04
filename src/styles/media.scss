@@ -93,12 +93,3 @@ $vertical: 321px;
   linear-gradient($color, $color),
   linear-gradient($color, $color);
 }
-
-// Animations
-@mixin home-logo-anim {
-  transition-delay: .65s;
-  transition-duration: .3s;
-  transition-property: transform, opacity;
-  transition-timing-function: cubic-bezier(0.215,0.61,0.355,1);
-  animation: 2.5s cubic-bezier(0.215,0.61,0.355,1) backwards infinite home-logo-anim;
-}

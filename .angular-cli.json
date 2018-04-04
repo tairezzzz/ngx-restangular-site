@@ -1,7 +1,7 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "project": {
-    "name": "ng-universal-demo"
+    "name": "ngx-restangular"
   },
   "apps": [
     {
@@ -21,8 +21,12 @@
       "prefix": "app",
       "serviceWorker": true,
       "styles": [
-        "./styles/styles.scss"
       ],
+      "stylePreprocessorOptions": {
+        "includePaths": [
+          "styles"
+        ]
+      },
       "scripts": [],
       "environmentSource": "environments/environment.ts",
       "environments": {
@@ -45,8 +49,12 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
       "styles": [
-        "./styles/styles.scss"
       ],
+      "stylePreprocessorOptions": {
+        "includePaths": [
+          "styles"
+        ]
+      },
       "scripts": [],
       "environmentSource": "environments/environment.ts",
       "environments": {
@@ -86,8 +94,8 @@
     },
     "component": {
       "spec": false,
-      "inlineStyle": true,
-      "inlineTemplate": true
+      "inlineStyle": false,
+      "inlineTemplate": false
     },
     "directive": {
       "spec": false
