@@ -28,8 +28,8 @@ import { OneSvgComponent } from './main/home/benefits-section/one-svg/one-svg.co
     FlexLayoutModule,
     CoreModule,
     MainModule,
+    BenefitsSectionModule,
     AppRoutingModule,
-    BenefitsSectionModule
   ],
   providers: [],
     entryComponents: [

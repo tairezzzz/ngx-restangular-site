@@ -12,9 +12,6 @@
         "/*.bundle.css",
         "/*.bundle.js",
         "/*.chunk.js"
-      ],
-      "urls": [
-        "https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700"
       ]
     }
   }, {
@@ -24,7 +21,15 @@
     "resources": {
       "files": [
         "/assets/**"
-      ]
+      ],
+      "urls": [
+        "https://fonts.googleapis.com/**"
+      ],
+      "cacheConfig": {
+        "strategy": "perfomance",
+        "maxSize": 20,
+        "maxAge": "30d"
+      }
     }
   }]
 }
