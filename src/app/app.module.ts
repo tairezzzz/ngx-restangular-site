@@ -3,7 +3,6 @@ import { environment } from '../environments/environment';
 
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { AppComponent } from './app.component';
 import { CoreModule } from './main/core/core.module';
@@ -25,7 +24,6 @@ import { OneSvgComponent } from './main/home/benefits-section/one-svg/one-svg.co
   imports: [
     BrowserModule.withServerTransition({appId: 'my-app'}),
     ServiceWorkerModule.register('/ngsw-worker.js', {enabled: environment.production}),
-    FlexLayoutModule,
     CoreModule,
     MainModule,
     BenefitsSectionModule,

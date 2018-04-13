@@ -5,16 +5,16 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 
 import { APP_DIRECTIVES } from './directives/index';
-import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
   declarations: [
     APP_DIRECTIVES,
   ],
-  imports: [],
+  imports: [
+    CommonModule
+  ],
   exports: [
-    HttpClientModule,
     CommonModule,
     FormsModule,
     FlexLayoutModule,

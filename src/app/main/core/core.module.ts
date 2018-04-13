@@ -1,17 +1,15 @@
 import { NgModule } from '@angular/core';
-
-import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 import { APP_SERVICE_PROVIDERS } from './services/index';
 
 
 @NgModule({
   declarations: [],
   imports: [
-    CommonModule,
+    HttpClientModule
   ],
   providers: [
     APP_SERVICE_PROVIDERS
   ]
 })
-export class CoreModule {
-}
+export class CoreModule {}
