@@ -1,14 +1,14 @@
 const nodemailer  = require('nodemailer');
 require('dotenv').config();
 
-export function sendMail(req, res){
+export function sendMail(req, res) {
   console.log(req.body);
   
-  let email = req.body.email;
-  let name = req.body.name;
-  let text = req.body.message;
-  
-  let smtpConfig = {
+  const email = req.body.email;
+  const name = req.body.name;
+  const text = req.body.message;
+
+  const smtpConfig = {
     host: process.env.EMAIL_HOST,
     port: 587,
     secure: false,
@@ -17,9 +17,9 @@ export function sendMail(req, res){
       pass: process.env.EMAIL_PASS
     }
   };
-  let transporter = nodemailer.createTransport(smtpConfig);
+  const transporter = nodemailer.createTransport(smtpConfig);
 
-  let mailOptions = {
+  const mailOptions = {
     from: `"2mc 👥" <${email}>`,
     to: process.env.EMAIL_TO,
     subject: 'Hello',
@@ -28,15 +28,15 @@ export function sendMail(req, res){
   };
 
   // send mail with defined transport object
-  transporter.sendMail(mailOptions, function(error, info){
+  transporter.sendMail(mailOptions, function(error, info) {
     if (error) {
       res.json({
-          status: error.statusCode
+        status: error.statusCode
       });
     } else {
       res.send({
         status: 200,
-        data: info
+        data: info.response
       });
     }
     

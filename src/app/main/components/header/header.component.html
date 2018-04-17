@@ -11,18 +11,15 @@
       fxHide="true"
       fxHide.gt-xs="false">
 
-       <!--Feel free to uncomment socials after filling in urls in headerSocialsList variable at headerComponent
-       -->
-
-      <!--<ul class="socials-list" fxLayout="row">-->
-        <!--<li class="socials-list__item" *ngFor="let headerSocialsItem of headerSocialsList">-->
-          <!--<a class="socials-list__link" href="">-->
-            <!--<svg class="socials-list__link-item" [class.socials-list__link-item_size]="headerSocialsItem.modifier">-->
-              <!--<use [attr.xlink:href]="[headerSocialsItem.imgPath]"></use>-->
-            <!--</svg>-->
-          <!--</a>-->
-        <!--</li>-->
-      <!--</ul>-->
+      <ul class="socials-list" fxLayout="row">
+        <li class="socials-list__item" *ngFor="let headerSocialsItem of headerSocialsList">
+          <a class="socials-list__link" [href]="headerSocialsItem.linkPath" target="_blank">
+            <svg class="socials-list__link-item" [class.socials-list__link-item_size]="headerSocialsItem.modifier">
+              <use [attr.xlink:href]="[headerSocialsItem.imgPath]"></use>
+            </svg>
+          </a>
+        </li>
+      </ul>
     </div>
   </div>
 </header>

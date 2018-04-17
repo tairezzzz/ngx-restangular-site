@@ -1,4 +1,4 @@
-import { Component, ViewChild, ElementRef, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 
 @Component({
@@ -14,8 +14,6 @@ export class HeaderComponent implements OnInit {
    modifier: boolean
  }[];
   
-  @ViewChild('header') header: ElementRef;
-  
   constructor() {}
   
   ngOnInit() {
@@ -23,27 +21,27 @@ export class HeaderComponent implements OnInit {
     this.headerSocialsList = [
       {
         imgPath: '/assets/img/svg/sprite.min.svg#fb',
-        linkPath: '01',
+        linkPath: 'https://www.facebook.com/2muchcoffeecom',
         modifier: false
       },
       {
         imgPath: '/assets/img/svg/sprite.min.svg#in',
-        linkPath: '02',
+        linkPath: 'https://www.linkedin.com/company/2muchcoffee',
         modifier: false
       },
       {
         imgPath: '/assets/img/svg/sprite.min.svg#github',
-        linkPath: '03',
+        linkPath: 'https://github.com/2muchcoffeecom',
         modifier: true
       },
       {
         imgPath: '/assets/img/svg/sprite.min.svg#behance',
-        linkPath: '04',
+        linkPath: 'https://www.behance.net/2muchcoffee',
         modifier: true
       },
       {
         imgPath: '/assets/img/svg/sprite.min.svg#tw',
-        linkPath: '05',
+        linkPath: 'https://twitter.com/2muchcoffeecom',
         modifier: false
       }
     ];
