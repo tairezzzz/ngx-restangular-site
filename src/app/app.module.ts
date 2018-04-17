@@ -16,6 +16,7 @@ import { RocketSvgComponent } from './main/home/benefits-section/rocket-svg/rock
 import { TrainSvgComponent } from './main/home/benefits-section/train-svg/train-svg.component';
 import { UfoSvgComponent } from './main/home/benefits-section/ufo-svg/ufo-svg.component';
 import { OneSvgComponent } from './main/home/benefits-section/one-svg/one-svg.component';
+import { APP_BASE_HREF } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,9 @@ import { OneSvgComponent } from './main/home/benefits-section/one-svg/one-svg.co
     BenefitsSectionModule,
     AppRoutingModule,
   ],
-  providers: [],
+  providers: [
+    { provide: APP_BASE_HREF, useValue: '/' }
+  ],
     entryComponents: [
       RobotSvgComponent,
       SatelliteSvgComponent,
