@@ -80,10 +80,14 @@
       padding: 0 10%;
     }
     @include laptops {
-      padding: 0 16%;
+      padding: 0 21%;
     }
     @include laptopsMDPI {
       margin-bottom: rem(100px);
+      padding: 0 18%;
+    }
+    @include desktop {
+      padding: 0 14%;
     }
   }
 }
@@ -272,6 +276,9 @@
     }
     @include tablets {
       padding: 0 16%;
+    }
+    @include laptops {
+      padding: 0 17%;
     }
     @include laptopsMDPI {
       max-width: rem(840px);
