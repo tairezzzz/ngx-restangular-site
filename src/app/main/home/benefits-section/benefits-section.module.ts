@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { SharedModule } from '../../shared/shared.module';
+
 import { BenefitsSectionComponent } from './benefits-section.component';
+
 import { RobotSvgComponent } from './robot-svg/robot-svg.component';
 import { SatelliteSvgComponent } from './satellite-svg/satellite-svg.component';
 import { RocketSvgComponent } from './rocket-svg/rocket-svg.component';

@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
-import { FooterComponent } from './footer.component';
 import { SharedModule } from '../../shared/shared.module';
+
+import { FooterComponent } from './footer.component';
 
 @NgModule({
   declarations: [
