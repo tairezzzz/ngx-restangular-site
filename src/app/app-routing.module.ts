@@ -1,9 +1,7 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
-const appRoutes: Routes = [
-
-];
+const appRoutes: Routes = [];
 
 @NgModule({
   imports: [
