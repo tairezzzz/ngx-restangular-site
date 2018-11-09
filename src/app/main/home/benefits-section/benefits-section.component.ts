@@ -84,7 +84,7 @@ export class BenefitsSectionComponent implements OnInit {
         itemBorderModifier: 'benefits-list__item_border_ufo',
         title: 'Work with nested RESTful resources',
         titleBorderModifier: 'benefits-list__title_border_ufo',
-        text: 'Ngx-restantugal has built-in features to work with nested entities.',
+        text: 'Ngx-restangular has built-in features to work with nested entities.',
         textPaddingModifier: 'benefits-list__text_padding_ufo',
         svg: this.ufoSvgComponent,
       },
