@@ -1,0 +1,11 @@
+version: '3.3'
+services:
+  frontend:
+    env_file: .env
+    build:
+      context: .
+      dockerfile: './.docker/Dockerfile'
+    ports:
+      - ${PORT:-54852}:${PORT:-54852}
+    restart: always
+    command: 'npm run serve:ssr'
