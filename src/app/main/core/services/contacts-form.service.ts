@@ -1,5 +1,10 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+
+import { Observable } from 'rxjs';
+import { catchError } from 'rxjs/operators';
+
+import { environment } from '../../../../environments/environment';
 
 @Injectable()
 export class ContactsFormService {
@@ -8,7 +13,16 @@ export class ContactsFormService {
   
   sendEmail(model) {
     if (model) {
-        return this.http.post('/send-mail', model);
+      return this.http.post(
+        environment.sendMailEndpoint,
+        {
+          subject: 'New request from NGX-restangular',
+          to: 'EMAIL_TO_SALES',
+          ...model
+        })
+      .pipe(
+        catchError((error: HttpErrorResponse) => Observable.of(error))
+      )
     }
   }
   hideLabel(value, labels) {

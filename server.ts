@@ -7,7 +7,6 @@ import * as express from 'express';
 import bodyParser = require('body-parser');
 import { join } from 'path';
 import { readFileSync } from 'fs';
-import { sendMail} from './sendMail';
 
 const compression = require('compression');
 // Faster server renders w/ Prod mode (dev mode never needed)
@@ -46,10 +45,6 @@ app.use(bodyParser.json());
  app.get('/api/**', (req, res) => { });
  */
 
-// mail Route
-app.post('/send-mail', (req, res) =>  {
-  sendMail(req, res);
-});
 // Server static files from /browser
 app.get('*.*', express.static(join(DIST_FOLDER, 'browser'), {
   maxAge: '1y'

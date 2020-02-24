@@ -4,5 +4,6 @@
 // The list of which env maps to which file can be found in `.angular-cli.json`.
 
 export const environment = {
+  sendMailEndpoint: 'https://2muchcoffee.com/send-mail',
   production: false
 };
