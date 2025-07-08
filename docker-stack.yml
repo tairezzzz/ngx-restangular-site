@@ -1,0 +1,14 @@
+version: "3.3"
+
+services:
+  landing:
+    image: 2muchcoffee/ngx-restangular-landing:${TAG:?}
+    env_file: .env
+    ports:
+      - $PORT:$PORT
+    command: "npm run serve:ssr"
+    deploy:
+      replicas: 1
+      placement:
+        constraints:
+          - node.labels.node-1 == true

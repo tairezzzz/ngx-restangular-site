@@ -6,6 +6,6 @@ services:
       context: .
       dockerfile: './.docker/Dockerfile'
     ports:
-      - ${PORT:-54852}:${PORT:-54852}
+      - ${PORT:-53100}:${PORT:-53100}
     restart: always
     command: 'npm run serve:ssr'

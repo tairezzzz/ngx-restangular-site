@@ -1,0 +1,5 @@
+dist
+.tmp
+.idea
+.git
+node_modules
